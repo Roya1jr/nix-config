@@ -1,0 +1,99 @@
+#Custom Languages
+[[language]]
+name = "uiua"
+scope = "source.uiua"
+injection-regex = "uiua"
+file-types = ["ua"]
+auto-format = true
+comment-token = "#"
+language-servers = [ "uiua-lsp" ]
+indent = { tab-width = 2, unit = "\t" }
+shebangs = ["uiua"]
+
+[language-server.uiua-lsp]
+command = "uiua"
+args = ["lsp"]
+
+
+[[grammar]]
+name = "uiua"
+source.git = "https://github.com/shnarazk/tree-sitter-uiua"
+source.rev = "f3fb8b8fe367b00e2ad858a419da3dedc8cbeeeb"
+
+# [[language]]
+# name = "bqn"
+# file-types = ["bqn"]
+# comment-token = "#"
+# indent = { tab-width = 2, unit = "\t" }
+# shebangs = ["bqn", "cbqn"]
+# injection-regex = "bqn"
+# scope = "scope.bqn"
+# language-servers = ["bqnlsp"]
+# language-id = "bqn"
+
+
+# [language-server.bqnlsp]
+# command = "bqnlsp"
+
+
+# [[grammar]]
+# name = "bqn"
+# source.git = "https://github.com/shnarazk/tree-sitter-bqn"
+# source.rev = "a90b371503f158699042423918e4c5e9285f5519"
+
+[language-server.emmet-lsp]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+[language-server.tailwindcss-ls]
+config = {userLanguages = {rust = "html",".rs" = "html",templ = "html","*.templ" = "html"}}
+
+[[language]]
+ name = "html"
+ formatter = { command = 'npx' , args = ["prettier","--parser", "html"] }
+ language-servers = ["tailwindcss-ls","vscode-html-language-server", "emmet-lsp"]
+ indent = { tab-width = 2, unit = "\t" }
+ auto-format = true
+
+#Built In Languages
+[language.auto-pairs]
+'⟨' = '⟩'
+'(' = ')'
+'{' = '}'
+'[' = ']'
+
+[[language]]
+name = "templ"
+language-servers = ["tailwindcss-ls","templ-lsp","emmet-lsp"]
+comment-token = "//"
+formatter = { command = "templ fmt" }
+auto-format = true
+[language-server.templ-lsp]
+command = "templ"
+args = ["lsp"]
+
+
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimports" }
+
+[[language]]
+name = "unison"
+scope = "source.unison"
+file-types = ["u"]
+language-servers = ["unison-lsp"]
+[language-server.unison-lsp]
+command = "ncat"
+args= ["localhost", "5757"]
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml"]
+language-servers = ["pylsp", "ruff"]
+[language-server.pylsp]
+command = "pylsp"
+[language-server.ruff]
+command = "ruff-lsp"
+config = { settings = { run = "onSave" } }
+ 

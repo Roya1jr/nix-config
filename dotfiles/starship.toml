@@ -1,0 +1,139 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+command_timeout = 10000
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red) '
+
+[cmd_duration]
+min_time = 100000
+format = "underwent [$duration](bold yellow)"
+
+[directory]
+format = "[$path]($style) " 
+truncation_length = 1000
+truncation_symbol = "…/"
+
+[status]
+style = "bg:red"
+symbol = " "
+not_found_symbol = "󱚠 "
+not_executable_symbol = "󰋮 "
+signal_symbol = " "
+sigint_symbol = "󰴔 "
+format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+map_symbol = true
+disabled = false
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+
+[shell]
+nu_indicator = "󰅬"
+fish_indicator = "󰈺"
+powershell_indicator = "󰨊"
+unknown_indicator = "?"
+disabled = false
+
+[shlvl]
+disabled = true
+format = "$shlvl level(s) down"
+threshold = 3
+
+[time]
+disabled = false
+format = '[\[ $time \]]($style) '
+time_format = "%v %r"
+use_12hr = true
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "user: [$user]($style) "
+disabled = false
+show_always = true
+
+# Environments
+
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = "bold yellow"
+symbol = " "
+[aws.region_aliases]
+ap-southeast-2 = "au"
+us-east-1 = "va"
+
+[conda]
+format = "[$symbol$environment](dimmed green) "
+
+[dart]
+format = "[ $version](bold blue) "
+
+[docker_context]
+format = "[ $context](blue bold)"
+
+[elixir]
+format = "[ $version](bold green) "
+
+[ocaml]
+format = '[🐪 $version]($style) '
+
+[git_branch]
+symbol = " "
+truncation_length = 1000
+truncation_symbol = ""
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = " "
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[ PICKING](bold red)"
+
+[git_status]
+conflicted = "󰘕"
+ahead = ""
+behind = ""
+diverged = ""
+untracked = "󱌑 ‍"
+stashed = "  "
+modified = " 󱎝 "
+staged = '[󱡆 \($count\)](green)'
+renamed = "󱁜 "
+deleted = "  "
+
+[golang]
+format = "[  $version](bold cyan) "
+
+[java]
+symbol = " "
+
+[kubernetes]
+format = 'on [⎈ $context \($namespace\)](dimmed green) '
+disabled = false
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+
+[lua]
+format = "[ $version](bold blue) "
+
+[hg_branch]
+format = "on [שׂ $branch](bold purple)"
+truncation_length = 1000
+truncation_symbol = ""
+
+[nodejs]
+format = "[󰎙 $version](bold green) "
+
+[package]
+format = "[📦$version](208 bold) "
+
+[python]
+symbol = " "
+pyenv_version_name = true
+
+[rust]
+format = "[ $version](red bold)"
