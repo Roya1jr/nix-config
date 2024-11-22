@@ -79,6 +79,7 @@
       "microsoft-teams"
       "obsidian"
       "steam"
+      "soduto"
       "wezterm"
       "visual-studio-code"
     ];
