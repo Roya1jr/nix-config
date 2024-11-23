@@ -77,11 +77,16 @@
       "heroic"
       "material-maker"
       "microsoft-teams"
+      "nikitabobko/tap/aerospace"
       "obsidian"
       "steam"
       "soduto"
       "wezterm"
       "visual-studio-code"
+    ];
+
+    taps = [
+
     ];
 
     masApps = {
@@ -101,7 +106,7 @@
       finder = {
         AppleShowAllExtensions = true;
         FXDefaultSearchScope = "SCcf";
-        FXEnableExtensionChangeWarning = false;
+        FXEnableExtensionChangeWarning = true;
         ShowPathbar = true;
       };
       # NSGlobalDomain = {
