@@ -3,6 +3,7 @@ theme = "gruvbox_dark_hard"
 [editor]
 line-number = "relative"
 mouse = false
+insert-final-newline = false
 
 [editor.lsp]
 display-inlay-hints = true
