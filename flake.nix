@@ -54,6 +54,8 @@
             _module.args = { inherit inputs; };
             home-manager = {
               users.${user} = import ./home-manager;
+              useGlobalPkgs = true;
+              useUserPackages = true;
             };
             users.users.${user}.home = "/Users/${user}";
             nix.settings.trusted-users = [ user ];
