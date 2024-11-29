@@ -6,6 +6,7 @@ with pkgs; [
   #gforth no macbook
   #glibc no macbook
   # gfortran14
+  libgcc
   libclang
   lldb
   raylib

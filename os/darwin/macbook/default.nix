@@ -66,10 +66,6 @@
     enable = true;
 
     casks = [
-      ##SYSTEM##
-      "gcc"
-      ########
-
       ##GUI##
       "android-studio"
       "blender@lts"
