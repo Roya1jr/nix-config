@@ -5,7 +5,7 @@ with pkgs; [
   cmake
   #gforth no macbook
   #glibc no macbook
-  gfortran14
+  # gfortran14
   libclang
   lldb
   raylib
