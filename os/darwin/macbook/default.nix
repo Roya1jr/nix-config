@@ -66,6 +66,11 @@
     enable = true;
 
     casks = [
+      ##SYSTEM##
+      "gcc"
+      ########
+
+      ##GUI##
       "android-studio"
       "blender@lts"
       "dbeaver-community"
@@ -84,6 +89,7 @@
       "soduto"
       "wezterm"
       "visual-studio-code"
+      ########
     ];
 
     taps = [
