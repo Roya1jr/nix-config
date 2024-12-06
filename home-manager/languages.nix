@@ -7,7 +7,7 @@ with pkgs; [
   #glibc no macbook
   #gfortran14
   libgccjit
-  libclang
+  #libclang
   lldb
   raylib
   ######
