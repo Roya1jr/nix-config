@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, unstable, ... }:
+let
+  upkgs = with unstable;[
+    gleam
+  ];
+in
 
 with pkgs; [
   ##C++#
@@ -15,7 +20,7 @@ with pkgs; [
   #dotnet-sdk_8
   erlang_26
   #factor-lang no macbook
-  gleam
+  #gleam
   #ghc
 
   ##GOLANG##
@@ -32,8 +37,8 @@ with pkgs; [
   #hare
   #io
   #(lib.hiPrio j) no macbook
-  
-  
+
+
   ##Janet
   #janet
   #jpm
@@ -60,9 +65,9 @@ with pkgs; [
   ##Lua
 
   #######LSP##########
-   dockerfile-language-server-nodejs
-   taplo
-   marksman
+  dockerfile-language-server-nodejs
+  taplo
+  marksman
   ####################
 
   #mercury
@@ -70,7 +75,7 @@ with pkgs; [
   #ocaml
   #opam
   ##Ocaml
-  
+
   #perl
   php
   protobuf_25
@@ -95,21 +100,21 @@ with pkgs; [
 
   #ngn-k no macbook
   rustup
-  
+
   ##Tailwind
   tailwindcss
   tailwindcss-language-server
   ##Tailwind
-  
+
   wasmtime
   wasmer
   uiua
   #unison-ucm
   yaml-language-server
   zulu
-  
+
   ##Zig
   zig
   zls
   ##Zig
-]
+] ++ upkgs

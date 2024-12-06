@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,6 +23,7 @@
 
   outputs =
     { nixpkgs
+    , nixpkgs-unstable
     , nixos-wsl
     , nixos-hardware
     , nix-flatpak
@@ -33,11 +35,17 @@
       systems = [ "x86_64-linux" "aarch64-darwin" ];
 
       forAllSystems = nixpkgs.lib.genAttrs systems;
+      pkgsFor = forAllSystems
+        (system: import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        });
 
-      pkgsFor = forAllSystems (system: import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      });
+      unstable-pkgsFor = forAllSystems (system: import nixpkgs-unstable
+        {
+          inherit system;
+          config.allowUnfree = true;
+        });
 
 
       darwinSystem = { user, arch ? "aarch64-darwin" }: entrypoint:
@@ -45,6 +53,7 @@
           system = arch;
           specialArgs = {
             pkgs = pkgsFor.${arch};
+            unstable = unstable-pkgsFor.${arch};
             inherit inputs;
           };
           modules = [
@@ -68,6 +77,7 @@
           system = arch;
           specialArgs = {
             pkgs = pkgsFor.${arch};
+            unstable = unstable-pkgsFor.${arch};
             inherit inputs;
           };
           modules = [
