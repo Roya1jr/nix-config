@@ -1,4 +1,8 @@
-{ pkgs, inputs, lib, ... }:
+{ pkgs
+, inputs
+, lib
+, ...
+}:
 
 let
   basePackages = import ./base.nix { inherit pkgs; };

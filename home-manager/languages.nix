@@ -1,9 +1,6 @@
-{ pkgs, unstable, ... }:
-let
-  upkgs = with unstable;[
-    gleam
-  ];
-in
+{ pkgs, ... }:
+
+
 
 with pkgs; [
   ##C++#
@@ -20,7 +17,7 @@ with pkgs; [
   #dotnet-sdk_8
   erlang_26
   #factor-lang no macbook
-  #gleam
+  gleam
   #ghc
 
   ##GOLANG##
@@ -117,4 +114,4 @@ with pkgs; [
   zig
   zls
   ##Zig
-] ++ upkgs
+]

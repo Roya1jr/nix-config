@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 with pkgs; [
-  nerdfonts
+  #nerdfonts
   fantasque-sans-mono
   hack-font
   julia-mono

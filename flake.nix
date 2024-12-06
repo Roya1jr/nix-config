@@ -2,10 +2,9 @@
   description = "Prince nix config v2";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     darwin = {
@@ -23,7 +22,6 @@
 
   outputs =
     { nixpkgs
-    , nixpkgs-unstable
     , nixos-wsl
     , nixos-hardware
     , nix-flatpak
@@ -41,30 +39,32 @@
           config.allowUnfree = true;
         });
 
-      unstable-pkgsFor = forAllSystems (system: import nixpkgs-unstable
-        {
-          inherit system;
-          config.allowUnfree = true;
-        });
+
 
 
       darwinSystem = { user, arch ? "aarch64-darwin" }: entrypoint:
+        let
+        in
         darwin.lib.darwinSystem {
           system = arch;
           specialArgs = {
             pkgs = pkgsFor.${arch};
-            unstable = unstable-pkgsFor.${arch};
+
             inherit inputs;
           };
+
           modules = [
             entrypoint
             home-manager.darwinModules.home-manager
             {
-              _module.args = { inherit inputs; };
+              _module.args = {
+                inherit inputs;
+              };
               home-manager = {
-                users.${user} = import ./home-manager;
+                users.${ user} = import ./home-manager;
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                extraSpecialArgs.flake-inputs = inputs;
               };
               users.users.${user}.home = "/Users/${user}";
               nix.settings.trusted-users = [ user ];
@@ -77,21 +77,19 @@
           system = arch;
           specialArgs = {
             pkgs = pkgsFor.${arch};
-            unstable = unstable-pkgsFor.${arch};
+
             inherit inputs;
           };
           modules = [
-            { nixpkgs.config.allowUnfree = true; }
-            { nixpkgs-unstable.config.allowUnfree = true; }
             entrypoint
             nix-flatpak.nixosModules.nix-flatpak
-            { nix.registry.nixpkgs.flake = nixpkgs; }
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 users.${user} = import ./home-manager;
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                extraSpecialArgs.flake-inputs = inputs;
               };
               nix.settings.trusted-users = [ user ];
             }

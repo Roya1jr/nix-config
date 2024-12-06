@@ -7,6 +7,7 @@
   environment.systemPackages =
     [
       pkgs.home-manager
+
     ];
 
   system.stateVersion = 5;
@@ -25,11 +26,11 @@
           pocketbase
 
         ];
-      file = {
-      "/Users/prince/Library/Application Support/nushell/config.nu".source = ../../../dotfiles/nushell/config.nu;
-      "/Users/prince/Library/Application Support/nushell/env.nu".source = ../../../dotfiles/nushell/env.nu;
-      ".config/aerospace/aerospace.toml".source = ../../../dotfiles/aerospace/aerospace.toml;
-    };
+        file = {
+          "/Users/prince/Library/Application Support/nushell/config.nu".source = ../../../dotfiles/nushell/config.nu;
+          "/Users/prince/Library/Application Support/nushell/env.nu".source = ../../../dotfiles/nushell/env.nu;
+          ".config/aerospace/aerospace.toml".source = ../../../dotfiles/aerospace/aerospace.toml;
+        };
 
       };
 
@@ -56,7 +57,7 @@
   programs = {
     zsh.enable = true;
   };
-  
+
 
   services = {
     nix-daemon.enable = true;

@@ -1,4 +1,4 @@
-{ pkgs, unstable, system, ... }:
+{ pkgs, system, ... }:
 
 {
   imports = [
@@ -9,7 +9,7 @@
   wsl.enable = true;
   wsl.defaultUser = "prince";
   wsl.extraBin = with pkgs; [
-  { src = "${coreutils}/bin/uname"; }
-];
-  
+    { src = "${coreutils}/bin/uname"; }
+  ];
+
 }
