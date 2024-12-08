@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 with pkgs; [
-  fira-code-nerdfont
-  fantasque-sans-mono
+  nerd-fonts.fira-code
+  nerd-fonts.fantasque-sans-mono
   hack-font
   julia-mono
   redhat-official-fonts
