@@ -6,7 +6,6 @@ with pkgs; [
   coreutils-full
   fastfetch
   fd
-  #fontfor nomacbookß
   git
   gzip
   htop
@@ -22,7 +21,6 @@ with pkgs; [
   sqlite
   starship
   tealdeer
-  #traceroute no macbook
   unzip
   wget
   wl-clipboard

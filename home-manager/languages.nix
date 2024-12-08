@@ -5,11 +5,7 @@
 with pkgs; [
   ##C++#
   cmake
-  #gforth no macbook
-  #glibc no macbook
-  #gfortran14
   libgccjit
-  #libclang
   lldb
   raylib
   ######
@@ -18,7 +14,7 @@ with pkgs; [
   erlang_26
   #factor-lang no macbook
   gleam
-  #ghc
+  ghc
 
   ##GOLANG##
   air
@@ -31,14 +27,10 @@ with pkgs; [
   templ
   #########
 
-  #hare
-  #io
-  #(lib.hiPrio j) no macbook
-
 
   ##Janet
-  #janet
-  #jpm
+  janet
+  jpm
   ##Janet
 
   jelly
@@ -67,13 +59,11 @@ with pkgs; [
   marksman
   ####################
 
-  #mercury
   ##Ocaml
-  #ocaml
-  #opam
+  ocaml
+  opam
   ##Ocaml
 
-  #perl
   php
   protobuf_25
 
@@ -95,7 +85,7 @@ with pkgs; [
   nixpkgs-fmt
   ##Nix
 
-  #ngn-k no macbook
+
   rustup
 
   ##Tailwind

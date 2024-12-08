@@ -25,7 +25,6 @@ in
     };
     sessionVariables = {
       EDITOR = "hx";
-      SHELL = "fish";
     };
   };
 }

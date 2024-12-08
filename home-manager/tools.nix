@@ -17,6 +17,11 @@ with pkgs; [
   podman-compose
   skopeo
 
+  # Databases
+  sqld
+  tigerbeetle
+
   # Other Dev Tools
   tree-sitter
+
 ]

@@ -7,7 +7,6 @@
   environment.systemPackages =
     [
       pkgs.home-manager
-
     ];
 
   system.stateVersion = 5;
