@@ -71,6 +71,7 @@
       "blender@lts"
       "dbeaver-community"
       "devtoys"
+      "diffusionbee"
       "discord"
       "firefox"
       "flutter"
