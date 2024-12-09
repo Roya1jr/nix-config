@@ -14,6 +14,7 @@ local os_name = wezterm.target_triple
 if os_name:find("linux") then
 	config.default_prog = {'/run/current-system/sw/bin/fish'}
 	config.enable_wayland = true
+	config.front_end = "WebGpu"
 elseif os_name:find("darwin") then
 	config.default_prog = {"/run/current-system/sw/bin/zsh"}
 	config.enable_wayland = false
@@ -28,6 +29,5 @@ config.font = wezterm.font('JuliaMono' ,{stretch='Normal'})
 config.font_size = 14
 -- Use cursive and ligatures
 config.harfbuzz_features = { 'zero' }
-config.front_end = "WebGpu"
 -- and finally, return the configuration to wezterm
 return config
