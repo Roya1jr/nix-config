@@ -11,6 +11,8 @@
       pkgs.home-manager
     ];
 
+  system.stateVersion = "24.11";
+
   nix = {
     package = pkgs.nix;
   };
