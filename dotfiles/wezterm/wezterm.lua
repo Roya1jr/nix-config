@@ -28,6 +28,6 @@ config.font = wezterm.font('JuliaMono' ,{stretch='Normal'})
 config.font_size = 16
 -- Use cursive and ligatures
 config.harfbuzz_features = { 'zero' }
-
+config.front_end = "WebGpu"
 -- and finally, return the configuration to wezterm
 return config
