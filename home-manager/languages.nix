@@ -3,13 +3,6 @@
 
 
 with pkgs; [
-  ##C++#
-  cmake
-  libgccjit
-  lldb
-  raylib
-  ######
-
   #dotnet-sdk_8
   erlang_26
   #factor-lang no macbook

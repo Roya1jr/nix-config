@@ -42,11 +42,17 @@
 
           #######Programming#########
 
-          ##C++#
-          (lib.hiPrio libclang)
+           ##C++#
+          cmake
+          gforth
+          glibc
+          gfortran14
+          libclang
+          lldb
           xorg.libX11
+          raylib
           ######
-
+          
           factor-lang
           hare
           io

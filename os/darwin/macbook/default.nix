@@ -22,6 +22,13 @@
     {
       home = {
         packages = with pkgs;[
+          ##C++#
+           cmake
+           glibc
+           libgccjit
+           lldb
+           raylib
+           ######
           pocketbase
 
         ];
