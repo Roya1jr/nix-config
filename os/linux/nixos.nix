@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, system, ... }:
+{ pkgs,  ... }:
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -6,8 +6,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services.xserver.enable = true;
-  #services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
   services.xserver.xkb = {
     layout = "za";
     variant = "";
@@ -46,15 +44,7 @@
   ##Bluetooth
 
   programs.dconf.enable = true;
-  programs = {
-    # kdeconnect = {
-    #   enable = true;
-    #   package = pkgs.gnomeExtensions.gsconnect;
-    # };
-  };
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.dash-to-panel
-    gnomeExtensions.arcmenu
   ];
 
   services.flatpak.packages = [
