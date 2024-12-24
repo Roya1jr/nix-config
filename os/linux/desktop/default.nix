@@ -11,6 +11,11 @@
       pkgs.home-manager
     ];
 
+   programs = {     
+       kdeconnect = {
+         enable = true;
+       };
+  };
   system.stateVersion = "24.11";
 
   nix = {
@@ -44,10 +49,7 @@
           };
         };
         
-       kdeconnect = {
-         enable = true;
-       };
-      
+            
       };
       ################
     };
