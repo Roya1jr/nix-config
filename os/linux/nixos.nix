@@ -56,18 +56,13 @@
     "org.jdownloader.JDownloader"
     "org.blender.Blender"
     "io.github.thetumultuousunicornofdarkness.cpu-x"
-    "app.drey.Damask"
-    "io.github.zen_browser.zen"
     "com.microsoft.Edge"
-    "com.github.taiko2k.tauonmb"
     "org.musicbrainz.Picard"
     "com.usebottles.bottles"
-    "org.gnome.Decibels"
     "com.tomjwatson.Emote"
     "com.discordapp.Discord"
     "com.github.tchx84.Flatseal"
     "com.obsproject.Studio"
-    "com.mattjakeman.ExtensionManager"
     "org.qbittorrent.qBittorrent"
     "net.nokyan.Resources"
     "io.mpv.Mpv"
@@ -90,7 +85,6 @@
           ##Editors##
           ride
           vscode
-          zed-editor
           ###########
 
         ];
