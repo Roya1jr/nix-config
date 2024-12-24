@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs,lib, ... }:
 
 {
   imports = [
@@ -43,6 +43,11 @@
             pull.rebase = true;
           };
         };
+        
+       kdeconnect = {
+         enable = true;
+       };
+      
       };
       ################
     };
@@ -54,6 +59,7 @@
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     };
+    ssh.askPassword = lib.mkForce "${pkgs.ksshaskpass}/bin/ksshaskpass";
   };
   ###Settings####
 
