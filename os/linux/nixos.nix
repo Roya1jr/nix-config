@@ -47,10 +47,10 @@
 
   programs.dconf.enable = true;
   programs = {
-    kdeconnect = {
-      enable = true;
-      package = pkgs.gnomeExtensions.gsconnect;
-    };
+    # kdeconnect = {
+    #   enable = true;
+    #   package = pkgs.gnomeExtensions.gsconnect;
+    # };
   };
   environment.systemPackages = with pkgs; [
     gnomeExtensions.dash-to-panel
