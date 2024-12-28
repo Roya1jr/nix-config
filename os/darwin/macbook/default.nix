@@ -81,6 +81,7 @@
       "discord"
       "firefox"
       "flutter"
+      "ghostty"
       "google-chrome"
       "godot"
       "heroic"
