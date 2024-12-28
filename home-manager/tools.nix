@@ -18,7 +18,6 @@ with pkgs; [
   skopeo
 
   # Databases
-  #sqld
   tigerbeetle
 
   # Other Dev Tools
