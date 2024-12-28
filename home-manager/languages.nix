@@ -18,6 +18,7 @@ with pkgs; [
   gopls
   gotools
   templ
+  pkgsite
   #########
 
 
