@@ -19,7 +19,7 @@ elseif os_name:find("darwin") then
 	config.default_prog = {"/run/current-system/sw/bin/zsh"}
 	config.enable_wayland = false
 elseif os_name:find("windows") then
-	config.default_prog = {"pwsh"}
+	config.default_prog = {"nu"}
 	config.enable_wayland = false
 end
   
