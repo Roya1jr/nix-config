@@ -24,7 +24,7 @@
         packages = with pkgs;[
           ##C++#
           cmake
-          libgccjit
+          gcc14
           lldb
           raylib
           ######
