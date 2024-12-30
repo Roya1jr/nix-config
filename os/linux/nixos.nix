@@ -1,4 +1,4 @@
-{ pkgs,  ... }:
+{ pkgs,... }:
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -69,7 +69,7 @@
   ];
 
   home-manager.users.prince =
-    { system, ... }:
+    { system,pkgs-unstable, ... }:
     {
       home = {
         packages = with pkgs;[
@@ -84,7 +84,7 @@
 
           ##Editors##
           ride
-          vscode
+          pkgs-unstable.vscode
           ###########
 
         ];

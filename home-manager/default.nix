@@ -1,14 +1,15 @@
-{ pkgs
-, inputs
-, lib
-, ...
+{ 
+pkgs,
+pkgs-unstable,
+lib,
+...
 }:
 
 let
-  basePackages = import ./base.nix { inherit pkgs; };
-  devTools = import ./tools.nix { inherit pkgs lib; };
-  languages = import ./languages.nix { inherit pkgs; };
-  fonts = import ./fonts.nix { inherit pkgs; };
+  basePackages = import ./base.nix { inherit pkgs pkgs-unstable; };
+  devTools = import ./tools.nix { inherit pkgs lib pkgs-unstable; };
+  languages = import ./languages.nix { inherit pkgs pkgs-unstable; };
+  fonts = import ./fonts.nix { inherit pkgs pkgs-unstable; };
 in
 {
   home = {

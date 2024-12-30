@@ -2,9 +2,10 @@
   description = "Prince nix config v2";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     darwin = {
@@ -22,6 +23,7 @@
 
   outputs =
     { nixpkgs
+    , nixpkgs-unstable
     , nixos-wsl
     , nixos-hardware
     , nix-flatpak
@@ -43,8 +45,6 @@
 
 
       darwinSystem = { user, arch ? "aarch64-darwin" }: entrypoint:
-        let
-        in
         darwin.lib.darwinSystem {
           system = arch;
           specialArgs = {
@@ -64,7 +64,13 @@
                 users.${ user} = import ./home-manager;
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs.flake-inputs = inputs;
+                extraSpecialArgs = {
+                 flake-inputs = inputs;
+                  pkgs-unstable = import nixpkgs-unstable { 
+                        system = arch;
+                        config.allowUnfree = true;
+                  };
+                };
               };
               users.users.${user}.home = "/Users/${user}";
               nix.settings.trusted-users = [ user ];
@@ -89,7 +95,13 @@
                 users.${user} = import ./home-manager;
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs.flake-inputs = inputs;
+                extraSpecialArgs = {
+                 flake-inputs = inputs;
+                  pkgs-unstable = import nixpkgs-unstable { 
+                        system = arch;
+                        config.allowUnfree = true;
+                  };
+                };
               };
               nix.settings.trusted-users = [ user ];
             }

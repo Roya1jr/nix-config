@@ -1,11 +1,13 @@
-{ pkgs, ... }:
+{ 
+pkgs,
+pkgs-unstable, 
+... 
+}:
 
 
 
 with pkgs; [
-  #dotnet-sdk_8
   erlang_26
-  #factor-lang no macbook
   gleam
   ghc
 
@@ -18,7 +20,7 @@ with pkgs; [
   gopls
   gotools
   templ
-  pkgsite
+  pkgs-unstable.pkgsite
   #########
 
 
@@ -69,16 +71,10 @@ with pkgs; [
   python311Packages.ipykernel
   ##Python
 
-  #qnial no macbook
-
-  #racket
-  #rakudo
-
   ##Nix
   nil
   nixpkgs-fmt
   ##Nix
-
 
   rustup
 
@@ -89,8 +85,7 @@ with pkgs; [
 
   wasmtime
   wasmer
-  uiua
-  #unison-ucm
+  pkgs-unstable.uiua
   yaml-language-server
   zulu
 

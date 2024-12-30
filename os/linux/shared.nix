@@ -65,7 +65,6 @@
           rakudo
           ngn-k
           wasmtime
-          uiua
           unison-ucm
           zulu
           ####################
