@@ -29,5 +29,5 @@ config.font = wezterm.font('JuliaMono' ,{stretch='Normal'})
 config.font_size = 14
 -- Use cursive and ligatures
 config.harfbuzz_features = { 'zero' }
--- and finally, return the configuration to wezterm
+config.max_fps = 240
 return config
