@@ -14,7 +14,7 @@ with pkgs; [
   ##GOLANG##
   air
   delve
-  go_1_22
+  go
   golangci-lint
   golangci-lint-langserver
   gopls
