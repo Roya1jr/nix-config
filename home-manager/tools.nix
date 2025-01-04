@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib,pkgs-unstable, ... }:
 
 with pkgs; [
   # CLI Tools
@@ -7,7 +7,7 @@ with pkgs; [
   nushell
 
   # Development Tools
-  helix
+  pkgs-unstable.helix
   gnumake
   fly
 
