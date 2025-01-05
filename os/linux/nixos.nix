@@ -75,6 +75,7 @@
         packages = with pkgs;[
           #######Programming##########
           (dyalog.override { acceptLicense = true; })
+          lmstudio
           #######Programming##########
 
           ###GUI### 
