@@ -55,6 +55,12 @@ format = "user: [$user]($style) "
 disabled = false
 show_always = true
 
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue)@[$hostname](bold blue) '
+trim_at = '.companyname.com'
+disabled = false
+
 # Environments
 
 [aws]
