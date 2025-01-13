@@ -84,6 +84,7 @@
       "google-chrome"
       "godot"
       "heroic"
+      "love"
       "material-maker"
       "microsoft-teams"
       "nikitabobko/tap/aerospace"
