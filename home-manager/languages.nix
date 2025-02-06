@@ -78,7 +78,6 @@ with pkgs; [
 
   ##Rust
   rustup
-  rust-analyzer
   ##Rust
 
   ##Tailwind
