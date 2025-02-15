@@ -9,6 +9,7 @@
   environment.systemPackages =
     [
       pkgs.home-manager
+      pkgs.kdePackages.partitionmanager
     ];
 
    programs = {     
@@ -27,7 +28,8 @@
       home = {
         packages = with pkgs;[
 
-
+          
+       
         ];
       };
 
