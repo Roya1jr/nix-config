@@ -73,10 +73,12 @@ with pkgs; [
 
   ##Nix
   nil
-  nixpkgs-fmt
+  nixfmt-rfc-style
   ##Nix
 
+  ##Rust
   rustup
+  ##Rust
 
   ##Tailwind
   tailwindcss
