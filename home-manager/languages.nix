@@ -7,7 +7,7 @@ pkgs-unstable,
 
 
 with pkgs; [
-  #erlang_26
+  erlang_26
   gleam
   ghc
 
