@@ -19,7 +19,7 @@ with pkgs; [
   golangci-lint-langserver
   gopls
   gotools
-  templ
+  pkgs-unstable.templ
   pkgs-unstable.pkgsite
   #########
 
