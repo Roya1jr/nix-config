@@ -81,8 +81,8 @@ with pkgs; [
   ##Rust
 
   ##Tailwind
-  tailwindcss
-  tailwindcss-language-server
+  pkgs-unstable.tailwindcss_4
+  pkgs-unstable.tailwindcss-language-server
   ##Tailwind
 
   wasmtime
