@@ -35,8 +35,8 @@ with pkgs; [
   biome
   pkgs-unstable.bun
   emmet-language-server
-  #nodejs_22
-  #nodePackages.typescript-language-server
+  nodejs_22
+  nodePackages.typescript-language-server
   typescript
   vscode-langservers-extracted
   ##JS
