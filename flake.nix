@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl = {
@@ -22,29 +22,37 @@
   };
 
   outputs =
-    { nixpkgs
-    , nixpkgs-unstable
-    , nixos-wsl
-    , nixos-hardware
-    , nix-flatpak
-    , darwin
-    , home-manager
-    , ...
-    } @ inputs:
+    {
+      nixpkgs,
+      nixpkgs-unstable,
+      nixos-wsl,
+      nixos-hardware,
+      nix-flatpak,
+      darwin,
+      home-manager,
+      ...
+    }@inputs:
     let
-      systems = [ "x86_64-linux" "aarch64-darwin" ];
+      systems = [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
 
       forAllSystems = nixpkgs.lib.genAttrs systems;
-      pkgsFor = forAllSystems
-        (system: import nixpkgs {
+      pkgsFor = forAllSystems (
+        system:
+        import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-        });
+        }
+      );
 
-
-
-
-      darwinSystem = { user, arch ? "aarch64-darwin" }: entrypoint:
+      darwinSystem =
+        {
+          user,
+          arch ? "aarch64-darwin",
+        }:
+        entrypoint:
         darwin.lib.darwinSystem {
           system = arch;
           specialArgs = {
@@ -61,14 +69,14 @@
                 inherit inputs;
               };
               home-manager = {
-                users.${ user} = import ./home-manager;
+                users.${user} = import ./home-manager;
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = {
-                 flake-inputs = inputs;
-                  pkgs-unstable = import nixpkgs-unstable { 
-                        system = arch;
-                        config.allowUnfree = true;
+                  flake-inputs = inputs;
+                  pkgs-unstable = import nixpkgs-unstable {
+                    system = arch;
+                    config.allowUnfree = true;
                   };
                 };
               };
@@ -78,7 +86,12 @@
           ];
         };
 
-      nixosSystem = { user, arch ? "x86_64-linux" }: entrypoint:
+      nixosSystem =
+        {
+          user,
+          arch ? "x86_64-linux",
+        }:
+        entrypoint:
         nixpkgs.lib.nixosSystem {
           system = arch;
           specialArgs = {
@@ -96,10 +109,10 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = {
-                 flake-inputs = inputs;
-                  pkgs-unstable = import nixpkgs-unstable { 
-                        system = arch;
-                        config.allowUnfree = true;
+                  flake-inputs = inputs;
+                  pkgs-unstable = import nixpkgs-unstable {
+                    system = arch;
+                    config.allowUnfree = true;
                   };
                 };
               };
@@ -110,25 +123,22 @@
     in
     {
       nixosConfigurations = {
-        desktop = nixosSystem
-          {
-            user = "prince";
-            arch = "x86_64-linux";
-          } ./os/linux/desktop;
+        desktop = nixosSystem {
+          user = "prince";
+          arch = "x86_64-linux";
+        } ./os/linux/desktop;
 
-        wsl = nixosSystem
-          {
-            user = "prince";
-            arch = "x86_64-linux";
-          } ./os/linux/wsl;
+        wsl = nixosSystem {
+          user = "prince";
+          arch = "x86_64-linux";
+        } ./os/linux/wsl;
       };
 
       darwinConfigurations = {
-        macbook = darwinSystem
-          {
-            user = "prince";
-            arch = "aarch64-darwin";
-          } ./os/darwin/macbook;
+        macbook = darwinSystem {
+          user = "prince";
+          arch = "aarch64-darwin";
+        } ./os/darwin/macbook;
       };
     };
 }
