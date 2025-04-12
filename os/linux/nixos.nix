@@ -62,10 +62,13 @@
     "com.discordapp.Discord"
     "com.github.tchx84.Flatseal"
     "com.obsproject.Studio"
-    "org.qbittorrent.qBittorrent"
     "net.nokyan.Resources"
     "io.mpv.Mpv"
-  ];
+    "net.retrodeck.retrodeck"
+    "org.gnucash.GnuCash"
+    "org.godotengine.Godot"
+    "org.gnome.Solanum
+"  ];
 
   home-manager.users.prince =
     { system,pkgs-unstable, ... }:
