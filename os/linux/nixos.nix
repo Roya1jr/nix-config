@@ -69,7 +69,8 @@
     "org.godotengine.Godot"
     "org.gnome.Solanum"
     "app.zen_browser.zen"
-"  ];
+
+   ];
 
   home-manager.users.prince =
     { system,pkgs-unstable, ... }:
