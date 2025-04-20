@@ -67,7 +67,8 @@
     "net.retrodeck.retrodeck"
     "org.gnucash.GnuCash"
     "org.godotengine.Godot"
-    "org.gnome.Solanum
+    "org.gnome.Solanum"
+    "app.zen_browser.zen"
 "  ];
 
   home-manager.users.prince =
