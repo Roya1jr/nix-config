@@ -1,6 +1,12 @@
-{ pkgs, lib,pkgs-unstable, ... }:
+{
+  pkgs,
+  lib,
+  pkgs-unstable,
+  ...
+}:
 
-with pkgs; [
+with pkgs;
+[
   # CLI Tools
   license-generator
   carapace

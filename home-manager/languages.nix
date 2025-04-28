@@ -1,12 +1,11 @@
-{ 
-pkgs,
-pkgs-unstable, 
-... 
+{
+  pkgs,
+  pkgs-unstable,
+  ...
 }:
 
-
-
-with pkgs; [
+with pkgs;
+[
   erlang_26
   gleam
   ghc
@@ -22,7 +21,6 @@ with pkgs; [
   pkgs-unstable.templ
   pkgs-unstable.pkgsite
   #########
-
 
   ##Janet
   janet
@@ -40,8 +38,6 @@ with pkgs; [
   typescript
   vscode-langservers-extracted
   ##JS
-
-
 
   ##Lua
   lua

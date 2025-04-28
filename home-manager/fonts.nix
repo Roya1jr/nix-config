@@ -1,9 +1,11 @@
-{ pkgs,pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
-with pkgs; [
+with pkgs;
+[
   hack-font
   julia-mono
   nerdfonts
   noto-fonts
   redhat-official-fonts
+  pkgs-unstable.uiua386
 ]
