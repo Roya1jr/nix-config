@@ -11,13 +11,13 @@ with pkgs;
   ghc
 
   ##GOLANG##
-  air
-  delve
-  go
-  golangci-lint
-  golangci-lint-langserver
-  gopls
-  gotools
+   pkgs-unstable.air
+   pkgs-unstable.delve
+   pkgs-unstable.go
+   pkgs-unstable.golangci-lint
+   pkgs-unstable.golangci-lint-langserver
+   pkgs-unstable.gopls
+   pkgs-unstable.gotools
   pkgs-unstable.templ
   pkgs-unstable.pkgsite
   #########
