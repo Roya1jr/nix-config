@@ -46,7 +46,7 @@ with pkgs;
   ##Lua
 
   #######LSP##########
-  dockerfile-language-server-nodejs
+  pkgs-unstable.docker-language-server
   taplo
   marksman
   ####################
