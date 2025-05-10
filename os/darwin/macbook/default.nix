@@ -4,24 +4,26 @@
   imports = [
     #../shared.nix
   ];
-  environment.systemPackages =
-    [
-      pkgs.home-manager
-    ];
+  environment.systemPackages = [
+    pkgs.home-manager
+  ];
 
   system.stateVersion = 5;
 
   nix = {
     package = pkgs.nix;
     settings = {
-      "extra-experimental-features" = [ "nix-command" "flakes" ];
+      "extra-experimental-features" = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
   home-manager.users.prince =
     { ... }:
     {
       home = {
-        packages = with pkgs;[
+        packages = with pkgs; [
           ##C++#
           cmake
           gcc14
@@ -32,8 +34,10 @@
 
         ];
         file = {
-          "/Users/prince/Library/Application Support/nushell/config.nu".source = ../../../dotfiles/nushell/config.nu;
-          "/Users/prince/Library/Application Support/nushell/env.nu".source = ../../../dotfiles/nushell/env.nu;
+          "/Users/prince/Library/Application Support/nushell/config.nu".source =
+            ../../../dotfiles/nushell/config.nu;
+          "/Users/prince/Library/Application Support/nushell/env.nu".source =
+            ../../../dotfiles/nushell/env.nu;
           ".config/aerospace/aerospace.toml".source = ../../../dotfiles/aerospace/aerospace.toml;
         };
 
@@ -63,7 +67,6 @@
     zsh.enable = true;
   };
 
-
   services = {
     nix-daemon.enable = true;
   };
@@ -81,6 +84,7 @@
       "discord"
       "firefox"
       "flutter"
+      "fontforge"
       "google-chrome"
       "godot"
       "heroic"
