@@ -32,7 +32,7 @@ with pkgs;
   ##JS
   biome
   pkgs-unstable.bun
-  #pkgs-unstable.emmet-language-server
+  pkgs-unstable.emmet-language-server
   nodejs_23
   pkgs-unstable.typescript-language-server
   #pkgs-unstable.typescript
