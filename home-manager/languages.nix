@@ -32,11 +32,11 @@ with pkgs;
   ##JS
   biome
   pkgs-unstable.bun
-  #emmet-language-server
-  nodejs_22
-  typescript-language-server
-  #typescript
-  #vscode-langservers-extracted
+  #pkgs-unstable.emmet-language-server
+  nodejs_23
+  pkgs-unstable.typescript-language-server
+  #pkgs-unstable.typescript
+  #pkgs-unstable.vscode-langservers-extracted
   ##JS
 
   ##Lua
