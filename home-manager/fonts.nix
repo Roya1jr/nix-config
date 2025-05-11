@@ -2,10 +2,10 @@
 
 with pkgs;
 [
-  hack-font
-  julia-mono
-  nerdfonts
-  noto-fonts
-  redhat-official-fonts
+  pkgs-unstable.hack-font
+  pkgs-unstable.julia-mono
+  pkgs-unstable.nerdfonts
+  pkgs-unstable.noto-fonts
+  pkgs-unstable.redhat-official-fonts
   pkgs-unstable.uiua386
 ]
