@@ -30,13 +30,13 @@ with pkgs;
   jelly
 
   ##JS
-  biome
-  pkgs-unstable.bun
-  emmet-language-server
-  nodejs_22
-  typescript-language-server
-  typescript
-  vscode-langservers-extracted
+  #biome
+  #pkgs-unstable.bun
+  #emmet-language-server
+  #nodejs_22
+  #typescript-language-server
+  #typescript
+  #vscode-langservers-extracted
   ##JS
 
   ##Lua
