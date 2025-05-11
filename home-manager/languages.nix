@@ -81,14 +81,14 @@ with pkgs;
   pkgs-unstable.tailwindcss-language-server
   ##Tailwind
 
-  wasmtime
-  wasmer
+  pkgs-unstable.wasmtime
+  pkgs-unstable.wasmer
   pkgs-unstable.uiua
-  yaml-language-server
+  pkgs-unstable.yaml-language-server
   zulu
 
   ##Zig
-  zig
-  zls
+  pkgs-unstable.zig
+  pkgs-unstable.zls
   ##Zig
 ]
