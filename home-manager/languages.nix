@@ -35,8 +35,8 @@ with pkgs;
   pkgs-unstable.emmet-language-server
   nodejs_23
   pkgs-unstable.typescript-language-server
-  #pkgs-unstable.typescript
-  #pkgs-unstable.vscode-langservers-extracted
+  pkgs-unstable.typescript
+  pkgs-unstable.vscode-langservers-extracted
   ##JS
 
   ##Lua
