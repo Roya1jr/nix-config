@@ -31,7 +31,7 @@ with pkgs;
 
   ##JS
   biome
-  #pkgs-unstable.bun
+  pkgs-unstable.bun
   #emmet-language-server
   nodejs_22
   #typescript-language-server
