@@ -64,9 +64,7 @@
           racket
           rakudo
           ngn-k
-          wasmtime
           unison-ucm
-          zulu
           ####################
         ];
       };
