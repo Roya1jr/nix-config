@@ -43,6 +43,7 @@
   ##Bluetooth
 
   programs.dconf.enable = true;
+  programs.zsh.enableCompletion = false;
   environment.systemPackages = with pkgs; [
   ];
 

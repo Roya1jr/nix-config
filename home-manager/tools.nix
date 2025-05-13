@@ -11,8 +11,11 @@ with pkgs;
   license-generator
   carapace
   nushell
+  #####ZSH#####
   zsh
-
+  zsh-autocomplete
+  ############
+  
   # Development Tools
   pkgs-unstable.helix
   gnumake
