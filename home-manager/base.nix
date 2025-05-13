@@ -2,7 +2,6 @@
 
 with pkgs; [
   bat
-  bash
   coreutils-full
   fastfetch
   fd
