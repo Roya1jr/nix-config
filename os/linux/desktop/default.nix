@@ -35,6 +35,7 @@
 
       ### Installed Settings####
       programs = {
+        zsh.enableCompletion = false;
         git = {
           enable = true;
           userName = "Prince Junior Mguni";
