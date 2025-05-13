@@ -1,4 +1,10 @@
-{ pkgs, unstable, inputs, lib, ... }:
+{
+  pkgs,
+  unstable,
+  inputs,
+  lib,
+  ...
+}:
 {
   services.printing.enable = true;
   services.openssh.enable = true;
@@ -7,7 +13,10 @@
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   virtualisation.containers.enable = true;
   users = {
     mutableUsers = true;
@@ -34,7 +43,10 @@
     { system, ... }:
     {
       home = {
-        packages = with pkgs;[
+        file = {
+          ".zshrc".source = ../../../dotfiles/zsh/.zshrc;
+        };
+        packages = with pkgs; [
           #######CLI##########
           fontfor
           traceroute
@@ -42,7 +54,7 @@
 
           #######Programming#########
 
-           ##C++#
+          ##C++#
           cmake
           gforth
           glibc
@@ -52,7 +64,7 @@
           xorg.libX11
           raylib
           ######
-          
+
           factor-lang
           hare
           io
@@ -69,6 +81,6 @@
         ];
       };
 
-       };
+    };
 
 }
