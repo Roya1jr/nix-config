@@ -13,7 +13,7 @@
     mutableUsers = true;
     users = {
       prince = {
-        shell = pkgs.fish;
+        shell = pkgs.zsh;
         description = "Me";
         isNormalUser = true;
         extraGroups = [
@@ -25,7 +25,7 @@
   };
 
   programs = {
-    fish = {
+    zsh = {
       enable = true;
     };
     nix-ld.enable = true;
@@ -69,10 +69,6 @@
         ];
       };
 
-      home.sessionVariables = {
-        EDITOR = "hx";
-        SHELL = "fish";
-      };
-    };
+       };
 
 }

@@ -11,11 +11,13 @@ with pkgs;
   license-generator
   carapace
   nushell
+  zsh
 
   # Development Tools
   pkgs-unstable.helix
   gnumake
   fly
+  
 
   # Podman and Container Tools
   buildah
