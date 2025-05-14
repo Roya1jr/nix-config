@@ -44,7 +44,7 @@
     {
       home = {
         file = {
-          ".zshrc".source = ../../../dotfiles/zsh/.zshrc;
+          ".zshrc".source = ../../dotfiles/zsh/.zshrc;
         };
         packages = with pkgs; [
           #######CLI##########
