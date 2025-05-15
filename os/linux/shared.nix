@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   inputs,
   lib,
   ...
@@ -39,7 +40,7 @@
     nix-ld.enable = true;
   };
   home-manager.users.prince =
-    { system, ... }:
+    { system, pkgs-unstable, ... }:
     {
       home = {
         file = {
@@ -64,7 +65,7 @@
           raylib
           ######
 
-          factor-lang
+          pkgs-unstable.factor-lang
           hare
           io
           (lib.hiPrio j)
