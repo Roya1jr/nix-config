@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   inputs,
   lib,
   ...
@@ -65,7 +64,7 @@
           raylib
           ######
 
-          pkgs-unstable.factor-lang
+          factor-lang
           hare
           io
           (lib.hiPrio j)
