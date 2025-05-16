@@ -92,7 +92,6 @@
       "microsoft-teams"
       "nikitabobko/tap/aerospace"
       "obsidian"
-      "steam"
       "soduto"
       "wezterm"
       "visual-studio-code"
