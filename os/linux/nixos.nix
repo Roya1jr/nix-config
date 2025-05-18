@@ -86,7 +86,7 @@
           ###GUI### 
           hyprland
           wezterm
-          pkgs-unstable.ventoy
+          pkgs-unstable.ventoy-full-qt
           #########
 
           ##Editors##
