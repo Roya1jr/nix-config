@@ -44,7 +44,6 @@
 
   programs.dconf.enable = true;
   programs.zsh.enableCompletion = false;
-  programs.zsh.completionInit = "autoload -U compinit && compinit -i";
   environment.systemPackages = with pkgs; [
   ];
 
