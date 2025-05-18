@@ -1,4 +1,7 @@
 # Created by newuser for 5.9
+autoload -Uz compinit
+compinit
+
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
