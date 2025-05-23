@@ -21,6 +21,7 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 #Aliases
+alias docker='podman'
 alias grep='rg'
 alias cat='bat'
 alias ls='lsd --icon always'
