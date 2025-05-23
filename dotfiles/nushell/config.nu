@@ -784,6 +784,7 @@ $env.config = {
     ]
 }
 ##Alias
+alias docker = podman
 alias ll = ls -l
 alias cat = bat
 alias grep =  rg
