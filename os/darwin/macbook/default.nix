@@ -8,7 +8,10 @@
     pkgs.home-manager
   ];
 
-  system.stateVersion = 5;
+  system = {
+    stateVersion = 6;
+    primaryUser = "prince"
+    };
 
   nix = {
     package = pkgs.nix;
@@ -101,6 +104,7 @@
   };
 
   system = {
+    primaryUser = 
     defaults = {
       # dock = {
       #   autohide = true;
