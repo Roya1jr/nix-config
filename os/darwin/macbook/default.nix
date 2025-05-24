@@ -10,7 +10,7 @@
 
   system = {
     stateVersion = 6;
-    primaryUser = "prince"
+    primaryUser = "prince";
     };
 
   nix = {
