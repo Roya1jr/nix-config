@@ -28,6 +28,7 @@ with pkgs;
   pkgs-unstable.templ
   pkgs-unstable.pkgsite
   #########
+  (lib.hiPrio j)
 
   ##Janet
   janet
@@ -54,6 +55,7 @@ with pkgs;
 
   #######LSP##########
   pkgs-unstable.docker-language-server
+  pkgs-unstable.yaml-language-server
   taplo
   marksman
   ####################
@@ -92,14 +94,17 @@ with pkgs;
   pkgs-unstable.tailwindcss-language-server
   ##Tailwind
 
+  pkgs-unstable.uiua
+  unison-ucm
+
   pkgs-unstable.wasmtime
   pkgs-unstable.wasmer
-  pkgs-unstable.uiua
-  pkgs-unstable.yaml-language-server
-  zulu
 
   ##Zig
   pkgs-unstable.zig
   pkgs-unstable.zls
   ##Zig
+
+  zulu
+
 ]

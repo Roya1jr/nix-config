@@ -65,11 +65,10 @@
           pkgs-unstable.factor-lang
           hare
           io
-          (lib.hiPrio j)
 
           qnial
           racket
-          unison-ucm
+       
           ####################
         ];
       };
