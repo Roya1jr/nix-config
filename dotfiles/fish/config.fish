@@ -1,9 +1,4 @@
 if status is-interactive
-    set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
-    mkdir -p ~/.config/fish/completions
-    carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
-    carapace _carapace | source
-
     ###Fish Settings###
     set fish_greeting
 
@@ -14,6 +9,12 @@ if status is-interactive
     set -g -x PATH "$PATH:/etc/profiles/per-user/prince/bin"
     set -g -x EDITOR hx
     ##########################
+
+    #Carapace
+    set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
+    mkdir -p ~/.config/fish/completions
+    carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
+    carapace _carapace | source
 
     #Zoxide
     zoxide init fish | source
