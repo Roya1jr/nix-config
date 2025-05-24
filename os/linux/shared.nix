@@ -56,7 +56,6 @@
           #######Programming#########
 
           ##C++#
-         
           glibc
           gfortran14
           libclang
@@ -68,11 +67,8 @@
           io
           (lib.hiPrio j)
 
-          mercury
-
           qnial
           racket
-          ngn-k
           unison-ucm
           ####################
         ];

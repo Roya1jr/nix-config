@@ -74,12 +74,14 @@ with pkgs;
   python311Packages.ipykernel
   ##Python
 
-  rakudo
+  mercury
 
   ##Nix
   nil
   nixfmt-rfc-style
   ##Nix
+
+  rakudo
 
   ##Rust
   rustup

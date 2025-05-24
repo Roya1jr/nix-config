@@ -30,7 +30,6 @@
           ##C++#
           gcc14
           ######
-          pocketbase
 
         ];
         file = {
