@@ -11,6 +11,7 @@ if status is-interactive
     set -g -x PATH "$PATH:/lib"
     set -g -x PATH "$PATH:$HOME/go/bin"
     set -g -x PATH "$PATH:$HOME/.cargo/bin"
+    set -g -x PATH "$PATH:/etc/profiles/per-user/prince/bin"
     set -g -x EDITOR hx
     ##########################
 
