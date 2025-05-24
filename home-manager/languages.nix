@@ -68,7 +68,7 @@ with pkgs;
   ##Python
   python311
   python311Packages.pip
-  ruff-lsp
+  ruff
   python311Packages.python-lsp-server
   python311Packages.ipykernel
   ##Python
