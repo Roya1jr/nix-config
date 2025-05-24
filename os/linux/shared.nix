@@ -56,7 +56,7 @@
           #######Programming#########
 
           ##C++#
-          gforth
+         
           glibc
           gfortran14
           libclang
@@ -72,7 +72,6 @@
 
           qnial
           racket
-          rakudo
           ngn-k
           unison-ucm
           ####################

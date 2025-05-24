@@ -7,6 +7,7 @@
 with pkgs;
 [
   ####C++###
+  gforth
   cmake
   lldb
   raylib
@@ -72,6 +73,8 @@ with pkgs;
   python311Packages.python-lsp-server
   python311Packages.ipykernel
   ##Python
+
+  rakudo
 
   ##Nix
   nil
