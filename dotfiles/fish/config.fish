@@ -8,6 +8,7 @@ if status is-interactive
     set -g -x PATH "$PATH:$HOME/.cargo/bin"
     set -g -x PATH "$PATH:/etc/profiles/per-user/prince/bin"
     set -g -x PATH "$PATH:/run/current-system/sw/bin"
+    set -g -x PATH "$PATH:/opt/homebrew/bin"
     set -g -x EDITOR hx
     ##########################
 
