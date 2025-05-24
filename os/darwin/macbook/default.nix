@@ -11,7 +11,7 @@
   system = {
     stateVersion = 6;
     primaryUser = "prince";
-    };
+  };
 
   nix = {
     package = pkgs.nix;
@@ -104,7 +104,6 @@
   };
 
   system = {
-    primaryUser = 
     defaults = {
       # dock = {
       #   autohide = true;
