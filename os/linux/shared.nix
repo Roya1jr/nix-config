@@ -56,14 +56,11 @@
           #######Programming#########
 
           ##C++#
-          cmake
           gforth
           glibc
           gfortran14
           libclang
-          lldb
           xorg.libX11
-          raylib
           ######
 
           pkgs-unstable.factor-lang

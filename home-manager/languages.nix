@@ -6,6 +6,12 @@
 
 with pkgs;
 [
+  ####C++###
+  cmake
+  lldb
+  raylib
+  ##########
+
   erlang_26
   gleam
   ghc
