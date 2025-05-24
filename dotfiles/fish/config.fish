@@ -7,6 +7,7 @@ if status is-interactive
     set -g -x PATH "$PATH:$HOME/go/bin"
     set -g -x PATH "$PATH:$HOME/.cargo/bin"
     set -g -x PATH "$PATH:/etc/profiles/per-user/prince/bin"
+    set -g -x PATH "$PATH:/run/current-system/sw/bin/darwin-rebuild"
     set -g -x EDITOR hx
     ##########################
 
