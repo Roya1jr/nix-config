@@ -12,11 +12,11 @@ end
 local os_name = wezterm.target_triple
 
 if os_name:find("linux") then
-	config.default_prog = {'/etc/profiles/per-user/prince/bin/nu'}
+	config.default_prog = {'/run/current-system/sw/bin/zsh'}
 	config.enable_wayland = true
 	config.front_end = "WebGpu"
 elseif os_name:find("darwin") then
-	config.default_prog = {"/etc/profiles/per-user/prince/bin/nu"}
+	config.default_prog = {"/run/current-system/sw/bin/zsh"}
 	config.enable_wayland = false
 elseif os_name:find("windows") then
 	config.default_prog = {"nu"}
