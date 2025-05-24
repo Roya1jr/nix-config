@@ -39,7 +39,7 @@ with pkgs;
   biome
   pkgs-unstable.bun
   pkgs-unstable.emmet-language-server
-  nodejs_23
+  nodejs_24
   pkgs-unstable.typescript-language-server
   pkgs-unstable.typescript
   pkgs-unstable.vscode-langservers-extracted
