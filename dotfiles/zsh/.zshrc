@@ -13,7 +13,6 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export EDITOR="hx"
 ##################
 
-
 #Zoxide
 eval "$(zoxide init zsh)"
 
@@ -29,7 +28,4 @@ alias top='htop'
 alias vi='hx'
 alias git-local-clean='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 
-#Nu Shell
-if [ -z "$NU_VERSION" ] && command -v nu >/dev/null 2>&1; then
-    exec nu
-fi
+

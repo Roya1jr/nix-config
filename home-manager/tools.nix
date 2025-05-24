@@ -10,17 +10,16 @@ with pkgs;
   # CLI Tools
   license-generator
   carapace
-  nushell
+  fish
   #####ZSH#####
   zsh
   zsh-autocomplete
   ############
-  
+
   # Development Tools
   pkgs-unstable.helix
   gnumake
   fly
-  
 
   # Podman and Container Tools
   buildah

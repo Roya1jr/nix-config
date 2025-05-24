@@ -16,8 +16,7 @@ in
     stateVersion = "24.05";
     packages = basePackages ++ devTools ++ languages ++ fonts;
     file = {
-      ".config/nushell/config.nu".source = ../dotfiles/nushell/config.nu;
-      ".config/nushell/env.nu".source = ../dotfiles/nushell/env.nu;
+      ".config/fish/config.fish".source = ../dotfiles/fish/config.fish;
       ".config/starship.toml".source = ../dotfiles/starship.toml;
       ".config/helix/languages.toml".source = ../dotfiles/helix/languages.toml;
       ".config/helix/config.toml".source = ../dotfiles/helix/config.toml;
