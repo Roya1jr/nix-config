@@ -13,7 +13,7 @@ let
 in
 {
   home = {
-    stateVersion = "24.05";
+    stateVersion = "25.05";
     packages = basePackages ++ devTools ++ languages ++ fonts;
     file = {
       ".config/fish/config.fish".source = ../dotfiles/fish/config.fish;
