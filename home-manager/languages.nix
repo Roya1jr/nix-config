@@ -28,7 +28,10 @@ with pkgs;
   pkgs-unstable.templ
   pkgs-unstable.pkgsite
   #########
-  (lib.hiPrio pkgs-unstable.j)
+  
+  ##Broken
+  #(lib.hiPrio pkgs-unstable.j)
+
 
   ##Janet
   janet
