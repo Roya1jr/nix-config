@@ -13,7 +13,7 @@ Personal Nix configuration for managing system settings, dotfiles, and developme
 ├── home-manager/    # Home Manager configs
 └── os/              # OS-specific configurations
 
-````
+```
 
 ## Prerequisites
 
@@ -22,17 +22,19 @@ Personal Nix configuration for managing system settings, dotfiles, and developme
 
 ## Installation
 
+In all configurations remember to replace username with your own if you clone this repository.
+
 ### MacOS
 
 1. Install Nix and Homebrew
 2. Clone to `~/.config/nixpkgs`:
 
    ```bash
-   
+
    git clone https://github.com/Roya1jr/nix-config.git ~/.config/darwin
    cd ~/.config/darwin
    darwin-rebuild switch --flake .#macbook
-   
+
    ```
 
 ### NixOS (Desktop)
@@ -40,11 +42,11 @@ Personal Nix configuration for managing system settings, dotfiles, and developme
 1. Clone to `/etc/nixos`:
 
    ```bash
-   
+
    sudo git clone https://github.com/Roya1jr/nix-config.git /etc/nixos
    cd /etc/nixos
    sudo nixos-rebuild switch --flake .#desktop
-   
+
    ```
 
 ### NixOS (WSL)
@@ -52,11 +54,11 @@ Personal Nix configuration for managing system settings, dotfiles, and developme
 1. Clone to `/etc/nixos`:
 
    ```bash
-   
+
    sudo git clone https://github.com/Roya1jr/nix-config.git /etc/nixos
    cd /etc/nixos
    sudo nixos-rebuild switch --flake .#wsl
-   
+
    ```
 
 ## Customization
@@ -70,7 +72,7 @@ Modify configurations in:
 
 ## Tools Configured
 
-- Shell: Fish, Nushell
+- Shell: Fish
 - Editor: Helix
 - Terminal: WezTerm
 - Prompt: Starship

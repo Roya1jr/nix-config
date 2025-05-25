@@ -28,10 +28,9 @@ with pkgs;
   pkgs-unstable.templ
   pkgs-unstable.pkgsite
   #########
-  
+
   ##Broken
   #(lib.hiPrio pkgs-unstable.j)
-
 
   ##Janet
   janet
@@ -69,14 +68,14 @@ with pkgs;
   ##Ocaml
 
   php
-  protobuf_25
+  protobuf
 
   ##Python
-  python311
-  python311Packages.pip
+  python313
+  python313Packages.pip
   ruff
-  python311Packages.python-lsp-server
-  python311Packages.ipykernel
+  python313Packages.python-lsp-server
+  python313Packages.ipykernel
   ##Python
 
   mercury
