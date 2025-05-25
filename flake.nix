@@ -36,13 +36,6 @@
         "aarch64-darwin"
       ];
       forAllSystems = nixpkgs.lib.genAttrs systems;
-      pkgsFor = forAllSystems (
-        system:
-        import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        }
-      );
       darwinSystem =
         {
           user,
@@ -53,10 +46,8 @@
           system = arch;
           modules = [
             entrypoint
-            # Import the readOnlyPkgs module and set nixpkgs.pkgs
-            nixpkgs.darwinModules.readOnlyPkgs
             {
-              nixpkgs.pkgs = pkgsFor.${arch};
+              nixpkgs.config.allowUnfree = true;
             }
             home-manager.darwinModules.home-manager
             {
@@ -90,10 +81,8 @@
           system = arch;
           modules = [
             entrypoint
-            # Import the readOnlyPkgs module and set nixpkgs.pkgs
-            nixpkgs.nixosModules.readOnlyPkgs
             {
-              nixpkgs.pkgs = pkgsFor.${arch};
+              nixpkgs.config.allowUnfree = true;
             }
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
