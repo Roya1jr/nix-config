@@ -50,11 +50,11 @@
         }:
         entrypoint:
         darwin.lib.darwinSystem {
-          system = arch;
+          # Don't set system here when using readOnlyPkgs
           modules = [
             entrypoint
-            # Use the readOnlyPkgs module for Darwin
-            "${nixpkgs}/nixos/modules/misc/nixpkgs/read-only.nix"
+            # Import readOnlyPkgs from the flake
+            inputs.nixpkgs.darwinModules.readOnlyPkgs
             {
               nixpkgs.pkgs = pkgsFor.${arch};
               _module.args = {
@@ -87,11 +87,11 @@
         }:
         entrypoint:
         nixpkgs.lib.nixosSystem {
-          system = arch;
+          # Don't set system here when using readOnlyPkgs
           modules = [
             entrypoint
-            # Use the readOnlyPkgs module
-            "${nixpkgs}/nixos/modules/misc/nixpkgs/read-only.nix"
+            # Import readOnlyPkgs from the flake
+            inputs.nixpkgs.nixosModules.readOnlyPkgs
             {
               nixpkgs.pkgs = pkgsFor.${arch};
               _module.args = {
