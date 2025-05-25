@@ -36,6 +36,13 @@
         "aarch64-darwin"
       ];
       forAllSystems = nixpkgs.lib.genAttrs systems;
+      pkgsFor = forAllSystems (
+        system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        }
+      );
       darwinSystem =
         {
           user,
@@ -44,11 +51,15 @@
         entrypoint:
         darwin.lib.darwinSystem {
           system = arch;
+          specialArgs = {
+            pkgs = pkgsFor.${arch};
+            inherit inputs;
+          };
           modules = [
             entrypoint
-            {
-              nixpkgs.config.allowUnfree = true;
-            }
+            # Disable nixpkgs options since we're using specialArgs.pkgs
+            { nixpkgs.config = nixpkgs.lib.mkForce {}; }
+            { nixpkgs.overlays = nixpkgs.lib.mkForce []; }
             home-manager.darwinModules.home-manager
             {
               _module.args = {
@@ -79,11 +90,15 @@
         entrypoint:
         nixpkgs.lib.nixosSystem {
           system = arch;
+          specialArgs = {
+            pkgs = pkgsFor.${arch};
+            inherit inputs;
+          };
           modules = [
             entrypoint
-            {
-              nixpkgs.config.allowUnfree = true;
-            }
+            # Disable nixpkgs options since we're using specialArgs.pkgs
+            { nixpkgs.config = nixpkgs.lib.mkForce {}; }
+            { nixpkgs.overlays = nixpkgs.lib.mkForce []; }  
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
             {
