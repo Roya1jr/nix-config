@@ -51,18 +51,20 @@
         entrypoint:
         darwin.lib.darwinSystem {
           system = arch;
+          specialArgs = {
+            pkgs = pkgsFor.${arch};
+            inherit inputs;
+          };
           modules = [
             entrypoint
-            # Use the readOnlyPkgs module for Darwin
-            "${nixpkgs}/nixos/modules/misc/nixpkgs/read-only.nix"
+            # Disable nixpkgs options since we're using specialArgs.pkgs
+            { nixpkgs.config = nixpkgs.lib.mkForce {}; }
+            { nixpkgs.overlays = nixpkgs.lib.mkForce []; }
+            home-manager.darwinModules.home-manager
             {
-              nixpkgs.pkgs = pkgsFor.${arch};
               _module.args = {
                 inherit inputs;
               };
-            }
-            home-manager.darwinModules.home-manager
-            {
               home-manager = {
                 users.${user} = import ./home-manager;
                 useGlobalPkgs = true;
@@ -88,16 +90,15 @@
         entrypoint:
         nixpkgs.lib.nixosSystem {
           system = arch;
+          specialArgs = {
+            pkgs = pkgsFor.${arch};
+            inherit inputs;
+          };
           modules = [
             entrypoint
-            # Use the readOnlyPkgs module
-            "${nixpkgs}/nixos/modules/misc/nixpkgs/read-only.nix"
-            {
-              nixpkgs.pkgs = pkgsFor.${arch};
-              _module.args = {
-                inherit inputs;
-              };
-            }
+            # Disable nixpkgs options since we're using specialArgs.pkgs
+            { nixpkgs.config = nixpkgs.lib.mkForce {}; }
+            { nixpkgs.overlays = nixpkgs.lib.mkForce []; }  
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
             {
