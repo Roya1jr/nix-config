@@ -52,7 +52,7 @@
         darwin.lib.darwinSystem {
           modules = [
             entrypoint
-            inputs.nixpkgs.darwinModules.readOnlyPkgs
+            
             {
               nixpkgs.pkgs = pkgsFor.${arch};
               _module.args = {
