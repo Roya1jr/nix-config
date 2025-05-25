@@ -8,4 +8,5 @@ with pkgs;
   pkgs-unstable.redhat-official-fonts
   pkgs-unstable.uiua386
   nerd-fonts.fira-code
+  nerd-fonts.fantasque-sans-mono
  ]
