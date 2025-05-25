@@ -7,4 +7,5 @@ with pkgs;
   pkgs-unstable.noto-fonts
   pkgs-unstable.redhat-official-fonts
   pkgs-unstable.uiua386
+  nerd-fonts.fira-code
  ]
