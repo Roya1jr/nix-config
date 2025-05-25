@@ -64,8 +64,7 @@
           pkgs-unstable.factor-lang
           hare
 
-          #Broken
-          ##io
+          io
 
           #Broken
           ##qnial
