@@ -49,7 +49,6 @@
   services.flatpak.packages = [
     "com.calibre_ebook.calibre"
     "io.github.RodZill4.Material-Maker"
-    "com.visualstudio.code"
     "md.obsidian.Obsidian"
     "com.heroicgameslauncher.hgl"
     "org.jdownloader.JDownloader"
@@ -90,6 +89,7 @@
 
           ##Editors##
           ride
+          pkgs-unstable.vscode
           ###########
 
         ];
