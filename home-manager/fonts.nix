@@ -7,4 +7,12 @@ with pkgs;
   pkgs-unstable.noto-fonts
   pkgs-unstable.redhat-official-fonts
   pkgs-unstable.uiua386
+  (pkgs.nerdfonts.override {
+      fonts = [
+        "IBMPlexMono"
+        "Iosevka"
+        "IosevkaTerm"
+        "FantasqueSansMono"
+      ];
+    })
 ]
