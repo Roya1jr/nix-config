@@ -64,10 +64,12 @@
 
           pkgs-unstable.factor-lang
           hare
-          io
 
           #Broken
-          #qnial
+          ##io
+
+          #Broken
+          ##qnial
           racket
        
           ####################
