@@ -90,7 +90,6 @@
 
           ##Editors##
           ride
-          pkgs-unstable.vscode
           ###########
 
         ];
