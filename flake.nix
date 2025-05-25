@@ -62,6 +62,8 @@
           };
 
           modules = [
+            nixpkgs.nixosModules.readOnlyPkgs
+            ({ nixpkgs.pkgs = pkgsFor.${arch}; }) 
             entrypoint
             home-manager.darwinModules.home-manager
             {
@@ -100,6 +102,8 @@
             inherit inputs;
           };
           modules = [
+            nixpkgs.nixosModules.readOnlyPkgs
+            ({ nixpkgs.pkgs = pkgsFor.${arch}; }) 
             entrypoint
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
