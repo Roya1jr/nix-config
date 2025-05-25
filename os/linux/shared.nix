@@ -66,7 +66,8 @@
           hare
           io
 
-          qnial
+          #Broken
+          #qnial
           racket
        
           ####################
