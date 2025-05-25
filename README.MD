@@ -33,7 +33,7 @@ In all configurations remember to replace username with your own if you clone th
 
    git clone https://github.com/Roya1jr/nix-config.git ~/.config/darwin
    cd ~/.config/darwin
-   darwin-rebuild switch --flake .#macbook
+   sudo darwin-rebuild switch --flake .#macbook
 
    ```
 
