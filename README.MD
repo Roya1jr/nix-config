@@ -22,7 +22,7 @@ Personal Nix configuration for managing system settings, dotfiles, and developme
 
 ## Installation
 
-In all configurations remember to replace username with your own if you clone this repository.
+In all configurations remember to replace username with your own if you clone this repository.As well as the username and email for git config
 
 ### MacOS
 
