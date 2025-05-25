@@ -7,5 +7,4 @@ with pkgs;
   pkgs-unstable.noto-fonts
   pkgs-unstable.redhat-official-fonts
   pkgs-unstable.uiua386
-  pkgs-unstable.nerd-fonts.droid-sans-mono
  ]
