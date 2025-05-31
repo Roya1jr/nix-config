@@ -96,7 +96,11 @@ with pkgs;
   pkgs-unstable.tailwindcss-language-server
   ##Tailwind
 
-  pkgs-unstable.uiua
+  (pkgs-unstable.uiua.override { 
+  windowSupport = true; 
+  audioSupport = true; 
+  webcamSupport = true; 
+  })
   unison-ucm
 
   pkgs-unstable.wasmtime
