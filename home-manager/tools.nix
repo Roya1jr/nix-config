@@ -20,6 +20,7 @@ with pkgs;
   pkgs-unstable.helix
   gnumake
   fly
+  git-filter-repo
 
   # Podman and Container Tools
   buildah
