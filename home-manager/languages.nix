@@ -29,8 +29,7 @@ with pkgs;
   pkgs-unstable.pkgsite
   #########
 
-  ##Broken
-  ##(lib.hiPrio pkgs-unstable.j)
+  (lib.hiPrio pkgs-unstable.j)
 
   ##Janet
   janet
