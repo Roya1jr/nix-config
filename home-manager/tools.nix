@@ -16,6 +16,10 @@ with pkgs;
   zsh-autocomplete
   ############
 
+  ## Desktop Tools
+  pkgs-unstable.libation
+  ##
+
   # Development Tools
   pkgs-unstable.helix
   gnumake
