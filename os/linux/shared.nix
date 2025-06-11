@@ -50,6 +50,7 @@
           #######CLI##########
           fontfor
           traceroute
+          pkgs-unstable.ollama
           ######################
 
           #######Programming#########
