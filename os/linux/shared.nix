@@ -64,6 +64,7 @@
 
           pkgs-unstable.factor-lang
           hare
+          (lib.hiPrio pkgs-unstable.j)
 
           ##Broken
           #io
@@ -71,7 +72,7 @@
           #Broken
           ##qnial
           racket
-       
+
           ####################
         ];
       };
