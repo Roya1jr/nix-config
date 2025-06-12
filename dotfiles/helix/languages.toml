@@ -56,13 +56,17 @@ auto-format = true
 command = "templ"
 args = ["lsp"]
 
-
 [[language]]
 name = "go"
 auto-format = true
+language-servers = [ "gopls", "golangci-lint-lsp" ]
 formatter = { command = "goimports" }
+
+[language-server.golangci-lint-lsp]
+command = "golangci-lint-langserver"
+
 [language-server.golangci-lint-lsp.config]
-command = ["golangci-lint-langserver", "run", "--out-format", "json", "--issues-exit-code=1"]
+command = ["golangci-lint", "run", "--output.json.path", "stdout", "--show-stats=false", "--issues-exit-code=1"]
 
 
 [[language]]
