@@ -9,12 +9,9 @@ comment-token = "#"
 language-servers = ["uiua-lsp"]
 indent = { tab-width = 2, unit = "\t" }
 shebangs = ["uiua"]
-
 [language-server.uiua-lsp]
 command = "uiua"
 args = ["lsp"]
-
-
 [[grammar]]
 name = "uiua"
 source.git = "https://github.com/shnarazk/tree-sitter-uiua"
@@ -61,10 +58,8 @@ name = "go"
 auto-format = true
 language-servers = [ "gopls", "golangci-lint-lsp" ]
 formatter = { command = "goimports" }
-
 [language-server.golangci-lint-lsp]
 command = "golangci-lint-langserver"
-
 [language-server.golangci-lint-lsp.config]
 command = ["golangci-lint", "run", "--output.json.path", "stdout", "--show-stats=false", "--issues-exit-code=1"]
 
@@ -80,7 +75,6 @@ args = ["localhost", "5757"]
 
 [[language]]
 name = "python"
-roots = ["pyproject.toml"]
 language-servers = ["pylsp", "ruff"]
 [language-server.pylsp]
 command = "pylsp"
