@@ -69,10 +69,9 @@ with pkgs;
 
   ##Python
   python313
-  python313Packages.pip
+  poetry
+  pyright
   ruff
-  python313Packages.python-lsp-server
-  python313Packages.ipykernel
   ##Python
 
   mercury

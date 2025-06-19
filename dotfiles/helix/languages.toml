@@ -75,9 +75,9 @@ args = ["localhost", "5757"]
 
 [[language]]
 name = "python"
-language-servers = ["pylsp", "ruff"]
-[language-server.pylsp]
-command = "pylsp"
+language-servers = ["pyright", "ruff"]
+[language-server.pyright]
+command = "pyright"
 [language-server.ruff]
 command = "ruff"
 args = ["server"]
