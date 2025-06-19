@@ -18,13 +18,6 @@ source.git = "https://github.com/shnarazk/tree-sitter-uiua"
 source.rev = "f3fb8b8fe367b00e2ad858a419da3dedc8cbeeeb"
 
 
-[language-server.emmet-lsp]
-command = "emmet-language-server"
-args = ["--stdio"]
-
-[language-server.tailwindcss-ls]
-config = { userLanguages = { rust = "html", ".rs" = "html", templ = "html", "*.templ" = "html" } }
-
 [[language]]
 name = "html"
 formatter = { command = 'npx', args = ["prettier", "--parser", "html"] }
@@ -33,6 +26,12 @@ language-servers = [
     "vscode-html-language-server",
     "emmet-lsp",
 ]
+[language-server.emmet-lsp]
+command = "emmet-language-server"
+args = ["--stdio"]
+[language-server.tailwindcss-ls]
+config = { userLanguages = { rust = "html", ".rs" = "html", templ = "html", "*.templ" = "html" } }
+
 indent = { tab-width = 2, unit = "\t" }
 auto-format = true
 
