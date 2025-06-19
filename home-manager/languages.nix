@@ -87,6 +87,10 @@ with pkgs;
   rustup
   ##Rust
 
+  ##lisp
+  sbcl
+  ##lisp  
+  
   ##Tailwind
   pkgs-unstable.tailwindcss_4
   pkgs-unstable.tailwindcss-language-server
