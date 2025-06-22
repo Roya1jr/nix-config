@@ -46,6 +46,8 @@ with pkgs;
   pkgs-unstable.vscode-langservers-extracted
   ##JS
 
+  pkgs-unstable.literate
+
   ##Lua
   lua
   luarocks
@@ -89,17 +91,17 @@ with pkgs;
 
   ##lisp
   sbcl
-  ##lisp  
-  
+  ##lisp
+
   ##Tailwind
   pkgs-unstable.tailwindcss_4
   pkgs-unstable.tailwindcss-language-server
   ##Tailwind
 
-  (pkgs-unstable.uiua.override { 
-  windowSupport = true; 
-  audioSupport = true; 
-  webcamSupport = true; 
+  (pkgs-unstable.uiua.override {
+    windowSupport = true;
+    audioSupport = true;
+    webcamSupport = true;
   })
   unison-ucm
 
