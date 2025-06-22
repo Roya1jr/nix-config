@@ -67,6 +67,7 @@ with pkgs;
   ##Ocaml
 
   php
+  pkgs-unstable.pkl
   protobuf
 
   ##Python
