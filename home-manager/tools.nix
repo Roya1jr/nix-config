@@ -11,6 +11,7 @@ with pkgs;
   license-generator
   carapace
   fish
+  rlwrap
   #####ZSH#####
   zsh
   zsh-autocomplete
