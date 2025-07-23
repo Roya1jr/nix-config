@@ -9,6 +9,7 @@ if status is-interactive
     set -g -x PATH "$PATH:/etc/profiles/per-user/prince/bin"
     set -g -x PATH "$PATH:/run/current-system/sw/bin"
     set -g -x PATH "$PATH:/opt/homebrew/bin"
+    set -g -x PATH "$PATH:$HOME/.kx/bin"
     set -g -x EDITOR hx
     ##########################
 
@@ -34,6 +35,7 @@ if status is-interactive
     alias ls "lsd --icon always"
     alias top htop
     alias vi hx
+    alias q "rlwrap -r q"
     alias git-local-clean "git branch --merged | egrep -v \"(^\\*|master|main|dev)\" | xargs git branch -d"
 
 
