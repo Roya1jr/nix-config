@@ -37,8 +37,9 @@ with pkgs;
   jelly
 
   ##JS
-  biome
+  pkgs-unstable.biome
   pkgs-unstable.bun
+  pkgs-unstable.pnpm
   pkgs-unstable.emmet-language-server
   nodejs_24
   pkgs-unstable.typescript-language-server
