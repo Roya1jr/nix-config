@@ -70,7 +70,8 @@
     enable = true;
 
     casks = [
-      ##GUI##
+      ########GUI#########
+      "arduino-ide"
       "android-studio"
       "blender@lts"
       "dbeaver-community"
@@ -78,19 +79,21 @@
       "diffusionbee"
       "discord"
       "firefox"
-      "flutter"
       "fontforge"
       "google-chrome"
       "godot"
-      "love"
       "material-maker"
       "microsoft-teams"
-      "nikitabobko/tap/aerospace"
       "obsidian"
       "soduto"
       "wezterm"
       "visual-studio-code"
-      ########
+      ####################
+
+      ########CLI#########
+      "love"
+      "flutter"
+      ####################
     ];
 
     taps = [
