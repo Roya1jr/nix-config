@@ -101,8 +101,8 @@
     ];
 
     masApps = {
-      "Bitwarden" = 1352778147;
-      "Ghostery" = 6504861501;
+      #"Bitwarden" = 1352778147;
+      #"Ghostery" = 6504861501;
 
     };
   };
