@@ -101,7 +101,9 @@
     ];
 
     masApps = {
-      "Microsoft365" = 1450038993;
+      "Bitwarden" = 1352778147;
+      "Ghostery" = 6504861501;
+
     };
   };
 
