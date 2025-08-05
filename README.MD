@@ -76,7 +76,6 @@ Modify configurations in:
 - Editor: Helix
 - Terminal: WezTerm
 - Prompt: Starship
-- Window Management: Aerospace (macOS)
 
 ## License
 

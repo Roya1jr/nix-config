@@ -33,7 +33,7 @@
 
         ];
         file = {
-          ".config/aerospace/aerospace.toml".source = ../../../dotfiles/aerospace/aerospace.toml;
+          #".config/aerospace/aerospace.toml".source = ../../../dotfiles/aerospace/aerospace.toml;
         };
 
       };
