@@ -12,6 +12,7 @@ with pkgs;
   carapace
   fish
   rlwrap
+  tree
   #####ZSH#####
   zsh
   zsh-autocomplete
