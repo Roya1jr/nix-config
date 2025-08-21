@@ -73,7 +73,7 @@ with pkgs;
 
   ##Python
   python313
-  poetry
+  uv
   pyright
   ruff
   ##Python
