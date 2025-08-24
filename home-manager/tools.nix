@@ -13,6 +13,8 @@ with pkgs;
   fish
   rlwrap
   tree
+  pkgs-unstable.devenv
+
   #####ZSH#####
   zsh
   zsh-autocomplete
