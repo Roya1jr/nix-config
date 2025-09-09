@@ -78,7 +78,6 @@
       "devtoys"
       "diffusionbee"
       "discord"
-      "firefox"
       "fontforge"
       "google-chrome"
       "godot"
@@ -88,6 +87,7 @@
       "soduto"
       "wezterm"
       "visual-studio-code"
+      "zen"
       ####################
 
       ########CLI#########
