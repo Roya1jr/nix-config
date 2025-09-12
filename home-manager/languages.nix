@@ -108,7 +108,7 @@ with pkgs;
   })
   unison-ucm
 
-  #pkgs-unstable.wasmtime
+  pkgs-unstable.wasmtime
   #pkgs-unstable.wasmer
 
   ##Zig
