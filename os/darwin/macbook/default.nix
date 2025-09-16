@@ -89,6 +89,7 @@
       "material-maker"
       "microsoft-teams"
       "obsidian"
+      "pocket-casts"
       "soduto"
       "wezterm"
       "visual-studio-code"
