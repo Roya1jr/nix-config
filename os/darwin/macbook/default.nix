@@ -86,6 +86,7 @@
       "fontforge"
       "google-chrome"
       "godot"
+      "jdownloader"
       "material-maker"
       "microsoft-teams"
       "obsidian"
