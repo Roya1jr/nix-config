@@ -6,16 +6,15 @@
     ./nixos.nix
     ../shared.nix
   ];
-  environment.systemPackages =
-    [
-      pkgs.home-manager
-      pkgs.kdePackages.partitionmanager
-    ];
+  environment.systemPackages = [
+    pkgs.home-manager
+    pkgs.kdePackages.partitionmanager
+  ];
 
-   programs = {     
-       kdeconnect = {
-         enable = true;
-       };
+  programs = {
+    kdeconnect = {
+      enable = true;
+    };
   };
   system.stateVersion = "24.11";
 
@@ -25,13 +24,6 @@
   home-manager.users.prince =
     { ... }:
     {
-      home = {
-        packages = with pkgs;[
-
-          
-       
-        ];
-      };
 
       ### Installed Settings####
       programs = {
@@ -51,13 +43,12 @@
             pull.rebase = true;
           };
         };
-        
-            
+
       };
       ################
     };
 
- ###Settings####
+  ###Settings####
   programs = {
     steam = {
       enable = true;
@@ -78,11 +69,10 @@
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-  plasma-browser-integration
-  konsole
-  oxygen
+    plasma-browser-integration
+    konsole
+    oxygen
   ];
   ##############
 
-  
 }
