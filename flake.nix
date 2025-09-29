@@ -1,5 +1,5 @@
 {
-  description = "Prince nix config v3";
+  description = "Prince nix config v2";
 
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -21,47 +21,16 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nixos-wsl, nixos-hardware, nix-flatpak, darwin, home-manager, ... }@inputs:
-  { user ? "prince" }:   
     let
       systems = [ "x86_64-linux" "aarch64-darwin" ];
 
-      # helper: import nixpkgs with allowUnfree
       mkPkgs = nixpkgsSource: system:
-        import nixpkgsSource {
-          inherit system;
-          config.allowUnfree = true;
-        };
+        import nixpkgsSource { inherit system; config.allowUnfree = true; };
 
-      # stable + unstable package sets
       pkgsFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs system);
       pkgsUnstableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-unstable system);
 
-      darwinSystem = { arch ? "aarch64-darwin" }: entrypoint:
-        darwin.lib.darwinSystem {
-          modules = [
-            entrypoint
-            {
-              nixpkgs.pkgs = pkgsFor.${arch};
-              _module.args = { inherit inputs; };
-            }
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                users.${user} = import ./home-manager;
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  flake-inputs = inputs;
-                  pkgs-unstable = pkgsUnstableFor.${arch};
-                };
-              };
-              users.users.${user}.home = "/Users/${user}";
-              nix.settings.trusted-users = [ user ];
-            }
-          ];
-        };
-
-      nixosSystem = { arch ? "x86_64-linux" }: entrypoint:
+      nixosSystemForUser = { user ? "prince"; arch ? "x86_64-linux"; entrypoint }: 
         nixpkgs.lib.nixosSystem {
           modules = [
             entrypoint
@@ -86,15 +55,46 @@
             }
           ];
         };
-    in {
+
+      darwinSystemForUser = { user ? "prince"; arch ? "aarch64-darwin"; entrypoint }: 
+        darwin.lib.darwinSystem {
+          modules = [
+            entrypoint
+            {
+              nixpkgs.pkgs = pkgsFor.${arch};
+              _module.args = { inherit inputs; };
+            }
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                users.${user} = import ./home-manager;
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  flake-inputs = inputs;
+                  pkgs-unstable = pkgsUnstableFor.${arch};
+                };
+              };
+              users.users.${user}.home = "/Users/${user}";
+              nix.settings.trusted-users = [ user ];
+            }
+          ];
+        };
+    in
+    {
       nixosConfigurations = {
-        desktop = nixosSystem { arch = "x86_64-linux"; } ./os/linux/desktop;
-        wsl     = nixosSystem { arch = "x86_64-linux"; } ./os/linux/wsl;
+        desktop = nixosSystemForUser {
+          entrypoint = ./os/linux/desktop;
+        };
+        wsl = nixosSystemForUser {
+          entrypoint = ./os/linux/wsl;
+        };
       };
 
       darwinConfigurations = {
-        macbook = darwinSystem { arch = "aarch64-darwin"; } ./os/darwin/macbook;
+        macbook = darwinSystemForUser {
+          entrypoint = ./os/darwin/macbook;
+        };
       };
     };
 }
-
