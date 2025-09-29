@@ -5,16 +5,7 @@
   system,
   ...
 }:
-let
-  desktopOnly = ../../../home-manager/desktop.nix {
-    inherit
-      pkgs
-      pkgs-unstable
-      lib
-      system
-      ;
-  };
-in
+
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -101,17 +92,15 @@ in
 
   home-manager.users.prince =
     {
-      system,
-      pkgs,
-      pkgs-unstable,
-      lib,
+      config,
       ...
     }:
     {
-      home = {
-        packages = desktopOnly;
-      };
-
+      imports = [
+        (import ../../../home-manager/desktop.nix{
+          inherit pkgs pkgs-unstable lib system;
+        })
+      ];
     };
 
 }
