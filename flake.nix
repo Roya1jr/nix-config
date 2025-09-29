@@ -1,107 +1,99 @@
 {
-  description = "Prince nix config v2";
+ description = "Prince nix config v2";
 
-  inputs = {
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
-    # flake-utils is removed as it was unused.
-  };
+  inputs = {
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    home-manager = {
+    url = "github:nix-community/home-manager/release-25.05";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-wsl, nixos-hardware, nix-flatpak, darwin, home-manager, ... }@inputs:
-    let
-      systems = [ "x86_64-linux" "aarch64-darwin" ];
+  darwin = {
+    url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  nixos-wsl = {
+    url = "github:nix-community/NixOS-WSL";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+  nix-flatpak.url = "github:gmodena/nix-flatpak";
+};
 
-      # Top-level user variable (Change this value to easily change the default user)
-      user = "prince";
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-wsl, nixos-hardware, nix-flatpak, darwin, home-manager, ... }@inputs:
+      let
+      systems = [ "x86_64-linux" "aarch64-darwin" ];
+      user = "prince";
+      mkPkgs = nixpkgsSource: system:
+      import nixpkgsSource { inherit system; config.allowUnfree = true; };
+      pkgsFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs system);
+      pkgsUnstableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-unstable system);
 
-      mkPkgs = nixpkgsSource: system:
-        import nixpkgsSource { inherit system; config.allowUnfree = true; };
+       # helper for NixOS system, uses the 'user' variable from the let-binding
+      nixosSystemForUser = { arch ? "x86_64-linux", entrypoint }:
+      nixpkgs.lib.nixosSystem {
+      modules = [
+        entrypoint
+        inputs.nixpkgs.nixosModules.readOnlyPkgs {
+          nixpkgs.pkgs = pkgsFor.${arch};
+          _module.args = { inherit inputs user; };
+        }
+        nix-flatpak.nixosModules.nix-flatpak
+        home-manager.nixosModules.home-manager{
+          home-manager = {
+             users.${user} = import ./home-manager;
+             useGlobalPkgs = true;
+             useUserPackages = true;
+             extraSpecialArgs = {
+               flake-inputs = inputs;
+               pkgs-unstable = pkgsUnstableFor.${arch};
+             };
+          };
+          nix.settings.trusted-users = [ user ];
+        }
+    ];
+ };
 
-      pkgsFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs system);
-      pkgsUnstableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-unstable system);
+ darwinSystemForUser = { arch ? "aarch64-darwin", entrypoint }:
+  darwin.lib.darwinSystem {
+   modules = [
+    entrypoint
+    {
+     nixpkgs.pkgs = pkgsFor.${arch};
+     _module.args = { inherit inputs user; };
+    }
+    home-manager.darwinModules.home-manager
+    {
+     home-manager = {
+     users.${user} = import ./home-manager;
+     useGlobalPkgs = true;
+     useUserPackages = true;
+     extraSpecialArgs = {
+      flake-inputs = inputs;
+      pkgs-unstable = pkgsUnstableFor.${arch};
+     };
+ };
+ users.users.${user}.home = "/Users/${user}";
+ nix.settings.trusted-users = [ user ];
+  }
+   ];
+  };
+ in
+ {
+  nixosConfigurations = {
+   desktop = nixosSystemForUser {
+   entrypoint = ./os/linux/desktop;
+   };
+   wsl = nixosSystemForUser {
+   entrypoint = ./os/linux/wsl;
+   };
+  };
 
-      # helper for NixOS system, uses the 'user' variable from the let-binding
-      nixosSystemForUser = { arch ? "x86_64-linux", entrypoint }: 
-        nixpkgs.lib.nixosSystem {
-          modules = [
-            entrypoint
-            inputs.nixpkgs.nixosModules.readOnlyPkgs
-            {
-              nixpkgs.pkgs = pkgsFor.${arch};
-              # CRITICAL FIX: Pass 'user' via _module.args so other modules can access it
-              _module.args = { inherit inputs user; };
-            }
-            nix-flatpak.nixosModules.nix-flatpak
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                users.${user} = import ./home-manager;
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  flake-inputs = inputs;
-                  pkgs-unstable = pkgsUnstableFor.${arch};
-                };
-              };
-              nix.settings.trusted-users = [ user ];
-            }
-          ];
-        };
-
-      darwinSystemForUser = { arch ? "aarch64-darwin", entrypoint }: 
-        darwin.lib.darwinSystem {
-          modules = [
-            entrypoint
-            {
-              nixpkgs.pkgs = pkgsFor.${arch};
-              # CRITICAL FIX: Pass 'user' via _module.args so other modules can access it
-              _module.args = { inherit inputs user; };
-            }
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                users.${user} = import ./home-manager;
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  flake-inputs = inputs;
-                  pkgs-unstable = pkgsUnstableFor.${arch};
-                };
-              };
-              users.users.${user}.home = "/Users/${user}";
-              nix.settings.trusted-users = [ user ];
-            }
-          ];
-        };
-    in
-    {
-      nixosConfigurations = {
-        desktop = nixosSystemForUser {
-          entrypoint = ./os/linux/desktop;
-        };
-        wsl = nixosSystemForUser {
-          entrypoint = ./os/linux/wsl;
-        };
-      };
-
-      darwinConfigurations = {
-        macbook = darwinSystemForUser {
-          entrypoint = ./os/darwin/macbook;
-        };
-      };
-    };
+  darwinConfigurations = {
+   macbook = darwinSystemForUser {
+    entrypoint = ./os/darwin/macbook;
+   };
+  };
+ };
 }
