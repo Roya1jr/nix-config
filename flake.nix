@@ -30,7 +30,7 @@
       pkgsFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs system);
       pkgsUnstableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-unstable system);
 
-      nixosSystemForUser = { user ? "prince"; arch ? "x86_64-linux"; entrypoint }: 
+      nixosSystemForUser = { user ? "prince", arch ? "x86_64-linux", entrypoint }: 
         nixpkgs.lib.nixosSystem {
           modules = [
             entrypoint
@@ -56,7 +56,7 @@
           ];
         };
 
-      darwinSystemForUser = { user ? "prince"; arch ? "aarch64-darwin"; entrypoint }: 
+      darwinSystemForUser = { user ? "prince", arch ? "aarch64-darwin", entrypoint }: 
         darwin.lib.darwinSystem {
           modules = [
             entrypoint
