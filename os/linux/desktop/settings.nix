@@ -3,8 +3,9 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../shared.nix { inherit pkgs pkgs-unstable user lib; }
-  ];
+     (import ../shared.nix { inherit pkgs pkgs-unstable user lib; })
+
+   ];
 
 
   # Assign system and home packages
