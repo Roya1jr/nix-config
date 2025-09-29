@@ -1,37 +1,25 @@
+# home-manager/desktop.nix (Revised to return a Home Manager Module)
+{ pkgs, pkgs-unstable, ... }:
+
 {
-  pkgs,
-  pkgs-unstable,
-  system,
-  lib,
-  ...
-}:
+  # This is the Home Manager option for packages
+  home.packages = with pkgs; [
+    # Packages should be explicitly prefixed (pkgs-unstable, etc.) 
+    # since we are inside a module, not a top-level 'with pkgs;' block.
 
-with pkgs;
-(
-  let
-    isLinux = builtins.elem system [
-      "x86_64-linux"
-      "aarch64-linux"
-    ];
-    common = [
-      #######Programming##########
-      (pkgs-unstable.dyalog.override { acceptLicense = true; })
-      pkgs-unstable.lmstudio
-      #######Programming##########
+    #######Programming##########
+    (pkgs-unstable.dyalog.override { acceptLicense = true; })
+    pkgs-unstable.lmstudio
+    #######Programming##########
 
-      ###GUI###
-      pkgs-unstable.hyprland
-      pkgs-unstable.wezterm
-      #########
+    ###GUI###
+    pkgs-unstable.hyprland
+    pkgs-unstable.wezterm
+    #########
 
-      ##Editors##
-      pkgs-unstable.ride
-      pkgs-unstable.vscode
-      ###########
-    ];
-    linuxOnly = [
-
-    ];
-  in
-  common ++ lib.optionals isLinux linuxOnly
-)
+    ##Editors##
+    pkgs-unstable.ride
+    pkgs-unstable.vscode
+    ###########
+  ];
+}
