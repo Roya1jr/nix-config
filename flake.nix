@@ -24,13 +24,16 @@
     let
       systems = [ "x86_64-linux" "aarch64-darwin" ];
 
+      # Top-level user variable (change here to override for all systems)
+      user = "prince";
+
       mkPkgs = nixpkgsSource: system:
         import nixpkgsSource { inherit system; config.allowUnfree = true; };
 
       pkgsFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs system);
       pkgsUnstableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-unstable system);
 
-      nixosSystemForUser = { user ? "prince", arch ? "x86_64-linux", entrypoint }: 
+      nixosSystemForUser = { arch ? "x86_64-linux", entrypoint }: 
         nixpkgs.lib.nixosSystem {
           modules = [
             entrypoint
@@ -56,7 +59,7 @@
           ];
         };
 
-      darwinSystemForUser = { user ? "prince", arch ? "aarch64-darwin", entrypoint }: 
+      darwinSystemForUser = { arch ? "aarch64-darwin", entrypoint }: 
         darwin.lib.darwinSystem {
           modules = [
             entrypoint
@@ -98,3 +101,4 @@
       };
     };
 }
+
