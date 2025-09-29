@@ -39,44 +39,5 @@
     };
     nix-ld.enable = true;
   };
-  home-manager.users.prince =
-    { system, pkgs-unstable, ... }:
-    {
-      home = {
-        file = {
-
-        };
-        packages = with pkgs; [
-          #######CLI##########
-          fontfor
-          traceroute
-          pkgs-unstable.ollama
-          ######################
-
-          #######Programming#########
-
-          ##C++#
-          glibc
-          gfortran14
-          libclang
-          xorg.libX11
-          ######
-
-          pkgs-unstable.factor-lang
-          hare
-          (lib.hiPrio pkgs-unstable.j)
-
-          ##Broken
-          #io
-
-          #Broken
-          ##qnial
-          racket
-
-          ####################
-        ];
-      };
-
-    };
 
 }

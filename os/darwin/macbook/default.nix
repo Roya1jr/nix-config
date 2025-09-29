@@ -83,7 +83,7 @@
       "devtoys"
       "diffusionbee"
       "discord"
-      "fontforge"
+      "fontforge-app"
       "google-chrome"
       "godot"
       "jdownloader"

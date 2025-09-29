@@ -54,9 +54,7 @@
           arch ? "x86_64-linux",
           entrypoint,
         }:
-        let
-          pkgs-unstable = pkgsUnstableFor.${arch};
-        in
+
         nixpkgs.lib.nixosSystem {
           modules = [
             entrypoint
@@ -74,7 +72,8 @@
                 useUserPackages = true;
                 extraSpecialArgs = {
                   flake-inputs = inputs;
-                  pkgs-unstable = pkgs-unstable;
+                  pkgs-unstable = pkgsUnstableFor.${arch};
+                  system = arch;
                 };
               };
               nix.settings.trusted-users = [ user ];
@@ -87,9 +86,7 @@
           arch ? "aarch64-darwin",
           entrypoint,
         }:
-        let
-          pkgs-unstable = pkgsUnstableFor.${arch};
-        in
+
         darwin.lib.darwinSystem {
           modules = [
             entrypoint
@@ -105,7 +102,8 @@
                 useUserPackages = true;
                 extraSpecialArgs = {
                   flake-inputs = inputs;
-                  pkgs-unstable = pkgs-unstable;
+                  pkgs-unstable = pkgsUnstableFor.${arch};
+                  system = arch;
                 };
               };
               users.users.${user}.home = "/Users/${user}";

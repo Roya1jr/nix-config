@@ -15,9 +15,30 @@ let
       system
       ;
   };
-  devTools = import ./tools.nix { inherit pkgs lib pkgs-unstable; };
-  languages = import ./languages.nix { inherit pkgs pkgs-unstable; };
-  fonts = import ./fonts.nix { inherit pkgs pkgs-unstable; };
+  devTools = import ./tools.nix {
+    inherit
+      pkgs
+      lib
+      pkgs-unstable
+      system
+      ;
+  };
+  languages = import ./languages.nix {
+    inherit
+      pkgs
+      lib
+      pkgs-unstable
+      system
+      ;
+  };
+  fonts = import ./fonts.nix {
+    inherit
+      pkgs
+      lib
+      pkgs-unstable
+      system
+      ;
+  };
 in
 {
   home = {
