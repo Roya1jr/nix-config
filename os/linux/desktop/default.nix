@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../nixos.nix
+    ./nixos.nix
     ../shared.nix
   ];
   environment.systemPackages =
@@ -84,9 +84,5 @@
   ];
   ##############
 
-  programs = {
-    zsh.enable = true;
-  };
-
-
+  
 }

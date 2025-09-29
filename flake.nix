@@ -17,7 +17,6 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    flake-utils.url = "github:numtide/flake-utils";
   };
   outputs =
     {
