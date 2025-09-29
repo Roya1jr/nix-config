@@ -1,10 +1,11 @@
-{ pkgs, user, packages, ... }:
+{ pkgs,pkgs-unstable,lib, user, packages, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
-    ../shared.nix
+    ../shared.nix { inherit pkgs pkgs-unstable user lib; }
   ];
+
 
   # Assign system and home packages
   environment.systemPackages = packages.systemPackages;
