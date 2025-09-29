@@ -2,11 +2,19 @@
   pkgs,
   pkgs-unstable,
   lib,
+  system,
   ...
 }:
 
 let
-  basePackages = import ./base.nix { inherit pkgs pkgs-unstable; };
+  basePackages = import ./base.nix {
+    inherit
+      pkgs
+      pkgs-unstable
+      lib
+      system
+      ;
+  };
   devTools = import ./tools.nix { inherit pkgs lib pkgs-unstable; };
   languages = import ./languages.nix { inherit pkgs pkgs-unstable; };
   fonts = import ./fonts.nix { inherit pkgs pkgs-unstable; };
