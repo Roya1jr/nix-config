@@ -1,5 +1,5 @@
 # home-manager/desktop.nix (Revised to return a Home Manager Module)
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
   # This is the Home Manager option for packages
@@ -8,18 +8,18 @@
     # since we are inside a module, not a top-level 'with pkgs;' block.
 
     #######Programming##########
-    (pkgs-unstable.dyalog.override { acceptLicense = true; })
-    pkgs-unstable.lmstudio
+    (dyalog.override { acceptLicense = true; })
+    lmstudio
     #######Programming##########
 
     ###GUI###
-    pkgs-unstable.hyprland
-    pkgs-unstable.wezterm
+    hyprland
+    wezterm
     #########
 
     ##Editors##
-    pkgs-unstable.ride
-    pkgs-unstable.vscode
+    ride
+    vscode
     ###########
   ];
 }
