@@ -3,5 +3,5 @@
 let
   packages = import ./packages.nix { inherit pkgs pkgs-unstable; };
 in
-import ./settings.nix { inherit pkgs user packages; }
+import ./settings.nix { inherit pkgs pkgs-unstable user packages; }
 
