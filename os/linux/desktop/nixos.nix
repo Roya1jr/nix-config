@@ -1,8 +1,24 @@
-{ pkgs,... }:
+{
+  pkgs,
+  pkgs-unstable,
+  lib,
+  system,
+  ...
+}:
+let
+  desktopOnly = ../../../home-manager/desktop.nix {
+    inherit
+      pkgs
+      pkgs-unstable
+      lib
+      system
+      ;
+  };
+in
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.extraModprobeConfig = '' options bluetooth disable_ertm=1 '';
+  boot.extraModprobeConfig = ''options bluetooth disable_ertm=1 '';
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services.xserver.enable = true;
@@ -14,24 +30,35 @@
   services.printing.enable = true;
   virtualisation.libvirtd.enable = true;
   security.rtkit.enable = true;
-  services.pipewire =
-    {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
-    };
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
   networking = {
     firewall = {
       enable = true;
       allowedTCPPortRanges = [
-        { from = 1714; to = 1764; } # KDE Connect
-        { from = 8091; to = 8096; } # KDE Connect
+        {
+          from = 1714;
+          to = 1764;
+        } # KDE Connect
+        {
+          from = 8091;
+          to = 8096;
+        } # KDE Connect
       ];
       allowedUDPPortRanges = [
-        { from = 1714; to = 1764; } # KDE Connect
-        { from = 8091; to = 8096; }
+        {
+          from = 1714;
+          to = 1764;
+        } # KDE Connect
+        {
+          from = 8091;
+          to = 8096;
+        }
       ];
     };
   };
@@ -46,6 +73,7 @@
   environment.systemPackages = with pkgs; [
   ];
 
+  ##Desktop Only Packages##
   services.flatpak.packages = [
     "com.calibre_ebook.calibre"
     "io.github.RodZill4.Material-Maker"
@@ -69,29 +97,19 @@
     "org.gnome.Solanum"
     "app.zen_browser.zen"
 
-   ];
+  ];
 
   home-manager.users.prince =
-    { system,pkgs-unstable, ... }:
+    {
+      system,
+      pkgs,
+      pkgs-unstable,
+      lib,
+      ...
+    }:
     {
       home = {
-        packages = with pkgs;[
-          #######Programming##########
-          (dyalog.override { acceptLicense = true; })
-          lmstudio
-          #######Programming##########
-
-          ###GUI### 
-          hyprland
-          wezterm
-          #########
-
-          ##Editors##
-          ride
-          pkgs-unstable.vscode
-          ###########
-
-        ];
+        packages = desktopOnly;
       };
 
     };
