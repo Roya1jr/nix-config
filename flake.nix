@@ -32,6 +32,9 @@
 
        # helper for NixOS system, uses the 'user' variable from the let-binding
       nixosSystemForUser = { arch ? "x86_64-linux", entrypoint }:
+      let 
+          pkgs-unstable = pkgsUnstableFor.${arch};
+      in
       nixpkgs.lib.nixosSystem {
       modules = [
         entrypoint
@@ -47,7 +50,7 @@
              useUserPackages = true;
              extraSpecialArgs = {
                flake-inputs = inputs;
-               pkgs-unstable = pkgsUnstableFor.${arch};
+               pkgs-unstable = pkgs-unstable;
              };
           };
           nix.settings.trusted-users = [ user ];
@@ -56,6 +59,9 @@
  };
 
  darwinSystemForUser = { arch ? "aarch64-darwin", entrypoint }:
+  let 
+     pkgs-unstable = pkgsUnstableFor.${arch};
+  in
   darwin.lib.darwinSystem {
    modules = [
     entrypoint
@@ -71,7 +77,7 @@
      useUserPackages = true;
      extraSpecialArgs = {
       flake-inputs = inputs;
-      pkgs-unstable = pkgsUnstableFor.${arch};
+      pkgs-unstable = pkgs-unstable;
      };
  };
  users.users.${user}.home = "/Users/${user}";
