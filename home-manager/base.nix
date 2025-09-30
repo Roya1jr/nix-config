@@ -31,7 +31,7 @@ with pkgs;
       sshs
       sqlite
       starship
-      tealdeer
+      tlrc
       unzip
       wget
       wl-clipboard
