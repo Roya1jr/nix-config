@@ -38,8 +38,6 @@ with pkgs;
       pkgs-unstable.pkgsite
       ##########
 
-      (lib.hiPrio j)
-
       ##Janet##
       #janet
       #jpm
@@ -149,6 +147,7 @@ with pkgs;
 
       #pkgs-unstable.factor-lang
       #hare
+      (lib.hiPrio pkgs-unstable.j)
 
       ##Broken##
       #io
