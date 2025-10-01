@@ -38,7 +38,7 @@ with pkgs;
       pkgs-unstable.pkgsite
       ##########
 
-      (lib.hiPrio pkgs-unstable.j)
+      (lib.hiPrio j)
 
       ##Janet##
       #janet
