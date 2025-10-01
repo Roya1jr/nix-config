@@ -126,7 +126,6 @@ with pkgs;
 
       ##Wasm##
       pkgs-unstable.wasmtime
-      pkgs-unstable.wasmer
       ########
 
       ##Zig##
