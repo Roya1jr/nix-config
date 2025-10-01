@@ -140,7 +140,7 @@ with pkgs;
       ##C++##
       glibc
       gfortran14
-      libclang
+      llvmPackages_21.clang-unwrapped
       xorg.libX11
       ######
 
