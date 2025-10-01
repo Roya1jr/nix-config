@@ -17,7 +17,7 @@
     layout = "za";
     variant = "";
   };
-  services.flatpak.enable = true;
+
   services.printing.enable = true;
   virtualisation.libvirtd.enable = true;
   security.rtkit.enable = true;
@@ -64,31 +64,37 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  ##Desktop Only Packages##
-  services.flatpak.packages = [
-    "com.calibre_ebook.calibre"
-    "io.github.RodZill4.Material-Maker"
-    "md.obsidian.Obsidian"
-    "com.heroicgameslauncher.hgl"
-    "org.jdownloader.JDownloader"
-    "org.blender.Blender"
-    "io.github.thetumultuousunicornofdarkness.cpu-x"
-    "com.microsoft.Edge"
-    "org.musicbrainz.Picard"
-    "com.usebottles.bottles"
-    "com.tomjwatson.Emote"
-    "com.discordapp.Discord"
-    "com.github.tchx84.Flatseal"
-    "com.obsproject.Studio"
-    "net.nokyan.Resources"
-    "io.mpv.Mpv"
-    "net.retrodeck.retrodeck"
-    "org.gnucash.GnuCash"
-    "org.godotengine.Godot"
-    "org.gnome.Solanum"
-    "app.zen_browser.zen"
+  ##Flatpak Desktop Only##
+  services.flatpak = {
+    update = {
+      onActivation = true;
+    };
+    enable = true;
+    packages = [
+      "com.calibre_ebook.calibre"
+      "io.github.RodZill4.Material-Maker"
+      "md.obsidian.Obsidian"
+      "com.heroicgameslauncher.hgl"
+      "org.jdownloader.JDownloader"
+      "org.blender.Blender"
+      "io.github.thetumultuousunicornofdarkness.cpu-x"
+      "com.microsoft.Edge"
+      "org.musicbrainz.Picard"
+      "com.usebottles.bottles"
+      "com.tomjwatson.Emote"
+      "com.discordapp.Discord"
+      "com.github.tchx84.Flatseal"
+      "com.obsproject.Studio"
+      "net.nokyan.Resources"
+      "io.mpv.Mpv"
+      "net.retrodeck.retrodeck"
+      "org.gnucash.GnuCash"
+      "org.godotengine.Godot"
+      "org.gnome.Solanum"
+      "app.zen_browser.zen"
+    ];
 
-  ];
+  };
 
   home-manager.users.prince =
     {
@@ -97,8 +103,13 @@
     }:
     {
       imports = [
-        (import ../../../home-manager/desktop.nix{
-          inherit pkgs pkgs-unstable lib system;
+        (import ../../../home-manager/desktop.nix {
+          inherit
+            pkgs
+            pkgs-unstable
+            lib
+            system
+            ;
         })
       ];
     };
