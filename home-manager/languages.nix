@@ -15,15 +15,15 @@ with pkgs;
     ];
     common = [
       ##C++##
-      _4th
+      #_4th
       cmake
       lldb
       raylib
       #######
 
-      erlang_26
-      gleam
-      ghc
+      #erlang_26
+      #gleam
+      #ghc
       pkgs-unstable.decker
 
       ##GOLANG##
@@ -38,9 +38,11 @@ with pkgs;
       pkgs-unstable.pkgsite
       ##########
 
+      (lib.hiPrio pkgs-unstable.j)
+
       ##Janet##
-      janet
-      jpm
+      #janet
+      #jpm
       #########
 
       jelly
@@ -72,11 +74,16 @@ with pkgs;
       #######
 
       ##Ocaml##
-      ocaml
-      opam
+      #ocaml
+      #opam
       #########
 
-      php
+      ##Odin##
+      odin
+      ols
+      ########
+
+      #php
       pkgs-unstable.pkl
       protobuf
 
@@ -87,21 +94,21 @@ with pkgs;
       ruff
       ##########
 
-      mercury
+      #mercury
 
       ##Nix##
       nil
       nixfmt-rfc-style
       #######
 
-      rakudo
+      #rakudo
 
       ##Rust##
       rustup
       ##Rust##
 
       ##Lisp##
-      sbcl
+      #sbcl
       ########
 
       ##Tailwind##
@@ -117,19 +124,19 @@ with pkgs;
       })
       ########
 
-      unison-ucm
+      #unison-ucm
 
       ##Wasm##
       pkgs-unstable.wasmtime
-      #pkgs-unstable.wasmer
+      pkgs-unstable.wasmer
       ########
 
       ##Zig##
-      pkgs-unstable.zig
-      pkgs-unstable.zls
+      #pkgs-unstable.zig
+      #pkgs-unstable.zls
       ##Zig##
 
-      zulu
+      pkgs-unstable.zulu25
 
     ];
     linuxOnly = [
@@ -140,16 +147,15 @@ with pkgs;
       xorg.libX11
       ######
 
-      pkgs-unstable.factor-lang
-      hare
-      (lib.hiPrio pkgs-unstable.j)
+      #pkgs-unstable.factor-lang
+      #hare
 
       ##Broken##
       #io
       #qnial
       #########
 
-      racket
+      #racket
     ];
   in
   common ++ lib.optionals isLinux linuxOnly
