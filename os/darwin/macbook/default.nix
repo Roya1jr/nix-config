@@ -23,20 +23,18 @@
     };
   };
   home-manager.users.prince =
-    { ... }:
+    { config, ... }:
     {
-      home = {
-        packages = with pkgs; [
-          ##C++#
-          gcc14
-          ######
-
-        ];
-        file = {
-          #".config/aerospace/aerospace.toml".source = ../../../dotfiles/aerospace/aerospace.toml;
-        };
-
-      };
+      imports = [
+        (import ../../../home-manager/macos.nix {
+          inherit
+            pkgs
+            pkgs-unstable
+            lib
+            system
+            ;
+        })
+      ];
 
       ### Installed Settings####
       programs = {
@@ -76,6 +74,7 @@
 
     casks = [
       ########GUI#########
+      "audacity"
       "arduino-ide"
       "android-studio"
       "blender@lts"
