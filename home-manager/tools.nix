@@ -33,6 +33,7 @@ with pkgs;
 
       # Development Tools
       pkgs-unstable.helix
+      gdb
       gnumake
       fly
       git-filter-repo
