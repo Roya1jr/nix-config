@@ -67,7 +67,7 @@
   ##Flatpak Desktop Only##
   services.flatpak = {
     update = {
-      onActivation = true;
+      onActivation = false;
     };
     enable = true;
     packages = [
