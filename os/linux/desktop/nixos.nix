@@ -29,6 +29,12 @@
     jack.enable = true;
   };
   networking = {
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-openvpn
+      ];
+    };
     firewall = {
       enable = true;
       allowedTCPPortRanges = [

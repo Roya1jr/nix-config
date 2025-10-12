@@ -53,9 +53,9 @@ with pkgs;
 
     ];
     linuxOnly = [
-
       fontfor
       traceroute
+      openvpn3
       pkgs-unstable.ollama
     ];
   in
