@@ -76,6 +76,7 @@
       "md.obsidian.Obsidian"
       "com.heroicgameslauncher.hgl"
       "org.jdownloader.JDownloader"
+      "eu.jumplink.Learn6502"
       "org.blender.Blender"
       "io.github.thetumultuousunicornofdarkness.cpu-x"
       "com.microsoft.Edge"
@@ -91,6 +92,7 @@
       "org.gnucash.GnuCash"
       "org.godotengine.Godot"
       "org.gnome.Solanum"
+      "net.waterfox.waterfox"
       "app.zen_browser.zen"
     ];
 
