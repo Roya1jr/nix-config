@@ -69,7 +69,7 @@
       },
       "original": {
         "owner": "gmodena",
-        "ref": "latest",
+        "ref": "v0.6.0",
         "repo": "nix-flatpak",
         "type": "github"
       }
