@@ -57,7 +57,7 @@ with pkgs;
       fontfor
       traceroute
       pkgs-unstable.ollama
-
+      openvpn3
     ];
   in
   common ++ lib.optionals isLinux linuxOnly
