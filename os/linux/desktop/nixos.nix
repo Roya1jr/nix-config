@@ -59,6 +59,7 @@
   hardware.xpadneo.enable = true;
   ##Bluetooth
 
+  programs.openvpn3.enable = true;
   programs.dconf.enable = true;
   programs.zsh.enableCompletion = false;
   environment.systemPackages = with pkgs; [
