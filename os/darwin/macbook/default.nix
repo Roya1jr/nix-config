@@ -80,6 +80,7 @@
 
     casks = [
       ########GUI#########
+      "anythingllm"
       "audacity"
       "arduino-ide"
       "android-studio"
