@@ -93,6 +93,7 @@
       "google-chrome"
       "godot"
       "jdownloader"
+      "lm-studio"
       "material-maker"
       "microsoft-teams"
       "obsidian"
