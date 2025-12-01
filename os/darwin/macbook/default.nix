@@ -46,7 +46,7 @@
       programs = {
         git = {
           enable = true;
-          user = {
+         settings.user = {
             name = "Prince Junior Mguni";
             email = "prince.mguni@outlook.com";
           };           
