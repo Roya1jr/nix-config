@@ -26,9 +26,11 @@
         zsh.enableCompletion = false;
         git = {
           enable = true;
-          userName = "Prince Junior Mguni";
-          userEmail = "princem@bestforu.co.za";
-          ignores = [ "*node_modules" ];
+          user = {
+            name = "Prince Junior Mguni";
+            email = "princem@bestforu.co.za";
+          };           
+           ignores = [ "*node_modules" ];
           extraConfig = {
             init = {
               defaultBranch = "main";

@@ -46,9 +46,11 @@
       programs = {
         git = {
           enable = true;
-          userName = "Prince Junior Mguni";
-          userEmail = "prince.mguni@outlook.com";
-          extraConfig = {
+          user = {
+            name = "Prince Junior Mguni";
+            email = "prince.mguni@outlook.com";
+          };           
+         extraConfig = {
             init = {
               defaultBranch = "main";
             };

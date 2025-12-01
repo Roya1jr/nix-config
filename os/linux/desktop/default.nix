@@ -30,8 +30,10 @@
         zsh.enableCompletion = false;
         git = {
           enable = true;
-          userName = "Prince Junior Mguni";
-          userEmail = "prince.mguni@outlook.com";
+          user = {
+            name = "Prince Junior Mguni";
+            email = "prince.mguni@outlook.com";
+          };           
           ignores = [ "*node_modules" ];
           extraConfig = {
             init = {
