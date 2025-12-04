@@ -25,13 +25,13 @@
       programs = {
         zsh.enableCompletion = false;
         git = {
-          enable = true;
-         settings.user = {
-            name = "Prince Junior Mguni";
-            email = "princem@bestforu.co.za";
-          };           
-           ignores = [ "*node_modules" ];
-          extraConfig = {
+          enable = true;       
+          ignores = [ "*node_modules" ];
+          settings = {
+            user = {
+              name = "Prince Junior Mguni";
+              email = "princem@bestforu.co.za";
+            };
             init = {
               defaultBranch = "main";
             };
@@ -39,6 +39,7 @@
               directory = "/etc/nixos";
             };
             pull.rebase = true;
+
           };
         };
       };

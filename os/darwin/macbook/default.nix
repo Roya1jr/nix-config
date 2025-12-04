@@ -45,12 +45,12 @@
       ### Installed Settings####
       programs = {
         git = {
-          enable = true;
-         settings.user = {
-            name = "Prince Junior Mguni";
-            email = "prince.mguni@outlook.com";
-          };           
-         extraConfig = {
+         enable = true;          
+         settings = {
+            user = {
+              name = "Prince Junior Mguni";
+              email = "prince.mguni@outlook.com";
+            };
             init = {
               defaultBranch = "main";
             };

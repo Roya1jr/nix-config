@@ -29,13 +29,13 @@
       programs = {
         zsh.enableCompletion = false;
         git = {
-          enable = true;
-         settings.user = {
-            name = "Prince Junior Mguni";
-            email = "prince.mguni@outlook.com";
-          };           
+          enable = true;        
           ignores = [ "*node_modules" ];
-          extraConfig = {
+          settings = {
+            user = {
+              name = "Prince Junior Mguni";
+              email = "prince.mguni@outlook.com";
+            };
             init = {
               defaultBranch = "main";
             };
@@ -45,7 +45,6 @@
             pull.rebase = true;
           };
         };
-
       };
       ################
     };
