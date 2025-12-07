@@ -34,12 +34,11 @@ with pkgs;
       tlrc
       unzip
       wget
-      wl-clipboard
       zip
       zoxide
     ];
     linuxOnly = [
-
+      wl-clipboard
     ];
   in
   common ++ lib.optionals isLinux linuxOnly
