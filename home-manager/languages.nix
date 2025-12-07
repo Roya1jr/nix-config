@@ -24,7 +24,6 @@ with pkgs;
       #erlang_26
       #gleam
       #ghc
-      pkgs-unstable.decker
 
       ##GOLANG##
       pkgs-unstable.air
