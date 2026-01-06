@@ -29,7 +29,7 @@
     };
   };
   home-manager.users.prince =
-    { config, ... }:
+    { ... }:
     {
       imports = [
         (import ../../../home-manager/macos.nix {
