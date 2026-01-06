@@ -1,56 +1,71 @@
-typeset -U path
+# --- Environment & Path ---
+typeset -U path  
+
+# Platform Detection
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    if [[ $INTELLIJ_ENVIRONMENT_READER ]]; then
+        return
+    fi
+
+    [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+    path+=("$HOME/.cache/lm-studio/bin")
+
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    path+=(
+        /lib
+    )
+fi
+
+
 path=(
-    $path
-    /lib
+    /etc/profiles/per-user/$USER/bin
+    /run/current-system/sw/bin
+    $HOME/.kx/bin
     $HOME/go/bin
     $HOME/.cargo/bin
-    /etc/profiles/per-user/prince/bin
-    /run/current-system/sw/bin
-    /opt/homebrew/bin
-    $HOME/.kx/bin
+    $path
 )
 export PATH
-
 export EDITOR="hx"
 
-# --- 2. Interactive Settings ---
+
+# --- Interactive Settings ---
 if [[ $- == *i* ]]; then
-    # Basic Zsh completions (standard)
+    # Basic Zsh completions
     autoload -Uz compinit && compinit
     
-    # --- External Tool Init ---
+    # External Tool Init (Check if binary exists before eval)
+    command -v carapace >/dev/null && {
+        export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+        zstyle ':completion:*' format $'\e[2;37m%d\e[m'
+        source <(carapace _carapace)
+    }
     
-    # Carapace
-    export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
-    zstyle ':completion:*' format $'\e[2;37m%d\e[m'
-    source <(carapace _carapace)
-
-    # Zoxide
-    eval "$(zoxide init zsh)"
-
-    # Starship
-    eval "$(starship init zsh)"
-
+    command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
+    command -v starship >/dev/null && eval "$(starship init zsh)"
 
     # --- Aliases ---
-    alias docker="podman"
+    alias q="rlwrap -r q"
+    alias vi="hx"
+    
+    # Linux-leaning aliases (safe for Mac if tools are installed via Brew)
     alias grep="rg"
     alias cat="bat"
     alias ls="lsd --icon always"
     alias top="htop"
-    alias vi="hx"
-    alias q="rlwrap -r q"
+    
+    # Only alias docker to podman if podman actually exists
+    command -v podman >/dev/null && alias docker="podman"
+    
     alias git-local-clean='git branch --merged | grep -Ev "(^\*|master|main|dev)" | xargs -r git branch -d'
 
-    # --- Fish-like UI (Native Zsh) ---
-    # History search with Up/Down arrows
+    # --- UI & Navigation ---
     autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
     zle -N up-line-or-beginning-search
     zle -N down-line-or-beginning-search
     bindkey '^[[A' up-line-or-beginning-search
     bindkey '^[[B' down-line-or-beginning-search
     
-    # Tab completion menu (arrow keys to select)
     zstyle ':completion:*' menu select
     setopt autocd
 fi
