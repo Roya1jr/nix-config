@@ -1,8 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
-  inputs,
-  lib,
   ...
 }:
 {
@@ -36,6 +33,10 @@
   programs = {
     zsh = {
       enable = true;
+      enableCompletion = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+      
     };
     nix-ld.enable = true;
   };

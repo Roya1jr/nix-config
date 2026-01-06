@@ -2,7 +2,6 @@
 
 {
   imports = [
-    # include NixOS-WSL modules
     ../shared.nix
   ];
   wsl.enable = true;
@@ -22,7 +21,6 @@
       };
 
       programs = {
-        zsh.enableCompletion = false;
         git = {
           enable = true;       
           ignores = [ "*node_modules" ];
