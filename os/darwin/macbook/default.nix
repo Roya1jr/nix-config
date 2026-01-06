@@ -106,6 +106,7 @@
       "wezterm"
       "visual-studio-code"
       "zen"
+      "zed"
       ####################
 
       ########CLI#########

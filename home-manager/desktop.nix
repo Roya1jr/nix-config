@@ -18,6 +18,7 @@
       ##Editors##
       ride
       vscode
+      zed-editor
       ###########
     ];
 
