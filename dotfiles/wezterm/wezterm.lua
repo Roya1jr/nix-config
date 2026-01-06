@@ -16,7 +16,7 @@ if os_name:find("linux") then
 	config.enable_wayland = true
 	config.front_end = "WebGpu"
 elseif os_name:find("darwin") then
-	config.default_prog = { "/etc/profiles/per-user/prince/bin/zsh" }
+	config.default_prog = { "/bin/zsh" }
 	config.enable_wayland = false
 elseif os_name:find("windows") then
 	config.default_prog = { "nu" }
