@@ -46,8 +46,8 @@ threshold = 3
 [time]
 disabled = false
 format = '[\[ $time \]]($style) '
-time_format = "%v %r"
-use_12hr = true
+time_format = "%v %R"
+use_12hr = false
 
 [username]
 style_user = "white bold"
