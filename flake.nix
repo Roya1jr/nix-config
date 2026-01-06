@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl = {
-      url = "github:nix-community/nixos-wsl/release-25.11";
+      url = "github:nix-community/NixOS-WSL/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -118,7 +118,13 @@
           entrypoint = ./os/linux/desktop;
         };
         wsl = nixosSystemForUser {
-          entrypoint = ./os/linux/wsl;
+          # We wrap the entrypoint in an inline module to include the WSL module
+          entrypoint = {
+            imports = [ 
+              ./os/linux/wsl 
+               nixos-wsl.nixosModules.default 
+            ];
+          };
         };
       };
 

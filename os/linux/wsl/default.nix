@@ -1,9 +1,8 @@
-{ pkgs, system, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     # include NixOS-WSL modules
-    <nixos-wsl/modules>
     ../shared.nix
   ];
   wsl.enable = true;
