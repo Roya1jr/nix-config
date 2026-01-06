@@ -96,6 +96,7 @@ with pkgs;
       ##Nix##
       nil
       nixfmt-rfc-style
+      nixd
       #######
 
       #rakudo
