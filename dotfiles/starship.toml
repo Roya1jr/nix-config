@@ -34,6 +34,7 @@ format = '[$symbol \[$name\]]($style) '
 nu_indicator = "󰅬"
 fish_indicator = "󰈺"
 powershell_indicator = "󰨊"
+zsh_indicator = ""
 unknown_indicator = "?"
 disabled = false
 
