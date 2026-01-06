@@ -12,20 +12,20 @@ end
 local os_name = wezterm.target_triple
 
 if os_name:find("linux") then
-	config.default_prog = {'/etc/profiles/per-user/prince/bin/fish'}
+	config.default_prog = { '/etc/profiles/per-user/prince/bin/zsh' }
 	config.enable_wayland = true
 	config.front_end = "WebGpu"
 elseif os_name:find("darwin") then
-	config.default_prog = {"/etc/profiles/per-user/prince/bin/fish"}
+	config.default_prog = { "/etc/profiles/per-user/prince/bin/zsh" }
 	config.enable_wayland = false
 elseif os_name:find("windows") then
-	config.default_prog = {"nu"}
+	config.default_prog = { "nu" }
 	config.enable_wayland = false
 end
-  
+
 -- For example, changing the color scheme:
 config.color_scheme = 'Gruvbox dark, hard (base16)'
-config.font = wezterm.font('JuliaMono' ,{stretch='Normal'})
+config.font = wezterm.font('JuliaMono', { stretch = 'Normal' })
 config.font_size = 14
 -- Use cursive and ligatures
 config.harfbuzz_features = { 'zero' }
