@@ -45,8 +45,8 @@
       ### Installed Settings####
       programs = {
         git = {
-         enable = true;          
-         settings = {
+          enable = true;
+          settings = {
             user = {
               name = "Prince Junior Mguni";
               email = "prince.mguni@outlook.com";
@@ -65,7 +65,12 @@
     };
 
   programs = {
-    zsh.enable = true;
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+    };
   };
 
   services = {
