@@ -18,6 +18,7 @@ fi
 
 
 path=(
+    /run/wrappers/bin
     /etc/profiles/per-user/$USER/bin
     /run/current-system/sw/bin
     $HOME/.kx/bin
