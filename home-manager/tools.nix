@@ -21,7 +21,7 @@ with pkgs;
       rlwrap
       tree
       pkgs-unstable.devenv
-
+      pkgs-unstable.jujutsu
       #####ZSH#####
       zsh
       zsh-autocomplete
