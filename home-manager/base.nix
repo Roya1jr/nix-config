@@ -21,6 +21,7 @@ with pkgs;
       gzip
       htop
       jq
+      jujutsu
       lsd
       lsof
       openssh
