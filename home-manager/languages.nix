@@ -146,7 +146,7 @@ with pkgs;
 
       #pkgs-unstable.factor-lang
       #hare
-      (lib.hiPrio pkgs-unstable.j)
+      (lib.hiPrio j)
 
       ##Broken##
       #io
