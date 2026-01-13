@@ -28,7 +28,7 @@ with pkgs;
       ############
 
       ## Desktop Tools
-      pkgs-unstable.libation
+      libation
       ##
 
       # Development Tools
