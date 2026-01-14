@@ -67,7 +67,7 @@ with pkgs;
       pkgs-unstable.docker-language-server
       pkgs-unstable.yaml-language-server
       taplo
-      marksman
+      #marksman
       #######
 
       ##Ocaml##
