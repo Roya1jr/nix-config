@@ -22,13 +22,14 @@ with pkgs;
       tree
       pkgs-unstable.devenv
       pkgs-unstable.jujutsu
+      pkgs-unstable.lazyjj
       #####ZSH#####
       zsh
       zsh-autocomplete
       ############
 
       ## Desktop Tools
-     
+
       ##
 
       # Development Tools
