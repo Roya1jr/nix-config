@@ -20,6 +20,7 @@ with pkgs;
       fish
       rlwrap
       tree
+      pkgs-unstable.ollama
       pkgs-unstable.devenv
       pkgs-unstable.jujutsu
       pkgs-unstable.lazyjj
