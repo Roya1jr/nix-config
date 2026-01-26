@@ -43,24 +43,7 @@
       ];
 
       ### Installed Settings####
-      programs = {
-        git = {
-          enable = true;
-          settings = {
-            user = {
-              name = "Prince Junior Mguni";
-              email = "prince.mguni@outlook.com";
-            };
-            init = {
-              defaultBranch = "main";
-            };
-            safe = {
-              directory = "/etc/nixos";
-            };
-            pull.rebase = true;
-          };
-        };
-      };
+      programs = {};
       ################
     };
 

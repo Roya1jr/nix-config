@@ -1,0 +1,12 @@
+[init]
+	defaultBranch = "main"
+
+[pull]
+	rebase = true
+
+[safe]
+	directory = "/etc/nixos"
+
+[user]
+	email = "prince.mguni@outlook.com"
+	name = "Prince Junior Mguni"

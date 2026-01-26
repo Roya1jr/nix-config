@@ -20,25 +20,6 @@
 
       };
 
-      programs = {
-        git = {
-          enable = true;       
-          ignores = [ "*node_modules" ];
-          settings = {
-            user = {
-              name = "Prince Junior Mguni";
-              email = "princem@bestforu.co.za";
-            };
-            init = {
-              defaultBranch = "main";
-            };
-            safe = {
-              directory = "/etc/nixos";
-            };
-            pull.rebase = true;
-
-          };
-        };
-      };
+      programs = {};
     };
 }

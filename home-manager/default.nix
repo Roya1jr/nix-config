@@ -51,6 +51,8 @@ in
       ".config/helix/config.toml".source = ../dotfiles/helix/config.toml;
       ".config/wezterm/wezterm.lua".source = ../dotfiles/wezterm/wezterm.lua;
       ".config/tlrc/config.toml".source = ../dotfiles/tlrc/config.toml;
+      ".config/jj/config.toml".source = ../dotfiles/jj/config.toml;
+      ".config/git/config".source = ../dotfiles/git/config;
       ".zshrc".source = ../dotfiles/.zshrc;
     };
   };
