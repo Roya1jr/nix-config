@@ -11,6 +11,17 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.extraModprobeConfig = ''options bluetooth disable_ertm=1 '';
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "i915.enable_guc=3" ];
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver     # VA-API (iHD) userspace
+      vpl-gpu-rt             # oneVPL (QSV) runtime
+      intel-compute-runtime  # OpenCL (NEO) + Level Zero for Arc/Xe
+    ];
+  };
+  hardware.enableRedistributableFirmware = true;
+
 
   services.xserver.enable = true;
   services.xserver.xkb = {

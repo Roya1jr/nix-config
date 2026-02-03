@@ -25,6 +25,8 @@
           "wheel"
           "networkmanager"
           "dialout"
+          "video"
+          "render"
         ];
       };
     };
