@@ -9,21 +9,20 @@
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "i915"];
+  boot.kernelModules = [ "i915" "kvm-amd"];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/190dc731-fa45-42b9-b1ac-0aeb9ea8b6ef";
+    { device = "/dev/disk/by-uuid/554626e2-45f4-44a6-b503-d32e2f4f333a";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/BCF1-895C";
+    { device = "/dev/disk/by-uuid/01D9-16C2";
       fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
   fileSystems."/run/media/prince/Media" =
