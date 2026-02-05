@@ -111,6 +111,7 @@
       "org.gnome.Solanum"
       "net.waterfox.waterfox"
       "app.zen_browser.zen"
+      "net.pixieditor.PixiEditor"
     ];
 
   };
