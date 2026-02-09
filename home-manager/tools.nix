@@ -39,7 +39,7 @@ with pkgs;
       gnumake
       fly
       git-filter-repo
-
+      ffmpeg_7-headless
       # Podman and Container Tools
       buildah
       podman
