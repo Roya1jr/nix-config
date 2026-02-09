@@ -57,7 +57,10 @@
           from = 8091;
           to = 8096;
         } # KDE Connect
-        9999
+        {
+          from = 9999;
+          to = 9999;
+        }
       ];
       allowedUDPPortRanges = [
         {
@@ -68,7 +71,10 @@
           from = 8091;
           to = 8096;
         }
-        9999 
+        {
+          from = 9999;
+          to = 9999;
+        }
       ];
     };
   };
