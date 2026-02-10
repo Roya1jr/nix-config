@@ -128,7 +128,6 @@
    flatpak-managed-install = {
     serviceConfig = {
       Restart = "on-failure";
-      RestartSec = "10s";
     };
      after = [ "network-online.target" ];
      wants = [ "network-online.target" ];
