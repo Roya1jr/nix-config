@@ -34,6 +34,7 @@ with pkgs;
       ##
 
       # Development Tools
+      pkgs-unstable.buf
       pkgs-unstable.helix
       gdb
       gnumake
