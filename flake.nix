@@ -91,6 +91,11 @@
           modules = [
             entrypoint
             {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  inetutils = prev.runCommand "stub-inetutils" { } "mkdir -p $out/bin";
+                })
+              ];
               nixpkgs.pkgs = pkgsFor.${arch};
               _module.args = { inherit inputs user; };
             }
@@ -120,9 +125,9 @@
         wsl = nixosSystemForUser {
           # We wrap the entrypoint in an inline module to include the WSL module
           entrypoint = {
-            imports = [ 
-              ./os/linux/wsl 
-               nixos-wsl.nixosModules.default 
+            imports = [
+              ./os/linux/wsl
+              nixos-wsl.nixosModules.default
             ];
           };
         };
