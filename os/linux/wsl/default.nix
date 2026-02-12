@@ -13,13 +13,8 @@
   home-manager.users.prince =
     { ... }:
     {
-      home = {
-        packages = with pkgs;[
-
-        ];
-
-      };
-
-      programs = {};
+      ####Installed Settings####
+      programs = { };
+      ################
     };
 }

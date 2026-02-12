@@ -1,21 +1,22 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  lib,
+  system,
+  ...
+}:
 
 {
   imports = [
-    ./hardware-configuration.nix
-    ./nixos.nix
+    ./settings/hardware-configuration.nix
     ../shared.nix
-  ];
-  environment.systemPackages = [
-    pkgs.home-manager
-    pkgs.kdePackages.partitionmanager
+    ./settings/flatpaks.nix
+    ./settings/programs.nix
+    ./settings/services.nix
+    ./settings/system.nix
+    ./settings/systemd.nix
   ];
 
-  programs = {
-    kdeconnect = {
-      enable = true;
-    };
-  };
   system.stateVersion = "24.11";
 
   nix = {
@@ -24,37 +25,22 @@
   home-manager.users.prince =
     { ... }:
     {
+      imports = [
+        (import ../../../home-manager/desktop.nix {
+          inherit
+            pkgs
+            pkgs-unstable
+            lib
+            system
+            ;
+        })
+      ];
 
       ### Installed Settings####
-      programs = {};
+      programs = { };
       ################
     };
 
-  ###Settings####
-  programs = {
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    };
-  };
   ###############
-
-  ###Services####
-  services.jellyfin = {
-    enable = true;
-    openFirewall = true;
-    user = "prince";
-  };
-  services.xserver.videoDrivers = [ "modesetting" ];
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    plasma-browser-integration
-    konsole
-    oxygen
-  ];
-  ##############
 
 }
