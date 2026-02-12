@@ -1,8 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
-  lib,
-  system,
   ...
 }:
 
@@ -31,19 +28,9 @@
   home-manager.users.prince =
     { ... }:
     {
-      imports = [
-        (import ../../../home-manager/macos.nix {
-          inherit
-            pkgs
-            pkgs-unstable
-            lib
-            system
-            ;
-        })
-      ];
 
       ### Installed Settings####
-      programs = {};
+      programs = { };
       ################
     };
 

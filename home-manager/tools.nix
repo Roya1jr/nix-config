@@ -38,7 +38,6 @@ with pkgs;
       pkgs-unstable.helix
       gdb
       gnumake
-      fly
       git-filter-repo
       ffmpeg_7-headless
       # Podman and Container Tools
@@ -59,7 +58,6 @@ with pkgs;
       fontfor
       traceroute
       openvpn3
-      pkgs-unstable.ollama
     ];
   in
   common ++ lib.optionals isLinux linuxOnly

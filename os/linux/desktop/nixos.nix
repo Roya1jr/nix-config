@@ -9,19 +9,18 @@
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.extraModprobeConfig = ''options bluetooth disable_ertm=1 '';
+  boot.extraModprobeConfig = "options bluetooth disable_ertm=1 ";
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "i915.enable_guc=3" ];
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      intel-media-driver     # VA-API (iHD) userspace
-      vpl-gpu-rt             # oneVPL (QSV) runtime
-      intel-compute-runtime  # OpenCL (NEO) + Level Zero for Arc/Xe
+      intel-media-driver # VA-API (iHD) userspace
+      vpl-gpu-rt # oneVPL (QSV) runtime
+      intel-compute-runtime # OpenCL (NEO) + Level Zero for Arc/Xe
     ];
   };
   hardware.enableRedistributableFirmware = true;
-
 
   services.xserver.enable = true;
   services.xserver.xkb = {
@@ -86,8 +85,7 @@
 
   programs.openvpn3.enable = true;
   programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [
-  ];
+  #environment.systemPackages = with pkgs; [];
 
   ##Flatpak Desktop Only##
   services.flatpak = {
@@ -124,20 +122,18 @@
 
   };
 
-  systemd.services ={
-   flatpak-managed-install = {
-    serviceConfig = {
-      Restart = "on-failure";
+  systemd.services = {
+    flatpak-managed-install = {
+      serviceConfig = {
+        Restart = "on-failure";
+      };
+      after = [ "network-online.target" ];
+      wants = [ "network-online.target" ];
     };
-     after = [ "network-online.target" ];
-     wants = [ "network-online.target" ];
-   };
- };
-
+  };
 
   home-manager.users.prince =
     {
-      config,
       ...
     }:
     {
