@@ -1,8 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
-  lib,
-  system,
   ...
 }:
 
@@ -25,16 +22,8 @@
   home-manager.users.prince =
     { ... }:
     {
-      imports = [
-        (import ../../../home-manager/desktop.nix {
-          inherit
-            pkgs
-            pkgs-unstable
-            lib
-            system
-            ;
-        })
-      ];
+
+      imports = [ ../../../home-manager/desktop.nix ];
 
       ### Installed Settings####
       programs = { };
