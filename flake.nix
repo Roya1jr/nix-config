@@ -61,7 +61,10 @@
             inputs.nixpkgs.nixosModules.readOnlyPkgs
             {
               nixpkgs.pkgs = pkgsFor.${arch};
-              _module.args = { inherit inputs user; };
+              _module.args = {
+                inherit inputs user;
+                pkgs-unstable = pkgsUnstableFor.${arch};
+              };
             }
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
@@ -97,7 +100,10 @@
                 })
               ];
               nixpkgs.pkgs = pkgsFor.${arch};
-              _module.args = { inherit inputs user; };
+              _module.args = {
+                inherit inputs user;
+                pkgs-unstable = pkgsUnstableFor.${arch};
+              };
             }
             home-manager.darwinModules.home-manager
             {
