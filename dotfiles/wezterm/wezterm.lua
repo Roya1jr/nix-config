@@ -27,6 +27,7 @@ end
 config.color_scheme = 'Gruvbox dark, hard (base16)'
 config.font = wezterm.font('JuliaMono', { stretch = 'Normal' })
 config.font_size = 14
+config.unicode_version = 14
 -- Use cursive and ligatures
 config.harfbuzz_features = { 'zero' }
 config.max_fps = 240
