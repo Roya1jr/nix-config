@@ -28,7 +28,7 @@ path=(
 )
 export PATH
 export EDITOR="hx"
-
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history)
 
 # --- Interactive Settings ---
 if [[ $- == *i* ]]; then
