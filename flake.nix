@@ -19,7 +19,11 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     #########################Extras###########################
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
+      # This forces nix-flatpak to use your local nixpkgs instead of its own
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     bqn-lsp = {
       url = "sourcehut:~detegr/bqnlsp";
       inputs.nixpkgs.follows = "nixpkgs";
