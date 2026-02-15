@@ -21,45 +21,51 @@ export EDITOR="hx"
 # --- Interactive Settings ---
 if [[ $- == *i* ]]; then
 
-    # 1. ESSENTIAL: Initialize completions manually since Nix is set to false
-    # This defines 'compdef' and stops the "command not found" error
-    autoload -Uz compinit
-    compinit
-
-    # 2. Fix the Ghosting (ZLE cleanup)
+    # 1. Manual Initialization (Crucial for NixOS stability)
+    autoload -Uz compinit && compinit
     setopt prompt_subst
     setopt autocd
+
+    # 2. Completion UI Styles
     zstyle ':completion:*' menu select
-    # Using Zsh internal colors to avoid width-calculation errors
     zstyle ':completion:*' format '%F{yellow}-- %d --%f'
 
-    # 3. Initialize Prompt (Starship needs to know compinit is done)
+    # 3. Load Starship
     command -v starship >/dev/null && eval "$(starship init zsh)"
     command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
-    # 4. Initialize Carapace (Now that compdef exists)
+    # 4. Load Carapace (Must come BEFORE Autosuggestions)
     command -v carapace >/dev/null && {
         export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
         export CARAPACE_ZSH_HAS_COMPFIX=1
         source <(carapace _carapace)
     }
 
-    # 5. History Search & Keybindings
+    # 5. Load NixOS Plugins Manually (Strict Order)
+    # Syntax Highlighting first
+    if [ -f /run/current-system/sw/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+        source /run/current-system/sw/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    fi
+
+    # Autosuggestions LAST (This prevents the "echoecho" ghosting)
+    if [ -f /run/current-system/sw/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+        source /run/current-system/sw/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+        ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history)
+        # Force clear the ghost text on tab
+        ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(expand-or-complete)
+    fi
+
+    # 6. Keybindings
     autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
     zle -N up-line-or-beginning-search
     zle -N down-line-or-beginning-search
     bindkey '^[[A' up-line-or-beginning-search
     bindkey '^[[B' down-line-or-beginning-search
 
-    # 6. Prevent Autosuggestions from clashing with Carapace
-    ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history)
-    # This clears the "grey" text when you start tabbing
-    ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(expand-or-complete)
-
     # --- Aliases ---
     alias vi="hx"
     alias grep="rg"
     alias cat="bat"
     alias ls="lsd --icon always"
-    
+    command -v podman >/dev/null && alias docker="podman"
 fi

@@ -40,7 +40,7 @@
       enable = true;
       enableCompletion = false;
       autosuggestions.enable = false;
-      syntaxHighlighting.enable = true;
+      syntaxHighlighting.enable = false;
 
     };
     nix-ld.enable = true;
