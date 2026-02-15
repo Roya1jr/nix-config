@@ -38,7 +38,7 @@
   programs = {
     zsh = {
       enable = true;
-      enableCompletion = true;
+      enableCompletion = false;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
 
