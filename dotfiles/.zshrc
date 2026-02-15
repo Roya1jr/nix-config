@@ -20,6 +20,9 @@ export EDITOR="hx"
 
 # --- Interactive Settings ---
 if [[ $- == *i* ]]; then
+   setopt prompt_subst
+   export LANG=en_US.UTF-8
+   export LC_ALL=en_US.UTF-8
 
     # 1. Manual Initialization (Crucial for NixOS stability)
     autoload -Uz compinit && compinit
