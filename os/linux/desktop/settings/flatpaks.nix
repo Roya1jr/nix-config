@@ -17,6 +17,7 @@
         "io.github.thetumultuousunicornofdarkness.cpu-x"
         "com.microsoft.Edge"
         "org.musicbrainz.Picard"
+        "org.libreoffice.LibreOffice"
         "com.usebottles.bottles"
         "com.tomjwatson.Emote"
         "com.discordapp.Discord"
