@@ -6,12 +6,16 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     if [[ $INTELLIJ_ENVIRONMENT_READER ]]; then
         return
     fi
+
     [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
     path+=("$HOME/.cache/lm-studio/bin")
 
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    path+=(/lib)
+    path+=(
+        /lib
+    )
 fi
+
 
 path=(
     /run/wrappers/bin
@@ -24,50 +28,43 @@ path=(
 )
 export PATH
 export EDITOR="hx"
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history)
 
 # --- Interactive Settings ---
 if [[ $- == *i* ]]; then
-
-    # 1. Initialize Prompt & Zoxide first (Sets the stage for ZLE)
-    command -v starship >/dev/null && eval "$(starship init zsh)"
-    command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
-
-    # 2. Setup Zsh Completion System
-    autoload -Uz compinit && compinit
     
-    # Enable the visual menu selection
-    zstyle ':completion:*' menu select
-    setopt autocd
-
-    # 3. Initialize Carapace (Last to ensure it bridges correctly)
+    # External Tool Init (Check if binary exists before eval)
     command -v carapace >/dev/null && {
+        autoload -U compinit && compinit
         export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
-        
-        # FIX: Added %{ %} wrappers around escape codes to prevent ghost text
+        #zstyle ':completion:*' format $'\e[2;37m%d\e[m'
         zstyle ':completion:*' format $'%{\e[2;37m%}%d%{\e[m%}'
-        
         source <(carapace _carapace)
+        
     }
-
-    # 4. Autosuggestions Strategy (If plugin is loaded)
-    ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history)
-
-    # 5. UI & Navigation (History Search)
-    autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-    zle -N up-line-or-beginning-search
-    zle -N down-line-or-beginning-search
-    bindkey '^[[A' up-line-or-beginning-search
-    bindkey '^[[B' down-line-or-beginning-search
+    
+    command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
+    command -v starship >/dev/null && eval "$(starship init zsh)"
 
     # --- Aliases ---
     alias q="rlwrap -r q"
     alias vi="hx"
+    
+    # Linux-leaning aliases (safe for Mac if tools are installed via Brew)
     alias grep="rg"
     alias cat="bat"
     alias ls="lsd --icon always"
     alias top="htop"
     
+    # Only alias docker to podman if podman actually exists
     command -v podman >/dev/null && alias docker="podman"
+    
     alias git-local-clean='git branch --merged | grep -Ev "(^\*|master|main|dev)" | xargs -r git branch -d'
 
+    # --- UI & Navigation ---
+    autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+    zle -N up-line-or-beginning-search
+    zle -N down-line-or-beginning-search
+    bindkey '^[[A' up-line-or-beginning-search
+    bindkey '^[[B' down-line-or-beginning-search    
 fi
