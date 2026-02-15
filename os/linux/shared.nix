@@ -9,10 +9,13 @@
   networking.networkmanager.enable = true;
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+  };
   virtualisation.containers.enable = true;
   users = {
     mutableUsers = true;
@@ -38,7 +41,7 @@
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
-      
+
     };
     nix-ld.enable = true;
   };

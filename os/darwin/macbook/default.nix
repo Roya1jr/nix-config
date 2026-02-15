@@ -1,107 +1,19 @@
 {
-  pkgs,
   ...
 }:
 
 {
   imports = [
-    #../shared.nix
-  ];
-  environment.systemPackages = [
-    pkgs.home-manager
+    ../shared.nix
+    ./settings/homebrew.nix
+    ./settings/programs.nix
+    ./settings/services.nix
+    ./settings/system.nix
   ];
 
   system = {
     stateVersion = 6;
     primaryUser = "prince";
-  };
-
-  nix = {
-    package = pkgs.nix;
-    settings = {
-      "extra-experimental-features" = [
-        "nix-command"
-        "flakes"
-      ];
-    };
-  };
-  home-manager.users.prince =
-    { ... }:
-    {
-
-      ### Installed Settings####
-      programs = { };
-      ################
-    };
-
-  programs = {
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      enableAutosuggestions = true;
-      enableSyntaxHighlighting = true;
-    };
-  };
-
-  services = {
-
-  };
-
-  homebrew = {
-    enable = true;
-    onActivation = {
-      autoUpdate = true;
-      upgrade = true;
-      cleanup = "zap";
-    };
-
-    casks = [
-      ########GUI#########
-      "anythingllm"
-      "audacity"
-      "arduino-ide"
-      "android-studio"
-      "blender@lts"
-      "dbeaver-community"
-      "devtoys"
-      "diffusionbee"
-      "discord"
-      "fontforge-app"
-      "google-chrome"
-      "godot"
-      "jdownloader"
-      "lm-studio"
-      "material-maker"
-      "microsoft-teams"
-      "obsidian"
-      "pixieditor"
-      "pocket-casts"
-      "soduto"
-      "tablecruncher"
-      "wezterm"
-      "visual-studio-code"
-      "zen"
-      "zed"
-      ####################
-
-      ########CLI#########
-      "flutter"
-      "j"
-      ####################
-    ];
-
-    taps = [
-
-    ];
-
-    masApps = {
-      #"Bitwarden" = 1352778147;
-      #"Ghostery" = 6504861501;
-
-    };
-  };
-
-  system = {
     defaults = {
       # dock = {
       #   autohide = true;
@@ -126,4 +38,14 @@
       enableKeyMapping = true;
     };
   };
+
+  home-manager.users.prince =
+    { ... }:
+    {
+
+      ### Installed Settings####
+      programs = { };
+      ################
+    };
+
 }
