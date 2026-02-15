@@ -1,10 +1,7 @@
 # --- Environment & Path ---
 typeset -U path  
-
-# Platform Detection
 if [[ "$OSTYPE" == "darwin"* ]]; then
     [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-    path+=("$HOME/.cache/lm-studio/bin")
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     path+=(/lib)
 fi
@@ -24,48 +21,45 @@ export EDITOR="hx"
 # --- Interactive Settings ---
 if [[ $- == *i* ]]; then
 
-    # 1. Core Zsh Options for NixOS/WezTerm Stability
-    setopt prompt_subst      # Dynamically re-calc prompt (Fixes double-tab ghosting)
-    setopt autocd            # Allow 'cd' by just typing dir name
-    
-    # 2. UI Styling (Do this before Carapace)
+    # 1. ESSENTIAL: Initialize completions manually since Nix is set to false
+    # This defines 'compdef' and stops the "command not found" error
+    autoload -Uz compinit
+    compinit
+
+    # 2. Fix the Ghosting (ZLE cleanup)
+    setopt prompt_subst
+    setopt autocd
     zstyle ':completion:*' menu select
+    # Using Zsh internal colors to avoid width-calculation errors
     zstyle ':completion:*' format '%F{yellow}-- %d --%f'
 
-    # 3. External Tool Init
-    # We do NOT call compinit here; Carapace's script handles it or Nix handles it.
+    # 3. Initialize Prompt (Starship needs to know compinit is done)
     command -v starship >/dev/null && eval "$(starship init zsh)"
     command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
+    # 4. Initialize Carapace (Now that compdef exists)
     command -v carapace >/dev/null && {
         export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
-        # This hidden flag tells Carapace to play nice with Nix-preloaded completions
         export CARAPACE_ZSH_HAS_COMPFIX=1
         source <(carapace _carapace)
     }
 
-    # 4. History Search Widgets
+    # 5. History Search & Keybindings
     autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
     zle -N up-line-or-beginning-search
     zle -N down-line-or-beginning-search
     bindkey '^[[A' up-line-or-beginning-search
     bindkey '^[[B' down-line-or-beginning-search
 
-    # 5. Nix-managed Plugin Config
-    # Nix loads the plugins, we just define how they behave.
+    # 6. Prevent Autosuggestions from clashing with Carapace
     ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history)
-    # This prevents autosuggestions from breaking during completion selection
+    # This clears the "grey" text when you start tabbing
     ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(expand-or-complete)
 
     # --- Aliases ---
-    alias q="rlwrap -r q"
     alias vi="hx"
     alias grep="rg"
     alias cat="bat"
     alias ls="lsd --icon always"
-    alias top="htop"
     
-    command -v podman >/dev/null && alias docker="podman"
-    alias git-local-clean='git branch --merged | grep -Ev "(^\*|master|main|dev)" | xargs -r git branch -d'
-
 fi
