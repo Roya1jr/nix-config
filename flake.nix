@@ -50,7 +50,7 @@
       mkPkgs =
         nixpkgsSource: system:
         import nixpkgsSource {
-          hostPlatform = system;
+          inherit system;
           config.allowUnfree = true;
           overlays = [ externalOverlay ];
         };
