@@ -32,8 +32,6 @@ ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history)
 
 # --- Interactive Settings ---
 if [[ $- == *i* ]]; then
-    # Basic Zsh completions
-    autoload -Uz compinit && compinit
     
     # External Tool Init (Check if binary exists before eval)
     command -v carapace >/dev/null && {
