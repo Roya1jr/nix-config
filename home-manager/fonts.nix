@@ -1,12 +1,11 @@
 {
-  pkgs,
   pkgs-unstable,
   system,
   lib,
   ...
 }:
 
-with pkgs;
+with pkgs-unstable;
 (
   let
     isLinux = builtins.elem system [
@@ -14,11 +13,12 @@ with pkgs;
       "aarch64-linux"
     ];
     common = [
-      pkgs-unstable.hack-font
-      pkgs-unstable.julia-mono
-      pkgs-unstable.noto-fonts
-      pkgs-unstable.redhat-official-fonts
-      pkgs-unstable.uiua386
+      hack-font
+      julia-mono
+      noto-fonts
+      redhat-official-fonts
+      uiua386
+      bqn386
       nerd-fonts.fira-code
       nerd-fonts.fantasque-sans-mono
     ];
