@@ -35,9 +35,11 @@ if [[ $- == *i* ]]; then
     
     # External Tool Init (Check if binary exists before eval)
     command -v carapace >/dev/null && {
+        autoload -U compinit && compinit
         export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
         zstyle ':completion:*' format $'\e[2;37m%d\e[m'
         source <(carapace _carapace)
+        
     }
     
     command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
@@ -63,8 +65,5 @@ if [[ $- == *i* ]]; then
     zle -N up-line-or-beginning-search
     zle -N down-line-or-beginning-search
     bindkey '^[[A' up-line-or-beginning-search
-    bindkey '^[[B' down-line-or-beginning-search
-    
-    zstyle ':completion:*' menu select
-    setopt autocd
+    bindkey '^[[B' down-line-or-beginning-search    
 fi
