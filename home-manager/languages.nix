@@ -21,6 +21,11 @@ with pkgs;
       raylib
       #######
 
+      ##BQN##
+      pkgs.cbqn-replxx
+      pkgs.bqnlsp
+      #######
+
       #erlang_26
       #gleam
       #ghc

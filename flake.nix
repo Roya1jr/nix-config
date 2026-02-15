@@ -18,7 +18,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    #########################Extras###########################
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
+    bqn-lsp = {
+      url = "sourcehut:~detegr/bqnlsp";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    #########################Extras###########################
   };
 
   outputs =
@@ -29,6 +35,7 @@
       nixos-wsl,
       nixos-hardware,
       nix-flatpak,
+      bqn-lsp,
       darwin,
       home-manager,
       ...
@@ -39,11 +46,13 @@
         "aarch64-darwin"
       ];
       user = "prince";
+      externalOverlay = import ./overlays/pkgs.nix inputs;
       mkPkgs =
         nixpkgsSource: system:
         import nixpkgsSource {
           inherit system;
           config.allowUnfree = true;
+          overlays = [ externalOverlay ];
         };
       pkgsFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs system);
       pkgsUnstableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-unstable system);
