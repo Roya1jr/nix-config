@@ -39,7 +39,7 @@
     zsh = {
       enable = true;
       enableCompletion = false;
-      autosuggestions.enable = false;
+      autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
 
     };

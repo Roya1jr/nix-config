@@ -44,21 +44,7 @@ if [[ $- == *i* ]]; then
         source <(carapace _carapace)
     }
 
-    # 5. Load NixOS Plugins Manually (Strict Order)
-    # Syntax Highlighting first
-    if [ -f /run/current-system/sw/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-        source /run/current-system/sw/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    fi
-
-    # Autosuggestions LAST (This prevents the "echoecho" ghosting)
-    if [ -f /run/current-system/sw/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-        source /run/current-system/sw/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-        ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history)
-        # Force clear the ghost text on tab
-        ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(expand-or-complete)
-    fi
-
-    # 6. Keybindings
+    # 5. Keybindings
     autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
     zle -N up-line-or-beginning-search
     zle -N down-line-or-beginning-search
