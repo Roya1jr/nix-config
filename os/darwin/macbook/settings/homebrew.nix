@@ -11,6 +11,7 @@
     casks = [
       ########GUI#########
       "anythingllm"
+      "anytype"
       "audacity"
       "arduino-ide"
       "android-studio"
