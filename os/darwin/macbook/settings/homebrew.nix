@@ -30,6 +30,7 @@
       "pixieditor"
       "pocket-casts"
       "soduto"
+      "super-productivity"
       "tablecruncher"
       "wezterm"
       "visual-studio-code"
