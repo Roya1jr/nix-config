@@ -10,7 +10,6 @@
 
     casks = [
       ########GUI#########
-      "anythingllm"
       "anytype"
       "audacity"
       "arduino-ide"
@@ -18,7 +17,6 @@
       "blender@lts"
       "dbeaver-community"
       "devtoys"
-      "discord"
       "fontforge-app"
       "google-chrome"
       "godot"
@@ -31,7 +29,6 @@
       "pocket-casts"
       "soduto"
       "super-productivity"
-      "tablecruncher"
       "wezterm"
       "visual-studio-code"
       "zen"
