@@ -8,6 +8,7 @@
       enable = true;
       packages = [
         "com.calibre_ebook.calibre"
+        "io.anytype.anytype"
         "io.github.RodZill4.Material-Maker"
         "md.obsidian.Obsidian"
         "com.heroicgameslauncher.hgl"
@@ -20,15 +21,11 @@
         "org.libreoffice.LibreOffice"
         "com.usebottles.bottles"
         "com.tomjwatson.Emote"
-        "com.discordapp.Discord"
         "com.github.tchx84.Flatseal"
         "com.obsproject.Studio"
         "net.nokyan.Resources"
         "io.mpv.Mpv"
-        "net.retrodeck.retrodeck"
-        "org.gnucash.GnuCash"
         "org.godotengine.Godot"
-        "org.gnome.Solanum"
         "net.waterfox.waterfox"
         "app.zen_browser.zen"
         "net.pixieditor.PixiEditor"
