@@ -41,9 +41,6 @@
       enableCompletion = false;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
-      shellAliases = {
-        zed = "zeditor";
-      };
 
     };
     nix-ld.enable = true;
