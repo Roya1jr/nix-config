@@ -25,6 +25,7 @@
         "com.obsproject.Studio"
         "net.nokyan.Resources"
         "io.mpv.Mpv"
+        "io.github.Faugus.faugus-launcher"
         "org.godotengine.Godot"
         "net.waterfox.waterfox"
         "app.zen_browser.zen"
