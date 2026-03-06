@@ -34,6 +34,7 @@ with pkgs;
       ##
 
       # Development Tools
+      pkgs-unstable.sqlc
       pkgs-unstable.buf
       pkgs-unstable.helix
       gdb
