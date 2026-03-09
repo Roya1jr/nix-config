@@ -81,3 +81,11 @@ command = "pyright"
 command = "ruff"
 args = ["server"]
 config = { settings = { run = "onSave" } }
+
+[[language]]
+name = "sql"
+language-servers = ["sqls"]
+file-types = ["ua"]
+
+[language-server.sqls]
+command = "sqls"
