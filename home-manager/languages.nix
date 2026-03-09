@@ -114,6 +114,10 @@ with pkgs;
       #sbcl
       ########
 
+      ###SQL####
+      sqls
+      ##########
+
       ##Tailwind##
       pkgs-unstable.tailwindcss_4
       pkgs-unstable.tailwindcss-language-server
