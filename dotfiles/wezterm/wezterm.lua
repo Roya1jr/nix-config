@@ -5,22 +5,22 @@ local wezterm = require 'wezterm'
 local config = {}
 
 if wezterm.config_builder then
-	config = wezterm.config_builder()
+    config = wezterm.config_builder()
 end
 
 -- default shell
 local os_name = wezterm.target_triple
 
-if os_name:find("linux") then
-	config.default_prog = { '/etc/profiles/per-user/prince/bin/zsh' }
-	config.enable_wayland = true
-	config.front_end = "WebGpu"
-elseif os_name:find("darwin") then
-	config.default_prog = { "/bin/zsh" }
-	config.enable_wayland = false
+local unix_shell = { '/etc/profiles/per-user/prince/bin/zsh' }
+
+if os_name:find("linux") or os_name:find("darwin") then
+    config.default_prog = unix_shell
+    config.front_end = "WebGpu"
+    -- Only enable Wayland if we are specifically on Linux
+    config.enable_wayland = os_name:find("linux") ~= nil
 elseif os_name:find("windows") then
-	config.default_prog = { "nu" }
-	config.enable_wayland = false
+    config.default_prog = { "nu" }
+    config.enable_wayland = false
 end
 
 -- For example, changing the color scheme:
