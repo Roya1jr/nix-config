@@ -27,6 +27,7 @@
       "obsidian"
       "pixieditor"
       "pocket-casts"
+      "raycast"
       "soduto"
       "super-productivity"
       "wezterm"
