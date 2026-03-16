@@ -19,6 +19,7 @@ Personal Nix configuration for managing system settings, dotfiles, and developme
 
 - [Nix](https://nixos.org/download.html)
 - [Home Manager](https://github.com/nix-community/home-manager)
+- Change username in [flake.nix](./flake.nix)
 
 ## Installation
 
@@ -27,36 +28,35 @@ In all configurations remember to replace username with your own if you clone th
 ### MacOS
 
 1. Install Nix and Homebrew
-2. Clone to `~/.config/nixpkgs`:
+2. Clone to `~/.config/nixos`:
 
    ```bash
-
-   git clone https://github.com/Roya1jr/nix-config.git ~/.config/darwin
-   cd ~/.config/darwin
+   git clone https://github.com/Roya1jr/nix-config.git ~/.config/nixos
+   cd ~/.config/nixos
    sudo darwin-rebuild switch --flake .#macbook
 
    ```
 
 ### NixOS (Desktop)
 
-1. Clone to `/etc/nixos`:
+1. Clone to `~/.config/nixos`:
 
    ```bash
 
-   sudo git clone https://github.com/Roya1jr/nix-config.git /etc/nixos
-   cd /etc/nixos
+   sudo git clone https://github.com/Roya1jr/nix-config.git ~/.config/nixos
+   cd ~/.config/nixos
    sudo nixos-rebuild switch --flake .#desktop
 
    ```
 
 ### NixOS (WSL)
 
-1. Clone to `/etc/nixos`:
+1. Clone to `~/.config/nixos`:
 
    ```bash
 
-   sudo git clone https://github.com/Roya1jr/nix-config.git /etc/nixos
-   cd /etc/nixos
+   sudo git clone https://github.com/Roya1jr/nix-config.git ~/.config/nixos
+   cd ~/.config/nixos
    sudo nixos-rebuild switch --flake .#wsl
 
    ```
