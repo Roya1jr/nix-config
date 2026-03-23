@@ -13,6 +13,7 @@
       ###GUI###
       hyprland
       wezterm
+      vicinae
       #########
 
       ##Editors##
