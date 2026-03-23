@@ -47,7 +47,7 @@ with pkgs;
       #jpm
       #########
 
-      jelly
+      #jelly
 
       ##JS##
       pkgs-unstable.biome
@@ -136,11 +136,6 @@ with pkgs;
       ##Wasm##
       pkgs-unstable.wasmtime
       ########
-
-      ##Zig##
-      #pkgs-unstable.zig
-      #pkgs-unstable.zls
-      ##Zig##
 
       pkgs-unstable.zulu25
 
