@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 
 {
 
   home = {
-    packages = with pkgs; [
+    packages = with pkgs-unstable; [
 
       #######Programming##########
       lmstudio
