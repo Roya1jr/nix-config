@@ -15,7 +15,6 @@
       #########
 
       ##Editors##
-      vscode
       zed-editor
       ###########
     ];
