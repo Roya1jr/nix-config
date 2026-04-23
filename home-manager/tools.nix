@@ -25,6 +25,7 @@ with pkgs;
       pkgs-unstable.devenv
       pkgs-unstable.jujutsu
       pkgs-unstable.lazyjj
+      pkgs-unstable.opencode
       #####ZSH#####
       zsh
       zsh-autocomplete
