@@ -25,7 +25,7 @@ with pkgs;
       pkgs-unstable.devenv
       pkgs-unstable.jujutsu
       pkgs-unstable.lazyjj
-      pkgs-pkgs-unstable.television
+      pkgs-unstable.television
       #####ZSH#####
       zsh
       zsh-autocomplete
