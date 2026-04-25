@@ -26,6 +26,7 @@ with pkgs;
       pkgs-unstable.jujutsu
       pkgs-unstable.lazyjj
       pkgs-unstable.opencode
+      pkgs-unstable.pi-coding-agent
       #####ZSH#####
       zsh
       zsh-autocomplete
