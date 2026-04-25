@@ -17,7 +17,7 @@
       "blender@lts"
       "dbeaver-community"
       "devtoys"
-      "fontforge-app"
+      "fontforge"
       "google-chrome"
       "godot"
       "jdownloader"
