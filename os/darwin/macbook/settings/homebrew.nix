@@ -36,6 +36,8 @@
       ########CLI#########
       "flutter"
       "j"
+      "opencode"
+      "pi-coding-agent"
       ####################
     ];
 
