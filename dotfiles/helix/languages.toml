@@ -86,6 +86,7 @@ config = { settings = { run = "onSave" } }
 name = "sql"
 language-servers = ["sqls"]
 file-types = ["ua"]
+auto-format = true
 
 [language-server.sqls]
 command = "sqls"
