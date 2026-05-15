@@ -21,6 +21,7 @@ with pkgs;
       rlwrap
       tree
       pciutils
+      inetutils
       pkgs-unstable.ollama
       pkgs-unstable.devenv
       pkgs-unstable.jujutsu
