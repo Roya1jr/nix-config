@@ -24,6 +24,7 @@
       "jdownloader"
       "lm-studio"
       "material-maker"
+      "mochi"
       "obsidian"
       "pixieditor"
       "raycast"
