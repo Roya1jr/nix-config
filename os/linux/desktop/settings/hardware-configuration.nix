@@ -45,17 +45,20 @@
   fileSystems."/run/media/prince/Media" = {
     device = "/dev/disk/by-uuid/78505E95505E5A48";
     fsType = "ntfs";
+    options = ["nofail"]; 
   };
 
   fileSystems."/run/media/prince/Games" = {
     device = "/dev/disk/by-uuid/2f72a1f1-3edc-4f20-b7bf-6e442a0b2083";
     fsType = "ext4";
+    options = ["nofail"]; 
   };
 
-#  fileSystems."/run/media/prince/Storage" = {
- #   device = "/dev/disk/by-uuid/7EF8147EF814373D";
- #   fsType = "ntfs";
- # };
+ fileSystems."/run/media/prince/Storage" = {
+    device = "/dev/disk/by-uuid/b42f0437-663a-4edf-bd98-3f2f631048a5";
+    fsType = "ext4";
+    options = ["nofail"]; 
+ };
 
   swapDevices = [ ];
 
