@@ -52,10 +52,10 @@
     fsType = "ext4";
   };
 
-  fileSystems."/run/media/prince/Storage" = {
-    device = "/dev/disk/by-uuid/7EF8147EF814373D";
-    fsType = "ntfs";
-  };
+#  fileSystems."/run/media/prince/Storage" = {
+ #   device = "/dev/disk/by-uuid/7EF8147EF814373D";
+ #   fsType = "ntfs";
+ # };
 
   swapDevices = [ ];
 
