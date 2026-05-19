@@ -43,6 +43,11 @@
       openFirewall = true;
       user = "prince";
     };
+    audiobookshelf = {
+      enable = true;
+      openFirewall = true;
+      user = "prince";
+    };
   };
 
 }
