@@ -57,7 +57,7 @@
           to = 1764;
         } # KDE Connect
         {
-          from = 8091;
+          from = 8000;
           to = 8096;
         } # KDE Connect
         {
