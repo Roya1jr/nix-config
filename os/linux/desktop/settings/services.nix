@@ -38,6 +38,7 @@
       pulse.enable = true;
       jack.enable = true;
     };
+    #3rd Party
     jellyfin = {
       enable = true;
       openFirewall = true;
@@ -47,7 +48,13 @@
       enable = true;
       openFirewall = true;
       user = "prince";
+      host = "0.0.0.0";
     };
+    kavita = {
+      enable = true;
+      tokenKeyFile = "/var/lib/kavita/token.key";
+    };
+
   };
 
 }
