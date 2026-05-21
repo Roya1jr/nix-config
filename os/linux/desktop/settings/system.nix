@@ -56,6 +56,10 @@
           from = 9999;
           to = 9999;
         }
+        {
+          from = 5000;
+          to = 5000;
+        }
       ];
       allowedUDPPortRanges = [
         {
