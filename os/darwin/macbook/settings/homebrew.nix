@@ -28,7 +28,6 @@
       "obsidian"
       "pixieditor"
       "raycast"
-      "soduto"
       "super-productivity"
       "wezterm"
       "zen"
