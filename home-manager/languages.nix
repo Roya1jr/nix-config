@@ -27,7 +27,7 @@ with pkgs;
       #######
 
       pkgs-unstable.erlang_28
-      
+
       pkgs-unstable.haskell.compiler.ghc914
 
       ##GOLANG##
@@ -41,8 +41,6 @@ with pkgs;
       pkgs-unstable.templ
       pkgs-unstable.pkgsite
       ##########
-
- 
 
       ##Janet##
       pkgs-unstable.janet
@@ -68,7 +66,6 @@ with pkgs;
       pkgs-unstable.lua54Packages.lua
       pkgs-unstable.luarocks
       pkgs-unstable.lua-language-server
-      pkgs-unstable.luajit
       #######
 
       ##LSP##
@@ -140,6 +137,7 @@ with pkgs;
 
       ###Zig##
       pkgs-unstable.zig_0_16
+      pkgs-unstable.zls
       #######
 
       pkgs-unstable.zulu25
@@ -156,7 +154,7 @@ with pkgs;
 
       pkgs-unstable.factor-lang
       pkgs-unstable.hare
-      
+
     ];
   in
   common ++ lib.optionals isLinux linuxOnly
