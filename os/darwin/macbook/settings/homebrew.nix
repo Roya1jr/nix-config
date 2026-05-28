@@ -14,7 +14,6 @@
       "anki"
       "audacity"
       "arduino-ide"
-      "android-studio"
       "blender@lts"
       "dbeaver-community"
       "devtoys"
