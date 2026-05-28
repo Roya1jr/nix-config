@@ -26,14 +26,14 @@ with pkgs;
       pkgs.bqnlsp
       #######
 
-      #erlang_26
-      #gleam
-      #ghc
+      pkgs-unstable.erlang_28
+      
+      pkgs-unstable.haskell.compiler.ghc914
 
       ##GOLANG##
       pkgs-unstable.air
       pkgs-unstable.delve
-      pkgs-unstable.go
+      pkgs-unstable.go_1_26
       pkgs-unstable.golangci-lint
       pkgs-unstable.golangci-lint-langserver
       pkgs-unstable.gopls
@@ -42,9 +42,13 @@ with pkgs;
       pkgs-unstable.pkgsite
       ##########
 
+      ####J#####
+      (lib.hiPrio pkgs-unstable.j)
+      ##########
+
       ##Janet##
-      #janet
-      #jpm
+      pkgs-unstable.janet
+      pkgs-unstable.jpm
       #########
 
       #jelly
@@ -63,9 +67,10 @@ with pkgs;
       pkgs-unstable.literate
 
       ##Lua##
-      lua
-      luarocks
-      lua-language-server
+      pkgs-unstable.lua54Packages.lua
+      pkgs-unstable.luarocks
+      pkgs-unstable.lua-language-server
+      pkgs-unstable.luajit
       #######
 
       ##LSP##
@@ -76,8 +81,8 @@ with pkgs;
       #######
 
       ##Ocaml##
-      #ocaml
-      #opam
+      ocaml
+      opam
       #########
 
       ##Odin##
@@ -85,18 +90,18 @@ with pkgs;
       ols
       ########
 
-      #php
+      pkgs-unstable.php85
       pkgs-unstable.pkl
-      protobuf
+      pkgs-unstable.protobuf
 
       ##Python##
-      python313
+      pkgs-unstable.python314
       uv
       pyright
       ruff
       ##########
 
-      #mercury
+      mercury
 
       ##Nix##
       nil
@@ -104,14 +109,14 @@ with pkgs;
       nixd
       #######
 
-      #rakudo
+      rakudo
 
       ##Rust##
       rustup
       ##Rust##
 
       ##Lisp##
-      #sbcl
+      sbcl_2_4_6
       ########
 
       ###SQL####
@@ -131,33 +136,29 @@ with pkgs;
       })
       ########
 
-      #unison-ucm
-
       ##Wasm##
       pkgs-unstable.wasmtime
       ########
 
+      ###Zig##
+      pkgs-unstable.zig_0_16
+      #######
+
       pkgs-unstable.zulu25
+      pkgs-unstable.racket
 
     ];
     linuxOnly = [
       ##C++##
       glibc
       gfortran14
-      llvmPackages_21.clang-unwrapped
+      llvmPackages_22.clang-unwrapped
       xorg.libX11
       ######
 
-      #pkgs-unstable.factor-lang
-      #hare
-      (lib.hiPrio j)
-
-      ##Broken##
-      #io
-      #qnial
-      #########
-
-      #racket
+      pkgs-unstable.factor-lang
+      pkgs-unstable.hare
+      
     ];
   in
   common ++ lib.optionals isLinux linuxOnly
