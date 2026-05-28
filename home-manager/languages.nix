@@ -42,16 +42,14 @@ with pkgs;
       pkgs-unstable.pkgsite
       ##########
 
-      ####J#####
-      (lib.hiPrio pkgs-unstable.j)
-      ##########
+ 
 
       ##Janet##
       pkgs-unstable.janet
       pkgs-unstable.jpm
       #########
 
-      #jelly
+      jelly
 
       ##JS##
       pkgs-unstable.biome
