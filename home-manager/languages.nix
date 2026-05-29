@@ -15,7 +15,8 @@ with pkgs;
     ];
     common = [
       ##C++##
-      #_4th
+      _4th
+      pkg-config
       cmake
       lldb
       raylib
@@ -27,6 +28,8 @@ with pkgs;
       #######
 
       pkgs-unstable.erlang_28
+
+      pkgs-unstable._4th
 
       pkgs-unstable.haskell.compiler.ghc914
 
@@ -43,7 +46,7 @@ with pkgs;
       ##########
 
       ##Janet##
-      pkgs-unstable.janet
+      janet
       pkgs-unstable.jpm
       #########
 
@@ -63,16 +66,17 @@ with pkgs;
       pkgs-unstable.literate
 
       ##Lua##
-      pkgs-unstable.lua54Packages.lua
+      luajit
       pkgs-unstable.luarocks
       pkgs-unstable.lua-language-server
+
       #######
 
       ##LSP##
       pkgs-unstable.docker-language-server
       pkgs-unstable.yaml-language-server
-      taplo
-      markdown-oxide
+      pkgs-unstable.taplo
+      pkgs-unstable.markdown-oxide
       #######
 
       ##Ocaml##
@@ -81,8 +85,8 @@ with pkgs;
       #########
 
       ##Odin##
-      odin
-      ols
+      pkgs-unstable.odin
+      pkgs-unstable.ols
       ########
 
       pkgs-unstable.php85
@@ -90,18 +94,18 @@ with pkgs;
       pkgs-unstable.protobuf
 
       ##Python##
-      pkgs-unstable.python314
-      uv
-      pyright
-      ruff
+      python314
+      pkgs-unstable.uv
+      pkgs-unstable.pyright
+      pkgs-unstable.ruff
       ##########
 
       mercury
 
       ##Nix##
-      nil
-      nixfmt-rfc-style
-      nixd
+      pkgs-unstable.nil
+      pkgs-unstable.nixfmt-rfc-style
+      pkgs-unstable.nixd
       #######
 
       rakudo
@@ -136,7 +140,7 @@ with pkgs;
       ########
 
       ###Zig##
-      pkgs-unstable.zig_0_16
+      zig_0_16
       pkgs-unstable.zls
       #######
 
@@ -146,10 +150,8 @@ with pkgs;
     ];
     linuxOnly = [
       ##C++##
-      glibc
       gfortran14
-      llvmPackages_22.clang-unwrapped
-      xorg.libX11
+      clang_21
       ######
 
       pkgs-unstable.factor-lang

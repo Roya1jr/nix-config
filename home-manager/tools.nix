@@ -22,11 +22,11 @@ with pkgs;
       tree
       pciutils
       inetutils
-      pkgs-unstable.ollama
       pkgs-unstable.devenv
       pkgs-unstable.jujutsu
       pkgs-unstable.lazyjj
       pkgs-unstable.television
+      pkgs-unstable.ollama
       #####ZSH#####
       zsh
       zsh-autocomplete
