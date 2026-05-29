@@ -140,7 +140,7 @@ with pkgs;
       ########
 
       ###Zig##
-      zig_0_16
+      pkgs-unstable.zig_0_16
       pkgs-unstable.zls
       #######
 
