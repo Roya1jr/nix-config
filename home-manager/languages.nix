@@ -150,7 +150,7 @@ with pkgs;
     ];
     linuxOnly = [
       ##C++##
-      gfortran14
+      #gfortran14
       clang_21
       ######
 
