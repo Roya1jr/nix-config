@@ -39,7 +39,7 @@ with pkgs;
       #############
       
       ###Fortran###
-      flang_22
+      pkgs-unstable.flang_22
       #############  
     
       ##GOLANG##
@@ -58,9 +58,10 @@ with pkgs;
       janet
       pkgs-unstable.jpm
       #########
-
-      jelly
-
+      
+      ##Jelly####
+      pkgs-unstable.jelly
+      #########
       ##JS##
       pkgs-unstable.biome
       pkgs-unstable.bun
