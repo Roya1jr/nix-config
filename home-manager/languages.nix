@@ -15,7 +15,6 @@ with pkgs;
     ];
     common = [
       ##C++##
-      _4th
       pkg-config
       cmake
       lldb
@@ -29,7 +28,7 @@ with pkgs;
 
       pkgs-unstable.erlang_28
 
-      #pkgs-unstable._4th
+      pkgs-unstable._4th
 
       pkgs-unstable.haskell.compiler.ghc914
 
