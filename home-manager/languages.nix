@@ -26,12 +26,22 @@ with pkgs;
       pkgs.bqnlsp
       #######
 
+      ###Erlang####
       pkgs-unstable.erlang_28
-
+      #############
+      
+      ####Fourth###
       pkgs-unstable._4th
+      #############
 
+      #####Haskel##
       pkgs-unstable.haskell.compiler.ghc914
-
+      #############
+      
+      ###Fortran###
+      flang_22
+      #############  
+    
       ##GOLANG##
       pkgs-unstable.air
       pkgs-unstable.delve
@@ -149,7 +159,6 @@ with pkgs;
     ];
     linuxOnly = [
       ##C++##
-      #gfortran14
       clang_21
       ######
 
