@@ -29,9 +29,13 @@ with pkgs;
       ###Erlang####
       pkgs-unstable.erlang_28
       #############
+
+      ###Fortran###
+      pkgs-unstable.flang_22
+      ############# 
       
       ####Fourth###
-      pkgs-unstable._4th
+      _4th
       #############
 
       #####Haskel##
@@ -93,8 +97,8 @@ with pkgs;
       #########
 
       ##Odin##
-      pkgs-unstable.odin
-      pkgs-unstable.ols
+      odin
+      ols
       ########
 
       pkgs-unstable.php85
@@ -161,10 +165,6 @@ with pkgs;
       clang_21
       ######
       
-      ###Fortran###
-      pkgs-unstable.flang_22
-      ############# 
-
       pkgs-unstable.factor-lang
       pkgs-unstable.hare
 
