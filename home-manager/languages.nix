@@ -39,7 +39,7 @@ with pkgs;
       #############
       
       ###Fortran###
-      pkgs-unstable.flang_22
+      flang_22
       #############  
     
       ##GOLANG##
