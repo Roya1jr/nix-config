@@ -38,9 +38,7 @@ with pkgs;
       pkgs-unstable.haskell.compiler.ghc914
       #############
       
-      ###Fortran###
-      flang_22
-      #############  
+        
     
       ##GOLANG##
       pkgs-unstable.air
@@ -162,6 +160,10 @@ with pkgs;
       ##C++##
       clang_21
       ######
+      
+      ###Fortran###
+      pkgs-unstable.flang_22
+      ############# 
 
       pkgs-unstable.factor-lang
       pkgs-unstable.hare
