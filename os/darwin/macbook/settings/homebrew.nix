@@ -28,6 +28,7 @@
       "pixieditor"
       "raycast"
       "super-productivity"
+      "tablecruncher"
       "wezterm"
       "zen"
       "zed"
