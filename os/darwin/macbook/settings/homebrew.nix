@@ -6,7 +6,10 @@
     onActivation = {
       autoUpdate = true;
       upgrade = true;
-      #cleanup = "uninstall";
+      cleanup = "zap";
+      extraFlags = [
+        "--force"
+      ];
     };
 
     casks = [
