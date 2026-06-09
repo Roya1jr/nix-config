@@ -97,8 +97,8 @@ with pkgs;
       #########
 
       ##Odin##
-      odin
-      ols
+      pkgs-unstable.odin
+      pkgs-unstable.ols
       ########
 
       pkgs-unstable.php85
