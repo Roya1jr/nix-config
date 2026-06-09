@@ -15,6 +15,7 @@
       "audacity"
       "arduino-ide"
       "blender@lts"
+      "bruno"
       "dbeaver-community"
       "devtoys"
       "fontforge"
