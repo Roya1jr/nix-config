@@ -22,8 +22,8 @@ with pkgs;
       #######
 
       ##BQN##
-      pkgs.cbqn-replxx
-      pkgs.bqnlsp
+      cbqn-replxx
+      #pkgs.bqnlsp
       #######
 
       ###Erlang####
@@ -32,8 +32,8 @@ with pkgs;
 
       ###Fortran###
       pkgs-unstable.flang_22
-      ############# 
-      
+      #############
+
       ####Fourth###
       _4th
       #############
@@ -41,9 +41,7 @@ with pkgs;
       #####Haskel##
       pkgs-unstable.haskell.compiler.ghc914
       #############
-      
-        
-    
+
       ##GOLANG##
       pkgs-unstable.air
       pkgs-unstable.delve
@@ -60,7 +58,7 @@ with pkgs;
       janet
       pkgs-unstable.jpm
       #########
-      
+
       ##Jelly####
       pkgs-unstable.jelly
       #########
@@ -164,7 +162,7 @@ with pkgs;
       ##C++##
       clang_21
       ######
-      
+
       pkgs-unstable.factor-lang
       pkgs-unstable.hare
 
