@@ -6,7 +6,7 @@
     onActivation = {
       autoUpdate = true;
       upgrade = true;
-      clean = "uninstall";
+      cleanup = "uninstall";
     };
 
     casks = [
