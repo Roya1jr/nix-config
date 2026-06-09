@@ -6,6 +6,7 @@
     onActivation = {
       autoUpdate = true;
       upgrade = true;
+      cleanup = "zap";
     };
 
     casks = [
