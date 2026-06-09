@@ -95,8 +95,8 @@ with pkgs;
       #########
 
       ##Odin##
-      #pkgs-unstable.odin
-      #pkgs-unstable.ols
+      pkgs-unstable.odin
+      pkgs-unstable.ols
       ########
 
       pkgs-unstable.php85
