@@ -16,6 +16,7 @@ with pkgs;
     common = [
       # CLI Tools
       license-generator
+      chafa
       carapace
       fish
       rlwrap
