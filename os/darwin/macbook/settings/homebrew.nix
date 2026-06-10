@@ -20,6 +20,8 @@
       "arduino-ide"
       "blender@lts"
       "bruno"
+      "container"
+      "container-compose"
       "dbeaver-community"
       "devtoys"
       "fontforge"
