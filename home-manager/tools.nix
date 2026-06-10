@@ -27,6 +27,7 @@ with pkgs;
       pkgs-unstable.lazyjj
       pkgs-unstable.television
       pkgs-unstable.ollama
+      pkgs-unstable.zellij
       #####ZSH#####
       zsh
       zsh-autocomplete
