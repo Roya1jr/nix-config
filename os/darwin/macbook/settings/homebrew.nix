@@ -20,8 +20,7 @@
       "arduino-ide"
       "blender@lts"
       "bruno"
-      "container"
-      "container-compose"
+
       "dbeaver-community"
       "devtoys"
       "fontforge"
@@ -45,8 +44,10 @@
     ];
 
     brews = [
+      "container"
+      "container-compose"
       "opencode"
-      "pi-coding-agent"
+      "pi-coding-agent"  
     ];
 
     taps = [
