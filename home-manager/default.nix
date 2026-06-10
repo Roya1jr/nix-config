@@ -53,6 +53,7 @@ in
       ".config/tlrc/config.toml".source = ../dotfiles/tlrc/config.toml;
       ".config/jj/config.toml".source = ../dotfiles/jj/config.toml;
       ".config/git/config".source = ../dotfiles/git/config;
+      ".config/ghostty/config.ghostty".source = ../dotfiles/ghostty/config.ghostty;
       ".zshrc".source = ../dotfiles/.zshrc;
     };
   };
