@@ -16,7 +16,7 @@ with pkgs;
     common = [
       # CLI Tools
       license-generator
-      chafa
+      pkgs-unstable.chafa
       carapace
       fish
       rlwrap
@@ -28,7 +28,6 @@ with pkgs;
       pkgs-unstable.lazyjj
       pkgs-unstable.television
       pkgs-unstable.ollama
-      pkgs-unstable.viu
       pkgs-unstable.zellij
       #####ZSH#####
       zsh
