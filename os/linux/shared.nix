@@ -6,7 +6,6 @@
   services.printing.enable = true;
   services.openssh.enable = true;
   networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
   nix = {
