@@ -33,6 +33,7 @@
       "obsidian"
       "pixieditor"
       "raycast"
+      "rio"
       "super-productivity"
       "tablecruncher"
       "wezterm"
@@ -44,7 +45,6 @@
     ];
 
     brews = [
-      "rio-terminal"
       "container"
       "container-compose"
     ];
