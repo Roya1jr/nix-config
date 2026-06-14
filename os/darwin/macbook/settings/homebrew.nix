@@ -44,10 +44,9 @@
     ];
 
     brews = [
+      "rio-terminal"
       "container"
       "container-compose"
-      "opencode"
-      "pi-coding-agent"  
     ];
 
     taps = [
