@@ -1,4 +1,4 @@
-#theme = "gruvbox"
+theme = "gruvbox"
 
 [shell]
 program = "/etc/profiles/per-user/prince/bin/zsh"
