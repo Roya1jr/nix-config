@@ -23,6 +23,7 @@ with pkgs;
       tree
       pciutils
       inetutils
+      pkgs-unstable.chafa
       pkgs-unstable.devenv
       pkgs-unstable.jujutsu
       pkgs-unstable.lazyjj
