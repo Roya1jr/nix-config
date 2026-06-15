@@ -1,5 +1,8 @@
 theme = "gruvbox"
 
+[shell]
+program = "/etc/profiles/per-user/prince/bin/zsh"
+
 [editor]
 program = "/etc/profiles/per-user/prince/bin/hx"
 args = []
