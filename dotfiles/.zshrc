@@ -56,5 +56,6 @@ if [[ $- == *i* ]]; then
     alias grep="rg"
     alias cat="bat"
     alias ls="lsd --icon always"
+    alias ll="ls -l"
     command -v podman >/dev/null && alias docker="podman"
 fi
