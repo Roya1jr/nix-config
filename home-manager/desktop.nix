@@ -10,7 +10,6 @@
       #######Programming##########
 
       ###GUI###
-      ghostty
       wezterm
       vicinae
       #########

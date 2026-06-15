@@ -16,7 +16,7 @@ with pkgs;
     common = [
       # CLI Tools
       license-generator
-      pkgs-unstable.chafa
+      pkgs-unstable.libsixel
       carapace
       fish
       rlwrap

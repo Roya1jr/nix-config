@@ -23,7 +23,6 @@
       "dbeaver-community"
       "devtoys"
       "fontforge"
-      "ghostty"
       "google-chrome"
       "godot"
       "jdownloader"
