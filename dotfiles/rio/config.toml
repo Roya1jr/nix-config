@@ -1,0 +1,21 @@
+theme = "gruvbox"
+
+[editor]
+program = "/etc/profiles/per-user/prince/bin/hx"
+args = []
+
+[cursor]
+shape = 'block'
+blinking = true
+
+[fonts]
+size = 17
+family = "FantasqueSansM Nerd Font Mono"
+features = ["ss02", "ss03", "ss05", "ss19"]
+use-drawable-chars = true
+symbol-map = []
+disable-warnings-not-found = false
+additional-dirs = []
+
+[effects]
+trail-cursor = true

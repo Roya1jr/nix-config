@@ -53,6 +53,8 @@ in
       ".config/tlrc/config.toml".source = ../dotfiles/tlrc/config.toml;
       ".config/jj/config.toml".source = ../dotfiles/jj/config.toml;
       ".config/git/config".source = ../dotfiles/git/config;
+      ".config/rio/config.toml".source = ../dotfiles/rio/config.toml;
+      ".config/rio/themes/gruvbox.toml".source = ../dotfiles/rio/themes/gruvbox.toml;
       ".zshrc".source = ../dotfiles/.zshrc;
     };
   };
