@@ -28,6 +28,17 @@
         variant = "";
       };
     };
+    fail2ban.enable = true;
+    openssh = {
+      enable = true;
+      ports = [ 22 ];
+      settings = {
+        PasswordAuthentication = false;
+        UseDns = true;
+        X11Forwarding = false;
+        PermitRootLogin = "no";
+      };
+    };
     printing = {
       enable = true;
     };
