@@ -29,7 +29,7 @@
           "video"
           "render"
         ];
-        openssh.authorizedKeys.keyFiles =  [ ../../../dotfiles/key.pub ];
+        openssh.authorizedKeys.keyFiles =  [ ./key.pub ];
       };
     };
   };
