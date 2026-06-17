@@ -42,7 +42,7 @@ with pkgs;
       # Development Tools
       pkgs-unstable.sqlc
       pkgs-unstable.buf
-      pkgs-unstable.helix
+      helixmaster
       gdb
       gnumake
       git-filter-repo

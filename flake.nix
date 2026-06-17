@@ -25,10 +25,7 @@
       url = "sourcehut:~detegr/bqnlsp";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mesa-git = {
-      url = "github:Daaboulex/mesa-git-nix";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    helix.url = "github:helix-editor/helix/master";
     #########################Extras###########################
   };
 
