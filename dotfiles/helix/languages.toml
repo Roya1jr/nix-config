@@ -53,6 +53,12 @@ command = "templ"
 args = ["lsp"]
 
 [[language]]
+name = "c"
+formatter = { command = "clang-format" }
+auto-format = true
+
+
+[[language]]
 name = "go"
 auto-format = true
 language-servers = [ "gopls", "golangci-lint-lsp" ]
@@ -62,15 +68,6 @@ command = "golangci-lint-langserver"
 [language-server.golangci-lint-lsp.config]
 command = ["golangci-lint", "run", "--output.json.path", "stdout", "--show-stats=false", "--issues-exit-code=1"]
 
-
-[[language]]
-name = "unison"
-scope = "source.unison"
-file-types = ["u"]
-language-servers = ["unison-lsp"]
-[language-server.unison-lsp]
-command = "ncat"
-args = ["localhost", "5757"]
 
 [[language]]
 name = "python"
