@@ -26,7 +26,6 @@
         "org.musicbrainz.Picard"
         "net.pixieditor.PixiEditor"
         "net.nokyan.Resources"
-        "com.rioterm.Rio"
         "com.obsproject.Studio"
         "net.waterfox.waterfox"
         "app.zen_browser.zen"

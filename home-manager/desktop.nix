@@ -4,19 +4,11 @@
 
   home = {
     packages = with pkgs-unstable; [
-
-      #######Programming##########
       lmstudio
-      #######Programming##########
-
-      ###GUI###
+      rio
       wezterm
       vicinae
-      #########
-
-      ##Editors##
       zed-editor
-      ###########
     ];
 
     file = {
