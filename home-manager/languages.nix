@@ -161,6 +161,7 @@ with pkgs;
     linuxOnly = [
       ##C++##
       clang_21
+      clang-tools
       ######
 
       pkgs-unstable.factor-lang
