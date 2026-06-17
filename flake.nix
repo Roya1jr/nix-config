@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +24,10 @@
     bqn-lsp = {
       url = "sourcehut:~detegr/bqnlsp";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    mesa-git = {
+      url = "github:Daaboulex/mesa-git-nix";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     #########################Extras###########################
   };
@@ -46,13 +51,14 @@
         "aarch64-darwin"
       ];
       user = "prince";
-      externalOverlay = import ./overlays/pkgs.nix inputs;
+      customPackagesOverlay = import ./overlays/packages.nix inputs;
+      systemOverridesList = import ./overlays/overrides.nix inputs;
       mkPkgs =
         nixpkgsSource: system:
         import nixpkgsSource {
           inherit system;
           config.allowUnfree = true;
-          overlays = [ externalOverlay ];
+          overlays = [ customPackagesOverlay ] ++ systemOverridesList;
         };
       pkgsFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs system);
       pkgsUnstableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-unstable system);
@@ -65,6 +71,7 @@
         }:
 
         nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs user; };
           modules = [
             entrypoint
             inputs.nixpkgs.nixosModules.readOnlyPkgs
@@ -100,6 +107,7 @@
         }:
 
         darwin.lib.darwinSystem {
+          specialArgs = { inherit inputs user; };
           modules = [
             entrypoint
             {
