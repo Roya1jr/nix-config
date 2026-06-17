@@ -28,7 +28,7 @@
         variant = "";
       };
     };
-    fail2ban.enable = true;
+    #fail2ban.enable = true;
     openssh = {
       enable = true;
       ports = [ 22 ];
