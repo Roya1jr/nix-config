@@ -25,6 +25,7 @@
         "md.obsidian.Obsidian"
         "org.musicbrainz.Picard"
         "net.pixieditor.PixiEditor"
+        "io.github.dummerle.rare"
         "net.nokyan.Resources"
         "com.obsproject.Studio"
         "net.waterfox.waterfox"
