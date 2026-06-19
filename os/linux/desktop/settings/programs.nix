@@ -26,10 +26,10 @@
 
   ##########Environment###############
   environment = {
-    systemPackages = [
-      pkgs.home-manager
-      pkgs.kdePackages.partitionmanager
-      pkgs.pulseaudio
+    systemPackages = with pkgs; [
+      home-manager
+      kdePackages.partitionmanager
+      pulseaudio
     ];
     plasma6 = {
       excludePackages = with pkgs.kdePackages; [
