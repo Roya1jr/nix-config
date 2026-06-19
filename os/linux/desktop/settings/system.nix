@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
@@ -21,13 +20,13 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-      package = pkgs-unstable.mesa;
-      extraPackages = with pkgs-unstable; [
-        intel-media-driver # VA-API (iHD) userspace
-        vpl-gpu-rt # oneVPL (QSV) runtime
-        intel-compute-runtime # OpenCL (NEO) + Level Zero for Arc/Xe
+      package = pkgs.mesa;
+      extraPackages = with pkgs; [
+        intel-media-driver
+        vpl-gpu-rt
+        intel-compute-runtime
       ];
-      extraPackages32 = with pkgs-unstable.pkgsi686Linux; [
+      extraPackages32 = with pkgs.pkgsi686Linux; [
         intel-media-driver
         intel-vaapi-driver
       ];
