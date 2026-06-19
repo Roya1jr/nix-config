@@ -29,6 +29,7 @@
     systemPackages = [
       pkgs.home-manager
       pkgs.kdePackages.partitionmanager
+      pkgs.pulseaudio
     ];
     plasma6 = {
       excludePackages = with pkgs.kdePackages; [
