@@ -21,7 +21,6 @@
         "org.jdownloader.JDownloader"
         "eu.jumplink.Learn6502"
         "org.libreoffice.LibreOffice"
-        "net.lutris.Lutris"
         "io.github.RodZill4.Material-Maker"
         "io.mpv.Mpv"
         "md.obsidian.Obsidian"
