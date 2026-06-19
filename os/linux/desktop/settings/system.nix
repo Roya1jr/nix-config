@@ -28,9 +28,8 @@
         intel-compute-runtime # OpenCL (NEO) + Level Zero for Arc/Xe
       ];
       extraPackages32 = with pkgs-unstable; [
-        intel-media-driver # VA-API (iHD) userspace
-        vpl-gpu-rt # oneVPL (QSV) runtime
-        intel-compute-runtime # OpenCL (NEO) + Level Zero for Arc/Xe
+        intel-media-driver
+        intel-vaapi-driver
       ];
     };
 
