@@ -27,7 +27,7 @@
         vpl-gpu-rt # oneVPL (QSV) runtime
         intel-compute-runtime # OpenCL (NEO) + Level Zero for Arc/Xe
       ];
-      extraPackages32 = with pkgs-unstable; [
+      extraPackages32 = with pkgs-unstable.pkgsi686Linux; [
         intel-media-driver
         intel-vaapi-driver
       ];
