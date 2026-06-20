@@ -14,6 +14,7 @@ with pkgs-unstable;
     ];
     common = [
       hack-font
+      inter
       julia-mono
       noto-fonts
       redhat-official-fonts
