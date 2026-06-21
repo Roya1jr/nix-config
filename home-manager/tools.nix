@@ -18,7 +18,6 @@ with pkgs;
       carapace
       pkgs-unstable.chafa
       pkgs-unstable.devenv
-      fish
       inetutils
       pkgs-unstable.jujutsu
       pkgs-unstable.lazyjj

@@ -72,8 +72,8 @@ Modify configurations in:
 
 ## Tools Configured
 
-- Shell: Fish
-- Editor: Helix
+- Shell: ZSH
+- Editor: Helix (nightly)
 - Terminal: WezTerm
 - Prompt: Starship
 
