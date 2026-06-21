@@ -14,51 +14,54 @@ with pkgs;
       "aarch64-linux"
     ];
     common = [
-      # CLI Tools
-      license-generator
-      pkgs-unstable.libsixel
+      ######CLI Tools######
       carapace
-      fish
-      rlwrap
-      tree
-      pciutils
-      inetutils
       pkgs-unstable.chafa
       pkgs-unstable.devenv
+      fish
+      inetutils
       pkgs-unstable.jujutsu
       pkgs-unstable.lazyjj
-      pkgs-unstable.television
+      pkgs-unstable.libsixel
+      license-generator
+      rlwrap
       pkgs-unstable.ollama
+      pciutils
+      tree
+      pkgs-unstable.television
       pkgs-unstable.zellij
-      #####ZSH#####
+
+      ###ZSH###
       zsh
       zsh-autocomplete
+      ###
+
       ############
 
-      ## Desktop Tools
-
-      ##
-
-      # Development Tools
+      ######Development Tools#####
       pkgs-unstable.sqlc
       pkgs-unstable.buf
       helixmaster
-      gdb
-      gnumake
-      git-filter-repo
       ffmpeg_7-headless
-      # Podman and Container Tools
+      gdb
+      git-filter-repo
+      gnumake
+      pkgs-unstable.quicktype
+      tree-sitter
+
+      ###Podman###
       buildah
       podman
       podman-compose
       skopeo
+      ###
 
-      # Databases
+      ###Databases###
       sqld
       tigerbeetle
+      ###
 
-      # Other Dev Tools
-      tree-sitter
+      ############
 
     ];
     linuxOnly = [
