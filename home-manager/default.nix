@@ -54,6 +54,7 @@ in
       ".config/git/config".source = ../dotfiles/git/config;
       ".config/rio/config.toml".source = ../dotfiles/rio/config.toml;
       ".config/rio/themes/gruvbox.toml".source = ../dotfiles/rio/themes/gruvbox.toml;
+      ".config/zellij/config.kdl".source = ../dotfiles/zellij/config.kdl;
       ".zshrc".source = ../dotfiles/.zshrc;
     };
   };
