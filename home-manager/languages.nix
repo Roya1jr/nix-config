@@ -126,6 +126,7 @@ with pkgs;
 
       ##Lisp##
       sbcl_2_4_6
+      steel
       ########
 
       ###SQL####
