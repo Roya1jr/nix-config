@@ -53,6 +53,7 @@ with pkgs;
       podman
       podman-compose
       runc
+      crun
       skopeo
       ###
 
