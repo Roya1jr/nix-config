@@ -47,11 +47,12 @@ with pkgs;
       gnumake
       pkgs-unstable.quicktype
       tree-sitter
-
+     
       ###Podman###
       buildah
       podman
       podman-compose
+      runc
       skopeo
       ###
 
