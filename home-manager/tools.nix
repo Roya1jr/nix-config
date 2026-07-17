@@ -52,8 +52,6 @@ with pkgs;
       buildah
       podman
       podman-compose
-      runc
-      crun
       skopeo
       ###
 
@@ -66,6 +64,12 @@ with pkgs;
 
     ];
     linuxOnly = [
+      
+      ###Podman###
+      runc
+      crun
+      ###
+      
       fontfor
       traceroute
       openvpn3
