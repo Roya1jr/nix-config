@@ -167,7 +167,8 @@ with pkgs;
 
       pkgs-unstable.factor-lang
       pkgs-unstable.hare
-
+      pkgs-unstable.odin
+      pkgs-unstable.ols
     ];
   in
   common ++ lib.optionals isLinux linuxOnly
