@@ -45,6 +45,7 @@
     brews = [
       "container"
       "container-compose"
+      "odin"
     ];
 
     taps = [
