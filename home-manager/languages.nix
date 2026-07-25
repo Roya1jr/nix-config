@@ -161,8 +161,8 @@ with pkgs;
     ];
     linuxOnly = [
       ##C++##
-      llvmPackages_22.clang-unwrapped
-      llvmPackages_22.clang-tools
+      pkgs-unstable.llvmPackages_22.clang-unwrapped
+      pkgs-unstable.llvmPackages_22.clang-tools
       ######
 
       pkgs-unstable.factor-lang
