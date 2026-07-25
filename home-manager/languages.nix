@@ -161,7 +161,7 @@ with pkgs;
       llvmPackages_22.clang-tools
       ######
       ###Fortran###
-      llvmPackages_22.flang-unwrapped
+      llvmPackages_22.flang
       #############
 
       pkgs-unstable.factor-lang
