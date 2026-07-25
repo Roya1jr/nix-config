@@ -30,10 +30,6 @@ with pkgs;
       pkgs-unstable.erlang_28
       #############
 
-      ###Fortran###
-      pkgs-unstable.flang_22
-      #############
-
       ####Fourth###
       _4th
       #############
@@ -161,9 +157,12 @@ with pkgs;
     ];
     linuxOnly = [
       ##C++##
-      pkgs-unstable.llvmPackages_22.clang-unwrapped
-      pkgs-unstable.llvmPackages_22.clang-tools
+      llvmPackages_22.clang-unwrapped
+      llvmPackages_22.clang-tools
       ######
+      ###Fortran###
+      llvmPackages_22.flang-unwrapped
+      #############
 
       pkgs-unstable.factor-lang
       pkgs-unstable.hare
