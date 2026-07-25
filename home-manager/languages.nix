@@ -158,7 +158,7 @@ with pkgs;
     linuxOnly = [
       ##C++##
       llvmPackages_22.clang-unwrapped
-      llvmPackages_22.clang-tools
+      (lib.lowPrio llvmPackages_22.clang-tools)
       ######
       ###Fortran###
       llvmPackages_22.flang
