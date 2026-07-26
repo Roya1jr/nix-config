@@ -27,7 +27,7 @@ with pkgs;
       #######
 
       ###Erlang####
-      pkgs-unstable.erlang_28
+      beam28Packages.erlang
       #############
 
       ####Fourth###
