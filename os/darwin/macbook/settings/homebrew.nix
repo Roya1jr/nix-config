@@ -25,6 +25,7 @@
       "google-chrome"
       "godot"
       "jdownloader"
+      "keepingyouawake"
       "lm-studio"
       "material-maker"
       "mochi"
