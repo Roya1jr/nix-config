@@ -24,7 +24,6 @@ with pkgs;
       pkgs-unstable.libsixel
       license-generator
       rlwrap
-      pkgs-unstable.ollama
       pciutils
       tree
       pkgs-unstable.television
@@ -73,6 +72,9 @@ with pkgs;
       fontfor
       traceroute
       openvpn3
+      
+      pkgs-unstable.ollama
+      pkgs-unstable.opencode
     ];
   in
   common ++ lib.optionals isLinux linuxOnly

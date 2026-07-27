@@ -47,6 +47,8 @@
       "container"
       "container-compose"
       "odin"
+      "ollama"
+      "opencode"
     ];
 
     taps = [
