@@ -58,6 +58,7 @@ with pkgs;
       sqld
       tigerbeetle
       postgresql
+      libpq
       ###
 
       ############
