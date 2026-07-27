@@ -57,7 +57,7 @@ with pkgs;
       ###Databases###
       sqld
       tigerbeetle
-      postgresql
+      pkgs-unstable.postgresql
       libpq
       ###
 
