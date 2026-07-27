@@ -53,10 +53,11 @@ with pkgs;
       podman-compose
       skopeo
       ###
-
+  
       ###Databases###
       sqld
       tigerbeetle
+      postgresql_19
       ###
 
       ############
