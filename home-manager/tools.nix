@@ -57,7 +57,7 @@ with pkgs;
       ###Databases###
       sqld
       tigerbeetle
-      postgresql_19
+      postgresql
       ###
 
       ############
