@@ -17,6 +17,7 @@ path=(
 )
 export PATH
 export EDITOR="hx"
+export PI_CODING_AGENT_DIR="$HOME/.config/pi"
 
 # --- Interactive Settings ---
 if [[ $- == *i* ]]; then
