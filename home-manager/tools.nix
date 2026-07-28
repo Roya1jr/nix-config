@@ -76,7 +76,7 @@ with pkgs;
       openvpn3
       
       pkgs-unstable.ollama
-      pkgs-unstable.opencode
+      pkgs-unstable.pi-coding-agent
     ];
   in
   common ++ lib.optionals isLinux linuxOnly

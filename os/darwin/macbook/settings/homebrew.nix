@@ -48,7 +48,7 @@
       "container-compose"
       "odin"
       "ollama"
-      "opencode"
+      "pi-coding-agent"
     ];
 
     taps = [
