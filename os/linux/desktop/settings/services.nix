@@ -62,7 +62,7 @@
     };
     kavita = {
       enable = true;
-      tokenKeyFile = "/var/lib/kavita/token.key";
+      tokenKeyFile = "/var/kavita/token.key";
     };
 
   };
