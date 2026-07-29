@@ -82,8 +82,7 @@
       };
     };
 
-    # Allow the calibre-web service user access to your user's storage mount
-    users.groups.prince.members = [ "calibre-web" ];
+
 
   };
 
