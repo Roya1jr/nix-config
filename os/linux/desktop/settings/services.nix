@@ -64,6 +64,26 @@
       enable = true;
       tokenKeyFile = "/var/kavita/token.key";
     };
+    calibre-web = {
+      enable = true;
+
+      listen = {
+        ip = "0.0.0.0";
+      };
+
+      openFirewall = true;
+
+      options = {
+        # Path to the directory containing metadata.db
+        calibreLibrary = "/run/media/prince/Storage/Books";
+
+        enableBookUploading = true;
+        enableBookConversion = true;
+      };
+    };
+
+    # Allow the calibre-web service user access to your user's storage mount
+    users.groups.prince.members = [ "calibre-web" ];
 
   };
 
