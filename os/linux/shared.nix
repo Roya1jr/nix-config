@@ -15,7 +15,6 @@
     ];
   };
   virtualisation.containers.enable = true;
-  users.groups.users.members = [ "calibre-web" ];
   users = {
     mutableUsers = true;
     users = {
@@ -29,6 +28,7 @@
           "dialout"
           "video"
           "render"
+          "calibre-web"
         ];
         openssh.authorizedKeys.keyFiles =  [ ./key.pub ];
       };
