@@ -42,22 +42,22 @@
     ];
   };
 
-  fileSystems."/run/media/prince/Media" = {
+  fileSystems."/mnt/Media" = {
     device = "/dev/disk/by-uuid/78505E95505E5A48";
-    fsType = "ntfs";
-    options = ["nofail"]; 
+    fsType = "ntfs3";
+    options = [ "nofail" "uid=1000" "gid=100" "dmask=0002" "fmask=0002" ];
   };
 
-  fileSystems."/run/media/prince/Games" = {
+  fileSystems."/mnt/Games" = {
     device = "/dev/disk/by-uuid/2f72a1f1-3edc-4f20-b7bf-6e442a0b2083";
     fsType = "ext4";
-    options = ["nofail"]; 
+    options = ["nofail" "exec"];
   };
 
- fileSystems."/run/media/prince/Storage" = {
+ fileSystems."/mnt/Storage" = {
     device = "/dev/disk/by-uuid/b42f0437-663a-4edf-bd98-3f2f631048a5";
     fsType = "ext4";
-    options = ["nofail"]; 
+    options = ["nofail" "exec"];
  };
 
   swapDevices = [ ];
