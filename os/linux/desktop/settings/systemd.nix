@@ -2,6 +2,10 @@
 {
   systemd = {
     services = {
+      calibre-web.serviceConfig = {
+          ReadWritePaths = [ "/mnt/Storage/Books" ];
+          UMask = "0002";
+        };
       flatpak-managed-install = {
         serviceConfig = {
           Restart = "on-failure";
