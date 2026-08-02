@@ -75,7 +75,7 @@
 
       options = {
         # Path to the directory containing metadata.db
-        calibreLibrary = "/run/media/prince/Storage/Books";
+        calibreLibrary = "/mnt/Storage/Books";
 
         enableBookUploading = true;
         enableBookConversion = true;
