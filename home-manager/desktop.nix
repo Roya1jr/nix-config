@@ -4,6 +4,7 @@
 
   home = {
     packages = with pkgs-unstable; [
+      itch
       lmstudio
       rio
       wezterm
