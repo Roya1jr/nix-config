@@ -18,6 +18,7 @@
       "audacity"
       "arduino-ide"
       "blender@lts"
+      "block-goose"
       "bruno"
       "dbeaver-community"
       "devtoys"
