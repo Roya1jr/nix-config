@@ -1,5 +1,5 @@
 # --- Environment & Path ---
-typeset -U path  
+typeset -U path
 if [[ "$OSTYPE" == "darwin"* ]]; then
     [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -17,7 +17,7 @@ path=(
 )
 export PATH
 export EDITOR="hx"
-export PI_CODING_AGENT_DIR="$HOME/.config/pi"
+
 
 # --- Interactive Settings ---
 if [[ $- == *i* ]]; then
