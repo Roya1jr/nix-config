@@ -18,7 +18,7 @@
       "audacity"
       "arduino-ide"
       "blender@lts"
-      "block-goose"
+      "block-goose-cli"
       "bruno"
       "dbeaver-community"
       "devtoys"
