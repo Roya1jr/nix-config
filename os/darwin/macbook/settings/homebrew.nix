@@ -18,7 +18,6 @@
       "audacity"
       "arduino-ide"
       "blender@lts"
-      "block-goose-cli"
       "bruno"
       "dbeaver-community"
       "devtoys"
@@ -45,6 +44,7 @@
     ];
 
     brews = [
+      "block-goose-cli"
       "container"
       "container-compose"
       "odin"
