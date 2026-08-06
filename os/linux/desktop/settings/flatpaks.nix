@@ -9,7 +9,6 @@
       packages = [
         "io.anytype.anytype"
         "org.blender.Blender"
-        "com.usebottles.bottles"
         "com.calibre_ebook.calibre"
         "page.kramo.Cartridges"
         "io.github.thetumultuousunicornofdarkness.cpu-x"
