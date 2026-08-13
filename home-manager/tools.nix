@@ -38,6 +38,7 @@ with pkgs;
 
       ######Development Tools#####
       pkgs-unstable.sqlc
+      pkgs-unstable.sql-studio
       pkgs-unstable.buf
       helixmaster
       ffmpeg_7-headless
@@ -46,14 +47,14 @@ with pkgs;
       gnumake
       pkgs-unstable.quicktype
       tree-sitter
-     
+
       ###Podman###
       buildah
       podman
       podman-compose
       skopeo
       ###
-  
+
       ###Databases###
       sqld
       tigerbeetle
@@ -65,16 +66,16 @@ with pkgs;
 
     ];
     linuxOnly = [
-      
+
       ###Podman###
       runc
       crun
       ###
-      
+
       fontfor
       traceroute
       openvpn3
-      
+
       pkgs-unstable.ollama
       pkgs-unstable.pi-coding-agent
     ];
