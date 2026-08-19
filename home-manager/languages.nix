@@ -55,9 +55,23 @@ with pkgs;
       pkgs-unstable.jpm
       #########
 
+      ##J Language##
+      (j.overrideAttrs (oldAttrs: {
+        meta = oldAttrs.meta // {
+          broken = false;
+        };
+        postInstall = (oldAttrs.postInstall or "") + ''
+          if [ -f $out/bin/jconsole ]; then
+            mv $out/bin/jconsole $out/bin/j
+          fi
+        '';
+      }))
+      ##############
+
       ##Jelly####
       pkgs-unstable.jelly
       #########
+
       ##JS##
       pkgs-unstable.biome
       pkgs-unstable.bun
