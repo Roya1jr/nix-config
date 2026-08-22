@@ -41,6 +41,7 @@ with pkgs;
       pkgs-unstable.sql-studio
       pkgs-unstable.buf
       helixmaster
+      pkgs-unstable.just
       ffmpeg_7-headless
       gdb
       git-filter-repo
