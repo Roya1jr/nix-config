@@ -23,6 +23,7 @@ with pkgs;
       jq
       lsd
       lsof
+      melt
       openssh
       openssl
       parallel
