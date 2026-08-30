@@ -40,6 +40,7 @@ with pkgs;
       zoxide
     ];
     linuxOnly = [
+      appimage-run
       wl-clipboard
     ];
   in
