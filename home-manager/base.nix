@@ -15,6 +15,7 @@ with pkgs;
     common = [
       bat
       coreutils-full
+      fontconfig
       fastfetch
       fd
       git
