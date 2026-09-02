@@ -148,6 +148,12 @@ with pkgs;
       pkgs-unstable.tailwindcss-language-server
       ############
 
+
+      ##Typst#####
+      pkgs-unstable.tinymist
+      pkgs-unstable.typst
+      ###########
+      
       ##Uiua##
       (pkgs-unstable.uiua.override {
         windowSupport = true;
