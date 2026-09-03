@@ -7,6 +7,7 @@
       };
       enable = true;
       packages = [
+        "org.audacityteam.Audacity"
         "io.anytype.anytype"
         "org.blender.Blender"
         "com.calibre_ebook.calibre"

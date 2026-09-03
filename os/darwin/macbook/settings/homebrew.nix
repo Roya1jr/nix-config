@@ -14,6 +14,7 @@
 
     casks = [
       ########GUI#########
+      "audacity"
       "anytype"
       "audacity"
       "arduino-ide"
