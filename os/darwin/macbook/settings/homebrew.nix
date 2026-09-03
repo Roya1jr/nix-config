@@ -33,6 +33,7 @@
       "pixieditor"
       "raycast"
       "rio"
+      "sonic-pi"
       "super-productivity"
       "tablecruncher"
       "wezterm"
