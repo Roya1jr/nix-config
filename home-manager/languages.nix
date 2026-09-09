@@ -153,7 +153,7 @@ with pkgs;
       pkgs-unstable.tinymist
       pkgs-unstable.typst
       ###########
-      
+
       ##Uiua##
       (pkgs-unstable.uiua.override {
         windowSupport = true;
@@ -177,7 +177,7 @@ with pkgs;
     ];
     linuxOnly = [
       ##C++##
-      llvmPackages_22.clang-unwrapped
+      clang_22
       (lib.lowPrio llvmPackages_22.clang-tools)
       ######
       ###Fortran###
