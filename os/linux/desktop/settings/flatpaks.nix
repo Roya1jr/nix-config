@@ -28,6 +28,7 @@
         "org.musicbrainz.Picard"
         "net.pixieditor.PixiEditor"
         "net.nokyan.Resources"
+        "net.sonic_pi.SonicPi"
         "com.obsproject.Studio"
         "net.waterfox.waterfox"
         "app.zen_browser.zen"
