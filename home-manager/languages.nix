@@ -27,7 +27,7 @@ with pkgs;
       #######
 
       ###Erlang####
-      beam28Packages.erlang
+      beam29Packages.erlang
       #############
 
       ####Fourth###
@@ -35,13 +35,13 @@ with pkgs;
       #############
 
       #####Haskel##
-      pkgs-unstable.haskell.compiler.ghc914
+      haskell.compiler.ghc914
       #############
 
       ##GOLANG##
+      go_1_27
       pkgs-unstable.air
       pkgs-unstable.delve
-      pkgs-unstable.go_1_26
       pkgs-unstable.golangci-lint
       pkgs-unstable.golangci-lint-langserver
       pkgs-unstable.gopls
@@ -73,11 +73,11 @@ with pkgs;
       #########
 
       ##JS##
+      nodejs_24
       pkgs-unstable.biome
       pkgs-unstable.bun
       pkgs-unstable.pnpm
       pkgs-unstable.emmet-language-server
-      nodejs_24
       pkgs-unstable.typescript-language-server
       pkgs-unstable.typescript
       pkgs-unstable.vscode-langservers-extracted
@@ -89,7 +89,6 @@ with pkgs;
       luajit
       pkgs-unstable.luarocks
       pkgs-unstable.lua-language-server
-
       #######
 
       ##LSP##
@@ -104,12 +103,7 @@ with pkgs;
       opam
       #########
 
-      ##Odin##
-      #pkgs-unstable.odin
-      #pkgs-unstable.ols
-      ########
-
-      pkgs-unstable.php85
+      php85
       pkgs-unstable.pkl
       pkgs-unstable.protobuf
 
@@ -148,7 +142,6 @@ with pkgs;
       pkgs-unstable.tailwindcss-language-server
       ############
 
-
       ##Typst#####
       pkgs-unstable.tinymist
       pkgs-unstable.typst
@@ -167,12 +160,11 @@ with pkgs;
       ########
 
       ###Zig##
-      pkgs-unstable.zig_0_16
+      zig_0_16
       pkgs-unstable.zls
       #######
 
-      pkgs-unstable.zulu25
-      pkgs-unstable.racket
+      zulu25
 
     ];
     linuxOnly = [
