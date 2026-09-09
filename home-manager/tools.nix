@@ -13,21 +13,21 @@ with pkgs;
       "x86_64-linux"
       "aarch64-linux"
     ];
-    common = [
+    common = with pkgs-unstable; [
       ######CLI Tools######
       carapace
-      pkgs-unstable.chafa
-      pkgs-unstable.devenv
+      chafa
+      devenv
       inetutils
-      pkgs-unstable.jujutsu
-      pkgs-unstable.lazyjj
-      pkgs-unstable.libsixel
+      jujutsu
+      lazyjj
+      libsixel
       license-generator
       rlwrap
       pciutils
       tree
-      pkgs-unstable.television
-      pkgs-unstable.zellij
+      television
+      zellij
 
       ###ZSH###
       zsh
@@ -37,16 +37,16 @@ with pkgs;
       ############
 
       ######Development Tools#####
-      pkgs-unstable.sqlc
-      pkgs-unstable.sql-studio
-      pkgs-unstable.buf
+      sqlc
+      sql-studio
+      buf
       helixmaster
-      pkgs-unstable.just
+      just
       ffmpeg_7-headless
       gdb
       git-filter-repo
       gnumake
-      pkgs-unstable.quicktype
+      quicktype
       tree-sitter
 
       ###Podman###
@@ -59,14 +59,14 @@ with pkgs;
       ###Databases###
       sqld
       tigerbeetle
-      pkgs-unstable.postgresql
+      postgresql
       libpq
       ###
 
       ############
 
     ];
-    linuxOnly = [
+    linuxOnly = with pkgs-unstable; [
 
       ###Podman###
       runc
@@ -77,8 +77,8 @@ with pkgs;
       traceroute
       openvpn3
 
-      pkgs-unstable.ollama
-      pkgs-unstable.pi-coding-agent
+      ollama
+      pi-coding-agent
     ];
   in
   common ++ lib.optionals isLinux linuxOnly
