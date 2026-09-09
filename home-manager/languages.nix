@@ -178,10 +178,10 @@ with pkgs;
     linuxOnly = [
       ##C++##
       clang_22
-      (lib.lowPrio llvmPackages_22.clang-tools)
+      (lib.lowPrio clang-tools)
       ######
       ###Fortran###
-      llvmPackages_22.flang
+      flang_22
       #############
 
       pkgs-unstable.factor-lang
