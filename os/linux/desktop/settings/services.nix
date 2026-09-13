@@ -1,5 +1,6 @@
 {
-  ...
+  ...,
+  pkgs-unstable,
 }:
 
 {
@@ -50,6 +51,7 @@
     };
     #3rd Party
     jellyfin = {
+      package = pkgs-unstable.jellyfin;
       enable = true;
       openFirewall = true;
       user = "prince";
