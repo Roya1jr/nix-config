@@ -27,6 +27,7 @@
       "godot"
       "jdownloader"
       "keepingyouawake"
+      "knockknock"
       "lm-studio"
       "material-maker"
       "mochi"
