@@ -79,6 +79,7 @@ with pkgs;
 
       ollama
       pi-coding-agent
+      qemu
     ];
   in
   common ++ lib.optionals isLinux linuxOnly
