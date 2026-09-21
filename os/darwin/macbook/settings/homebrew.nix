@@ -38,6 +38,7 @@
       "sonic-pi"
       "super-productivity"
       "tablecruncher"
+      "utm"
       "wezterm"
       "zen"
       "zed"
