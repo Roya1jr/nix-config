@@ -10,7 +10,6 @@
         "org.audacityteam.Audacity"
         "io.anytype.anytype"
         "org.blender.Blender"
-        "org.gnome.Boxes"
         "com.calibre_ebook.calibre"
         "page.kramo.Cartridges"
         "io.github.thetumultuousunicornofdarkness.cpu-x"
@@ -31,6 +30,7 @@
         "net.nokyan.Resources"
         "net.sonic_pi.SonicPi"
         "com.obsproject.Studio"
+        "org.virt_manager.virt-manager"
         "net.waterfox.waterfox"
         "app.zen_browser.zen"
       ];
