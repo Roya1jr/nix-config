@@ -10,6 +10,7 @@
         "org.audacityteam.Audacity"
         "io.anytype.anytype"
         "org.blender.Blender"
+        "org.gnome.Boxes"
         "com.calibre_ebook.calibre"
         "page.kramo.Cartridges"
         "io.github.thetumultuousunicornofdarkness.cpu-x"
