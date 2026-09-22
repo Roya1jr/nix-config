@@ -2,3 +2,7 @@
 [user]
 name = "Prince Junior Mguni"
 email = "prince.mguni@outlook.com"
+
+[ui]
+pager = "delta"
+diff-formatter = ":git"

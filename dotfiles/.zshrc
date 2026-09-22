@@ -58,5 +58,6 @@ if [[ $- == *i* ]]; then
     alias cat="bat"
     alias ls="lsd --icon always"
     alias ll="ls -l"
+    alias lj="lazyjj"
     command -v podman >/dev/null && alias docker="podman"
 fi

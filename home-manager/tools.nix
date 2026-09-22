@@ -18,6 +18,7 @@ with pkgs;
       carapace
       chafa
       devenv
+      delta
       inetutils
       jujutsu
       lazyjj
