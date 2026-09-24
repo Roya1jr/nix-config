@@ -47,11 +47,9 @@
     ];
 
     brews = [
-      "block-goose-cli"
       "container"
       "container-compose"
       "odin"
-      "ollama"
       "pi-coding-agent"
     ];
 

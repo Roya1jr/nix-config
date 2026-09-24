@@ -77,8 +77,6 @@ with pkgs;
       fontfor
       traceroute
       openvpn3
-
-      ollama
       pi-coding-agent
       qemu
     ];
