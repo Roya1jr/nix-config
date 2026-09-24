@@ -62,10 +62,6 @@
       user = "prince";
       host = "0.0.0.0";
     };
-    kavita = {
-      enable = true;
-      tokenKeyFile = "/var/kavita/token.key";
-    };
     calibre-web = {
       enable = true;
 
