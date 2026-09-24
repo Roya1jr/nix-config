@@ -33,7 +33,6 @@
       "material-maker"
       "mochi"
       "obsidian"
-      "open-webui"
       "pixieditor"
       "raycast"
       "rio"
