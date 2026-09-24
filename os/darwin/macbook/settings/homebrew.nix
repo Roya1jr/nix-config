@@ -33,6 +33,7 @@
       "material-maker"
       "mochi"
       "obsidian"
+      "open-webui"
       "pixieditor"
       "raycast"
       "rio"
@@ -50,6 +51,7 @@
       "container"
       "container-compose"
       "odin"
+      "ollama"
       "pi-coding-agent"
     ];
 
