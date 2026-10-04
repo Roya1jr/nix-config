@@ -62,6 +62,13 @@
       user = "prince";
       host = "0.0.0.0";
     };
+    sunshine = {
+      package = pkgs-unstable.sunshine;
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
     calibre-web = {
       enable = true;
 
