@@ -20,5 +20,11 @@ symbol-map = []
 disable-warnings-not-found = false
 additional-dirs = []
 
+[window]
+mode = "Maximized"
+opacity = 0.6
+decorations = "transparent"
+blur = "macos-glass-regular"
+
 [effects]
 trail-cursor = true
