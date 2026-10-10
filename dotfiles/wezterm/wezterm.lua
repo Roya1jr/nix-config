@@ -25,7 +25,7 @@ end
 
 -- For example, changing the color scheme:
 config.color_scheme = 'Gruvbox dark, hard (base16)'
-config.font = wezterm.font('JuliaMono', { stretch = 'Normal' })
+config.font = wezterm.font('FantasqueSansM Nerd Font Mono', { stretch = 'Normal' })
 config.font_size = 14
 config.unicode_version = 14
 -- Use cursive and ligatures
