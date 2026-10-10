@@ -26,6 +26,7 @@
       "devtoys"
       "google-chrome"
       "godot"
+      "ghostty"
       "jdownloader"
       "knockknock"
       "lm-studio"
