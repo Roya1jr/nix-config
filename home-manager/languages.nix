@@ -117,7 +117,7 @@ with pkgs;
 
       ##Nix##
       nil
-      nixfmt-rfc-style
+      nixfmt
       nixd
       #######
 

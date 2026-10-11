@@ -1,13 +1,14 @@
-{ pkgs-stab, ... }:
+{ pkgs, ... }:
 
 {
 
   home = {
-    packages = with pkgs-stab; [
+    packages = with pkgs; [
+      ghostty
       itch
       rio
-      wezterm
       vicinae
+      wezterm
       zed-editor
     ];
 
