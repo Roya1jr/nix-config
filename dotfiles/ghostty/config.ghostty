@@ -1,0 +1,14 @@
+#Font
+font-family = "FantasqueSansM Nerd Font Mono"
+font-size = 18
+
+
+#Cursor
+shell-integration-features = no-cursor
+cursor-style = block_hollow
+cursor-style-blink = false
+cursor-click-to-move = true
+
+#Style
+background-blur = true
+custom-shader = shaders/cursor_sweep.glsl
