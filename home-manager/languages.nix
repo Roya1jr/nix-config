@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   system,
   lib,
   ...
@@ -40,19 +39,19 @@ with pkgs;
 
       ##GOLANG##
       go_1_27
-      pkgs-unstable.air
-      pkgs-unstable.delve
-      pkgs-unstable.golangci-lint
-      pkgs-unstable.golangci-lint-langserver
-      pkgs-unstable.gopls
-      pkgs-unstable.gotools
-      pkgs-unstable.templ
-      pkgs-unstable.pkgsite
+      air
+      delve
+      golangci-lint
+      golangci-lint-langserver
+      gopls
+      gotools
+      templ
+      pkgsite
       ##########
 
       ##Janet##
       janet
-      pkgs-unstable.jpm
+      jpm
       #########
 
       ##J Language##
@@ -69,33 +68,33 @@ with pkgs;
       ##############
 
       ##Jelly####
-      pkgs-unstable.jelly
+      jelly
       #########
 
       ##JS##
       nodejs_24
-      pkgs-unstable.biome
-      pkgs-unstable.bun
-      pkgs-unstable.pnpm
-      pkgs-unstable.emmet-language-server
-      pkgs-unstable.typescript-language-server
-      pkgs-unstable.typescript
-      pkgs-unstable.vscode-langservers-extracted
+      biome
+      bun
+      pnpm
+      emmet-language-server
+      typescript-language-server
+      typescript
+      vscode-langservers-extracted
       ######
 
-      pkgs-unstable.literate
+      literate
 
       ##Lua##
       luajit
-      pkgs-unstable.luarocks
-      pkgs-unstable.lua-language-server
+      luarocks
+      lua-language-server
       #######
 
       ##LSP##
-      pkgs-unstable.docker-language-server
-      pkgs-unstable.yaml-language-server
-      pkgs-unstable.taplo
-      pkgs-unstable.markdown-oxide
+      docker-language-server
+      yaml-language-server
+      taplo
+      markdown-oxide
       #######
 
       ##Ocaml##
@@ -104,22 +103,22 @@ with pkgs;
       #########
 
       php85
-      pkgs-unstable.pkl
-      pkgs-unstable.protobuf
+      pkl
+      protobuf
 
       ##Python##
       python314
-      pkgs-unstable.uv
-      pkgs-unstable.pyright
-      pkgs-unstable.ruff
+      uv
+      pyright
+      ruff
       ##########
 
       mercury
 
       ##Nix##
-      pkgs-unstable.nil
-      pkgs-unstable.nixfmt-rfc-style
-      pkgs-unstable.nixd
+      nil
+      nixfmt-rfc-style
+      nixd
       #######
 
       rakudo
@@ -138,17 +137,17 @@ with pkgs;
       ##########
 
       ##Tailwind##
-      pkgs-unstable.tailwindcss_4
-      pkgs-unstable.tailwindcss-language-server
+      tailwindcss_4
+      tailwindcss-language-server
       ############
 
       ##Typst#####
-      pkgs-unstable.tinymist
-      pkgs-unstable.typst
+      tinymist
+      typst
       ###########
 
       ##Uiua##
-      (pkgs-unstable.uiua.override {
+      (uiua.override {
         windowSupport = true;
         audioSupport = true;
         webcamSupport = true;
@@ -156,12 +155,12 @@ with pkgs;
       ########
 
       ##Wasm##
-      pkgs-unstable.wasmtime
+      wasmtime
       ########
 
       ###Zig##
       zig_0_16
-      pkgs-unstable.zls
+      zls
       #######
 
       zulu25
@@ -176,10 +175,10 @@ with pkgs;
       flang_22
       #############
 
-      pkgs-unstable.factor-lang
-      pkgs-unstable.hare
-      pkgs-unstable.odin
-      pkgs-unstable.ols
+      factor-lang
+      hare
+      odin
+      ols
     ];
   in
   common ++ lib.optionals isLinux linuxOnly

@@ -1,9 +1,9 @@
-{ pkgs-unstable, ... }:
+{ pkgs-stab, ... }:
 
 {
 
   home = {
-    packages = with pkgs-unstable; [
+    packages = with pkgs-stab; [
       itch
       rio
       wezterm

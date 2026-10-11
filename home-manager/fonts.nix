@@ -1,11 +1,11 @@
 {
-  pkgs-unstable,
+  pkgs,
   system,
   lib,
   ...
 }:
 
-with pkgs-unstable;
+with pkgs;
 (
   let
     isLinux = builtins.elem system [

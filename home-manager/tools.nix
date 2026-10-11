@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   system,
   lib,
   ...
@@ -13,7 +12,7 @@ with pkgs;
       "x86_64-linux"
       "aarch64-linux"
     ];
-    common = with pkgs-unstable; [
+    common = with pkgs; [
       ######CLI Tools######
       carapace
       chafa
@@ -67,7 +66,7 @@ with pkgs;
       ############
 
     ];
-    linuxOnly = with pkgs-unstable; [
+    linuxOnly = with pkgs; [
 
       ###Podman###
       runc

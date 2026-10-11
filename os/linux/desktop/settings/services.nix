@@ -1,7 +1,4 @@
-{
-  pkgs-unstable,
-  ...
-}:
+{pkgs, ...}:
 
 {
   services = {
@@ -51,7 +48,7 @@
     };
     #3rd Party
     jellyfin = {
-      package = pkgs-unstable.jellyfin;
+      package = pkgs.jellyfin;
       enable = true;
       openFirewall = true;
       user = "prince";
@@ -63,7 +60,7 @@
       host = "0.0.0.0";
     };
     sunshine = {
-      package = pkgs-unstable.sunshine;
+      package = pkgs.sunshine;
       enable = true;
       autoStart = true;
       capSysAdmin = true;

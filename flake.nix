@@ -2,8 +2,8 @@
   description = "Prince nix config v2";
 
   inputs = {
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -33,7 +33,7 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
+      nixpkgs-stable,
       nixos-wsl,
       nixos-hardware,
       nix-flatpak,
@@ -58,7 +58,7 @@
           overlays = [ customPackagesOverlay ] ++ systemOverridesList;
         };
       pkgsFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs system);
-      pkgsUnstableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-unstable system);
+      pkgsUnstableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-stable system);
 
       # helper for NixOS system, uses the 'user' variable from the let-binding
       nixosSystemForUser =
@@ -76,7 +76,7 @@
               nixpkgs.pkgs = pkgsFor.${arch};
               _module.args = {
                 inherit inputs user;
-                pkgs-unstable = pkgsUnstableFor.${arch};
+                pkgs-stable = pkgsUnstableFor.${arch};
               };
             }
             nix-flatpak.nixosModules.nix-flatpak
@@ -88,7 +88,7 @@
                 useUserPackages = true;
                 extraSpecialArgs = {
                   flake-inputs = inputs;
-                  pkgs-unstable = pkgsUnstableFor.${arch};
+                  pkgs-stable = pkgsUnstableFor.${arch};
                   system = arch;
                 };
               };
@@ -116,7 +116,7 @@
               nixpkgs.pkgs = pkgsFor.${arch};
               _module.args = {
                 inherit inputs user;
-                pkgs-unstable = pkgsUnstableFor.${arch};
+                pkgs-stable = pkgsUnstableFor.${arch};
               };
             }
             home-manager.darwinModules.home-manager
@@ -127,7 +127,7 @@
                 useUserPackages = true;
                 extraSpecialArgs = {
                   flake-inputs = inputs;
-                  pkgs-unstable = pkgsUnstableFor.${arch};
+                  pkgs-stable = pkgsUnstableFor.${arch};
                   system = arch;
                 };
               };

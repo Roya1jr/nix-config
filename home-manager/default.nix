@@ -1,6 +1,6 @@
 {
   pkgs,
-  pkgs-unstable,
+  pkgs-stable,
   lib,
   system,
   ...
@@ -10,7 +10,7 @@ let
   basePackages = import ./base.nix {
     inherit
       pkgs
-      pkgs-unstable
+      pkgs-stable
       lib
       system
       ;
@@ -19,7 +19,7 @@ let
     inherit
       pkgs
       lib
-      pkgs-unstable
+      pkgs-stable
       system
       ;
   };
@@ -27,7 +27,7 @@ let
     inherit
       pkgs
       lib
-      pkgs-unstable
+      pkgs-stable
       system
       ;
   };
@@ -35,7 +35,7 @@ let
     inherit
       pkgs
       lib
-      pkgs-unstable
+      pkgs-stable
       system
       ;
   };
