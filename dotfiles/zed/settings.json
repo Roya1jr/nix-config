@@ -1,0 +1,138 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "diff_view_style": "unified",
+  "inlay_hints": {
+    "enabled": true,
+  },
+  "vim": {
+    "toggle_relative_line_numbers": true,
+  },
+  "relative_line_numbers": "wrapped",
+  "disable_ai": true,
+  "cli_default_open_behavior": "existing_window",
+  "agent_servers": {
+    "opencode": {
+      "type": "registry",
+    },
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "language_models": {
+    "lmstudio": {
+      "api_url": "http://localhost:1234/api/v0",
+    },
+  },
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "templ": "html",
+        },
+        "experimental": {
+          "classRegex": ["class=\"([^\"]*)\""],
+        },
+      },
+    },
+  },
+  "languages": {
+    "Uiua": {
+      "inlay_hints": {
+        "show_background": true,
+        "enabled": true,
+      },
+      "indent_guides": {
+        "enabled": true,
+      },
+    },
+    "Templ": {
+      "format_on_save": "on",
+      "language_servers": [
+        "templ",
+        "tailwindcss-language-server",
+        "vscode-html-language-server",
+        "emmet-language-server",
+        "...",
+      ],
+    },
+  },
+  "preferred_line_length": 80,
+  "show_wrap_guides": true,
+  "show_edit_predictions": false,
+  "edit_predictions": {
+    "provider": "zed",
+  },
+  "icon_theme": {
+    "mode": "light",
+    "light": "VSCode Icons for Zed (Dark)",
+    "dark": "VSCode Icons for Zed (Dark)",
+  },
+  "helix_mode": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "vim_mode": false,
+  "base_keymap": "VSCode",
+  "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
+    "inline_assistant_model": {
+      "provider": "lmstudio",
+      "model": "google_gemma-4-e2b-it",
+      "enable_thinking": false,
+    },
+    "default_model": {
+      "provider": "lmstudio",
+      "model": "google_gemma-4-e2b-it",
+    },
+    "enable_feedback": false,
+    "dock": "right",
+    "enabled": true,
+    "button": true,
+    "model_parameters": [],
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "file_types": {
+    "json": ["flake.lock"],
+    "dotenv": [".env*","*.env"],
+  },
+  "use_on_type_format": true,
+  "indent_guides": {
+    "enabled": false,
+  },
+  "soft_wrap": "editor_width",
+  "terminal": {
+    "font_size": 16.0,
+    "font_family": "FantasqueSansM Nerd Font Mono",
+  },
+  "buffer_font_family": "MonaspiceRn Nerd Font",
+  "ui_font_size": 16,
+  "buffer_font_size": 18.0,
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Material Dark Hard",
+  },
+}
