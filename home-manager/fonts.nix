@@ -20,8 +20,11 @@ with pkgs;
       redhat-official-fonts
       uiua386
       bqn386
+      googlesans-code
       nerd-fonts.fira-code
       nerd-fonts.fantasque-sans-mono
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.hack
     ];
     linuxOnly = [
 
