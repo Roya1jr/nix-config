@@ -1,6 +1,10 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 command_timeout = 10000
+
+[battery]
+disabled = false
+
 [os]
 format = "[$symbol]($style) "
 style = "bold white"
@@ -23,7 +27,7 @@ min_time = 100000
 format = "underwent [$duration](bold yellow)"
 
 [directory]
-format = "[$path]($style) " 
+format = "[$path]($style) "
 truncation_length = 1000
 truncation_symbol = "…/"
 
@@ -57,7 +61,7 @@ threshold = 3
 [time]
 disabled = false
 format = '[\[ $time \]]($style) '
-time_format = "%v %R"
+time_format = "%d-%b-%Y %R"
 use_12hr = false
 
 [username]

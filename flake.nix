@@ -58,7 +58,7 @@
           overlays = [ customPackagesOverlay ] ++ systemOverridesList;
         };
       pkgsFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs system);
-      pkgsUnstableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-stable system);
+      pkgsStableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-stable system);
 
       # helper for NixOS system, uses the 'user' variable from the let-binding
       nixosSystemForUser =
@@ -76,7 +76,7 @@
               nixpkgs.pkgs = pkgsFor.${arch};
               _module.args = {
                 inherit inputs user;
-                pkgs-stable = pkgsUnstableFor.${arch};
+                pkgs-stable = pkgsStableFor.${arch};
               };
             }
             nix-flatpak.nixosModules.nix-flatpak
@@ -88,7 +88,7 @@
                 useUserPackages = true;
                 extraSpecialArgs = {
                   flake-inputs = inputs;
-                  pkgs-stable = pkgsUnstableFor.${arch};
+                  pkgs-stable = pkgsStableFor.${arch};
                   system = arch;
                 };
               };
@@ -116,7 +116,7 @@
               nixpkgs.pkgs = pkgsFor.${arch};
               _module.args = {
                 inherit inputs user;
-                pkgs-stable = pkgsUnstableFor.${arch};
+                pkgs-stable = pkgsStableFor.${arch};
               };
             }
             home-manager.darwinModules.home-manager
@@ -127,7 +127,7 @@
                 useUserPackages = true;
                 extraSpecialArgs = {
                   flake-inputs = inputs;
-                  pkgs-stable = pkgsUnstableFor.${arch};
+                  pkgs-stable = pkgsStableFor.${arch};
                   system = arch;
                 };
               };
