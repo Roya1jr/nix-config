@@ -48,7 +48,7 @@ format = '[$symbol \[$name\]]($style) '
 [shell]
 zsh_indicator = "%_"
 unknown_indicator = "? "
-disabled = false
+disabled = true
 
 [shlvl]
 disabled = true
