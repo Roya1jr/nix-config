@@ -28,6 +28,7 @@ with pkgs;
       monaspace
       monaspace-script-nerd
       nerd-fonts.victor-mono
+      maple-mono.NF
     ];
     linuxOnly = [
 
