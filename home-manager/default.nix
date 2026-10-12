@@ -50,7 +50,6 @@ in
       ".config/helix/config.toml".source = ../dotfiles/helix/config.toml;
       ".config/helix/helix.scm".source = ../dotfiles/helix/helix.scm;
       ".config/helix/init.scm".source = ../dotfiles/helix/init.scm;
-      ".config/wezterm/wezterm.lua".source = ../dotfiles/wezterm/wezterm.lua;
       ".config/tlrc/config.toml".source = ../dotfiles/tlrc/config.toml;
       ".config/jj/config.toml".source = ../dotfiles/jj/config.toml;
       ".config/git/config".source = ../dotfiles/git/config;

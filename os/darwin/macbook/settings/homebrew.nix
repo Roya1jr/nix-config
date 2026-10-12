@@ -42,7 +42,6 @@
       "utm"
       "unsloth"
       "vorssaint"
-      "wezterm"
       "zen"
       "zed"
       ####################

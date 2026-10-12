@@ -8,7 +8,6 @@
       itch
       rio
       vicinae
-      wezterm
       zed-editor
     ];
 
