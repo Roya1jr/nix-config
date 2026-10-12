@@ -14,7 +14,7 @@ disabled = false
 [os.symbols]
 Windows = "󰍲 "
 Macos = " "
-Linux = "󱄅 "
+
 
 
 # Replace the '❯' symbol in the prompt with '➜'
