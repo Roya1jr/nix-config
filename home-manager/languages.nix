@@ -16,7 +16,7 @@ with pkgs;
       ##C++##
       pkg-config
       cmake
-      llvmPackages_23.lldb
+      llvmPackages_21.lldb
       raylib
       #######
 
@@ -168,11 +168,11 @@ with pkgs;
     ];
     linuxOnly = [
       ##C++##
-      llvmPackages_23.clang
-      llvmPackages_23.clang-tools
+      llvmPackages_21.clang
+      llvmPackages_21.clang-tools
       ######
       ###Fortran###
-      llvmPackages_23.flang
+      llvmPackages_21.flang
       #############
 
       factor-lang
