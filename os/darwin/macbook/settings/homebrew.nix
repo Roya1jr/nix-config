@@ -14,6 +14,7 @@
 
     casks = [
       ########GUI#########
+      "anydesk"
       "audacity"
       "anytype"
       "audacity"

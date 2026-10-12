@@ -26,6 +26,7 @@ with pkgs;
       nerd-fonts.jetbrains-mono
       nerd-fonts.hack
       monaspace
+      monaspace-script-nerd
       nerd-fonts.victor-mono
     ];
     linuxOnly = [

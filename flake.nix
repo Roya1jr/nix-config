@@ -9,7 +9,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,14 +18,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    #########################Extras###########################
+
+    ######################### Extras ###########################
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     bqn-lsp = {
       url = "sourcehut:~detegr/bqnlsp";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helix.url = "github:helix-editor/helix/master";
-    #########################Extras###########################
+    monaspace-script = {
+      url = "github:Roya1jr/monaspace-scripted";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ######################### Extras ###########################
   };
 
   outputs =
@@ -35,128 +39,116 @@
       nixpkgs,
       nixpkgs-stable,
       nixos-wsl,
-      nixos-hardware,
       nix-flatpak,
-      bqn-lsp,
       darwin,
       home-manager,
       ...
     }@inputs:
     let
+      inherit (nixpkgs) lib;
+
+      user = "prince";
       systems = [
         "x86_64-linux"
         "aarch64-darwin"
       ];
-      user = "prince";
+      forAllSystems = lib.genAttrs systems;
+
+      ######################### Package sets ###########################
       customPackagesOverlay = import ./overlays/packages.nix inputs;
       systemOverridesList = import ./overlays/overrides.nix inputs;
+
+      # Darwin-only: stub out inetutils
+      darwinOverlay = final: prev: {
+        inetutils = prev.runCommand "stub-inetutils" { } "mkdir -p $out/bin";
+      };
+
       mkPkgs =
         nixpkgsSource: system:
         import nixpkgsSource {
           inherit system;
           config.allowUnfree = true;
-          overlays = [ customPackagesOverlay ] ++ systemOverridesList;
+          overlays = [
+            customPackagesOverlay
+          ]
+          ++ systemOverridesList
+          ++ lib.optional (lib.hasSuffix "-darwin" system) darwinOverlay;
         };
-      pkgsFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs system);
-      pkgsStableFor = nixpkgs.lib.genAttrs systems (system: mkPkgs nixpkgs-stable system);
 
-      # helper for NixOS system, uses the 'user' variable from the let-binding
-      nixosSystemForUser =
+      pkgsFor = forAllSystems (mkPkgs nixpkgs);
+      pkgsStableFor = forAllSystems (mkPkgs nixpkgs-stable);
+
+      ######################### Shared module pieces ###########################
+      # One place for everything NixOS and nix-darwin have in common.
+      mkSpecialArgs = system: {
+        inherit inputs user;
+        pkgs-stable = pkgsStableFor.${system};
+      };
+
+      mkCommonModule = system: {
+        nixpkgs.pkgs = pkgsFor.${system};
+        nix.settings.trusted-users = [ user ];
+        home-manager = {
+          users.${user} = import ./home-manager;
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = {
+            flake-inputs = inputs;
+            pkgs-stable = pkgsStableFor.${system};
+            inherit system;
+          };
+        };
+      };
+
+      ######################### System builders ###########################
+      mkNixos =
         {
-          arch ? "x86_64-linux",
-          entrypoint,
+          system ? "x86_64-linux",
+          modules,
         }:
-
-        nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs user; };
-          modules = [
-            entrypoint
-            inputs.nixpkgs.nixosModules.readOnlyPkgs
-            {
-              nixpkgs.pkgs = pkgsFor.${arch};
-              _module.args = {
-                inherit inputs user;
-                pkgs-stable = pkgsStableFor.${arch};
-              };
-            }
+        lib.nixosSystem {
+          specialArgs = mkSpecialArgs system;
+          modules = modules ++ [
+            nixpkgs.nixosModules.readOnlyPkgs
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                users.${user} = import ./home-manager;
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  flake-inputs = inputs;
-                  pkgs-stable = pkgsStableFor.${arch};
-                  system = arch;
-                };
-              };
-              nix.settings.trusted-users = [ user ];
-            }
+            (mkCommonModule system)
           ];
         };
 
-      darwinSystemForUser =
+      mkDarwin =
         {
-          arch ? "aarch64-darwin",
-          entrypoint,
+          system ? "aarch64-darwin",
+          modules,
         }:
-
         darwin.lib.darwinSystem {
-          specialArgs = { inherit inputs user; };
-          modules = [
-            entrypoint
-            {
-              nixpkgs.overlays = [
-                (final: prev: {
-                  inetutils = prev.runCommand "stub-inetutils" { } "mkdir -p $out/bin";
-                })
-              ];
-              nixpkgs.pkgs = pkgsFor.${arch};
-              _module.args = {
-                inherit inputs user;
-                pkgs-stable = pkgsStableFor.${arch};
-              };
-            }
+          specialArgs = mkSpecialArgs system;
+          modules = modules ++ [
             home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                users.${user} = import ./home-manager;
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  flake-inputs = inputs;
-                  pkgs-stable = pkgsStableFor.${arch};
-                  system = arch;
-                };
-              };
-              users.users.${user}.home = "/Users/${user}";
-              nix.settings.trusted-users = [ user ];
-            }
+            (mkCommonModule system)
+            { users.users.${user}.home = "/Users/${user}"; }
           ];
         };
     in
     {
       nixosConfigurations = {
-        desktop = nixosSystemForUser {
-          entrypoint = ./os/linux/desktop;
+        desktop = mkNixos {
+          modules = [ ./os/linux/desktop ];
         };
-        wsl = nixosSystemForUser {
-          # We wrap the entrypoint in an inline module to include the WSL module
-          entrypoint = {
-            imports = [
-              ./os/linux/wsl
-              nixos-wsl.nixosModules.default
-            ];
-          };
+        wsl = mkNixos {
+          modules = [
+            ./os/linux/wsl
+            nixos-wsl.nixosModules.default
+          ];
         };
       };
 
       darwinConfigurations = {
-        macbook = darwinSystemForUser {
-          entrypoint = ./os/darwin/macbook;
+        macbook = mkDarwin {
+          modules = [ ./os/darwin/macbook ];
         };
       };
+
+      formatter = forAllSystems (system: pkgsFor.${system}.nixfmt);
     };
 }

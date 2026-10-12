@@ -141,6 +141,26 @@
         "type": "github"
       }
     },
+    "monaspace-script": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791836665,
+        "narHash": "sha256-LIwa3UgmjlaTzdER9o4tY0dlGVfwWsbvRRq/Akt2jmc=",
+        "owner": "Roya1jr",
+        "repo": "monaspace-scripted",
+        "rev": "a721d4a052f430b425069a7083136274b952c624",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Roya1jr",
+        "repo": "monaspace-scripted",
+        "type": "github"
+      }
+    },
     "naersk": {
       "inputs": {
         "fenix": "fenix",
@@ -316,6 +336,7 @@
         "darwin": "darwin",
         "helix": "helix",
         "home-manager": "home-manager",
+        "monaspace-script": "monaspace-script",
         "nix-flatpak": "nix-flatpak",
         "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",

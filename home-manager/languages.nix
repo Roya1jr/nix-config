@@ -22,7 +22,7 @@ with pkgs;
 
       ##BQN##
       cbqn-replxx
-      #pkgs.bqnlsp
+      bqnlsp
       #######
 
       ###Erlang####
