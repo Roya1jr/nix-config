@@ -14,7 +14,7 @@ disabled = true
 [os.symbols]
 Windows = "󰍲 "
 Macos = " "
-
+NixOS = " "
 
 
 # Replace the '❯' symbol in the prompt with '➜'
@@ -46,11 +46,11 @@ disabled = false
 format = '[$symbol \[$name\]]($style) '
 
 [shell]
-nu_indicator = "󰅬  "
-fish_indicator = "󰈺  "
-powershell_indicator = "󰨊  "
-zsh_indicator = "  "
-unknown_indicator = "?  "
+nu_indicator = "󰅬 "
+fish_indicator = "󰈺 "
+powershell_indicator = "󰨊 "
+zsh_indicator = " "
+unknown_indicator = "? "
 disabled = false
 
 [shlvl]
