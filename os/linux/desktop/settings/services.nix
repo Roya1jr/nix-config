@@ -91,7 +91,7 @@
       environment = {
         # Must match the address you actually type in the browser / devices
         APP_URL = "http://http://192.168.1.182"; # your server's LAN IP or hostname
-        PORT = 8000;
+        PORT = 8200;
       };
 
       environmentFile = "/etc/bookorbit/secrets.env";
