@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 {
   services = {
@@ -84,7 +84,18 @@
       };
     };
 
+    bookorbit = {
+      enable = true;
+      openFirewall = true;
 
+      environment = {
+        # Must match the address you actually type in the browser / devices
+        APP_URL = "http://http://192.168.1.182"; # your server's LAN IP or hostname
+        PORT = 8000;
+      };
+
+      environmentFile = "/etc/bookorbit/secrets.env";
+    };
 
   };
 
