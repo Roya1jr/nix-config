@@ -12,4 +12,5 @@ cursor-click-to-move = true
 #Style
 background-blur = true
 custom-shader = shaders/cursor_sweep.glsl
+custom-shader = shaders/bettercrt.glsl
 theme = Gruvbox Dark Hard
