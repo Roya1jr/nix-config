@@ -172,7 +172,7 @@ with pkgs;
       llvmPackages_23.clang-tools
       ######
       ###Fortran###
-      llvmPackages_23.flang_23
+      llvmPackages_23.flang
       #############
 
       factor-lang
