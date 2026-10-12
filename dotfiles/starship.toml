@@ -8,7 +8,7 @@ disabled = false
 [os]
 format = "[$symbol]($style) "
 style = "bold white"
-disabled = false
+disabled = true
 
 
 [os.symbols]
