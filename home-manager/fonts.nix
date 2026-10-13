@@ -21,14 +21,17 @@ with pkgs;
       uiua386
       bqn386
       googlesans-code
-      nerd-fonts.fira-code
-      nerd-fonts.fantasque-sans-mono
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.hack
       monaspace
       monaspace-script-nerd
-      nerd-fonts.victor-mono
       maple-mono.NF-CN
+      nerd-fonts.annotationmono
+      nerd-fonts.fira-code
+      nerd-fonts.fantasque-sans-mono
+      nerd-fonts.hack
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.victor-mono
+
+
     ];
     linuxOnly = [
 
