@@ -1,7 +1,6 @@
 #Font
-font-family = "AnnotationM Nerd Font Mono"
+font-family = "Maple Mono NF CN"
 font-size = 18
-
 font-feature = +liga
 font-feature = +ss01
 font-feature = +onum
@@ -21,8 +20,6 @@ font-feature = +ss08
 font-feature = +ss09
 font-feature = +ss10
 font-feature = +ss11
-
-
 
 #Cursor
 shell-integration-features = no-cursor
