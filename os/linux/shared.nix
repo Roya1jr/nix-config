@@ -18,9 +18,6 @@
   users = {
     mutableUsers = true;
     users = {
-      calibre-web = {
-        extraGroups = [ "users" ];
-      };
       prince = {
         shell = pkgs.zsh;
         description = "Me";
@@ -31,7 +28,6 @@
           "dialout"
           "video"
           "render"
-          "calibre-web"
         ];
         openssh.authorizedKeys.keyFiles = [ ./key.pub ];
       };
