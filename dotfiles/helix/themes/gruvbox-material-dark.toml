@@ -1,0 +1,130 @@
+# Helix port of the Zed "Gruvbox Material" theme (colours taken from its JSON),
+# with italic/bold on keywords, booleans, builtin constants, labels and comments.
+
+# ---- Syntax -----------------------------------------------------------------
+"attribute" = "blue"
+
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "gray", modifiers = ["italic", "bold"] }
+
+"constant" = "purple"
+"constant.builtin" = { fg = "purple", modifiers = ["italic"] }
+"constant.builtin.boolean" = { fg = "purple_dim", modifiers = ["italic", "bold"] }
+"constant.numeric" = "purple_dim"
+"constant.character" = "green"
+"constant.character.escape" = "gray"
+
+"constructor" = "aqua"
+"function" = "aqua"
+"function.macro" = "aqua"
+
+# Sub-scopes (keyword.control.*, keyword.function, ...) fall back to this entry.
+"keyword" = { fg = "blue", modifiers = ["italic", "bold"] }
+"keyword.directive" = { fg = "fg", modifiers = ["italic"] }
+
+"label" = { fg = "blue", modifiers = ["italic"] }
+"namespace" = "fg"
+"operator" = "aqua"
+
+"punctuation" = "fg"
+"punctuation.bracket" = "fg_muted"
+"punctuation.delimiter" = "fg_muted"
+"punctuation.special" = "fg_muted"
+
+"string" = "green"
+"string.regexp" = "purple_dim"
+"string.special" = "purple_dim"
+"string.special.symbol" = "purple_dim"
+
+"tag" = "blue"
+"type" = "aqua"
+"type.enum.variant" = "aqua"
+
+"variable" = "fg"
+"variable.builtin" = "purple_dim"
+"variable.other.member" = "red"
+"variable.parameter" = "fg"
+
+# ---- Markup / diff ----------------------------------------------------------
+"markup.heading" = { fg = "red", modifiers = ["bold"] }
+"markup.bold" = { fg = "purple_dim", modifiers = ["bold"] }
+"markup.italic" = { fg = "blue", modifiers = ["italic"] }
+"markup.link.url" = { fg = "aqua", modifiers = ["underlined"] }
+"markup.link.text" = "aqua"
+"markup.list" = "red"
+"markup.raw" = "green"
+"markup.quote" = "fg_muted"
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "yellow"
+
+# ---- Diagnostics ------------------------------------------------------------
+"error" = "red"
+"warning" = "yellow"
+"info" = "blue"
+"hint" = "blue"
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.info" = { underline = { color = "blue", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "blue", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+# ---- UI ---------------------------------------------------------------------
+"ui.background" = { bg = "bg" }
+"ui.text" = "fg"
+"ui.text.focus" = { bg = "bg_hover" }
+"ui.text.inactive" = "gray"
+"ui.window" = { fg = "border" }
+"ui.help" = { fg = "fg", bg = "bg_alt" }
+"ui.popup" = { fg = "fg", bg = "bg_alt" }
+"ui.menu" = { fg = "fg", bg = "bg_alt" }
+"ui.menu.selected" = { fg = "fg", bg = "bg_hover" }
+
+"ui.statusline" = { fg = "fg", bg = "bg_alt" }
+"ui.statusline.inactive" = { fg = "gray", bg = "bg_alt" }
+"ui.statusline.normal" = { fg = "bg", bg = "blue", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "bg", bg = "green", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "bg", bg = "purple", modifiers = ["bold"] }
+
+"ui.bufferline" = { fg = "gray", bg = "bg" }
+"ui.bufferline.active" = { fg = "fg", bg = "bg_alt" }
+"ui.bufferline.background" = { bg = "bg" }
+
+"ui.linenr" = { fg = "line_number" }
+"ui.linenr.selected" = { fg = "fg" }
+"ui.gutter" = { bg = "bg" }
+"ui.cursorline.primary" = { bg = "bg_alt" }
+"ui.cursor" = { fg = "bg", bg = "fg_muted" }
+"ui.cursor.primary" = { fg = "bg", bg = "blue" }
+"ui.cursor.match" = { bg = "selection" }
+"ui.selection" = { bg = "selection" }
+"ui.selection.primary" = { bg = "selection" }
+"ui.highlight" = { bg = "selection" }
+
+"ui.virtual.whitespace" = { fg = "line_number" }
+"ui.virtual.indent-guide" = { fg = "border" }
+"ui.virtual.ruler" = { bg = "bg_alt" }
+"ui.virtual.inlay-hint" = { fg = "blue_dim" }
+"ui.virtual.wrap" = { fg = "border" }
+
+[palette]
+bg = "#292828"
+bg_alt = "#383432"
+bg_hover = "#45403d"
+selection = "#374141"
+border = "#444343"
+line_number = "#5a524c"
+fg = "#d4be98"
+fg_muted = "#c5b18d"
+gray = "#928374"
+comment = "#7c6f64"
+red = "#ea6962"
+yellow = "#d8a657"
+green = "#a9b665"
+aqua = "#89b482"
+blue = "#7daea3"
+blue_dim = "#68948a"
+purple = "#d3869b"
+purple_dim = "#ab6c7d"
