@@ -83,6 +83,7 @@
     "light": "VSCode Icons for Zed (Dark)",
     "dark": "VSCode Icons for Zed (Dark)",
   },
+
   "helix_mode": true,
   "telemetry": {
     "diagnostics": false,
@@ -92,7 +93,7 @@
   "base_keymap": "VSCode",
   "agent": {
     "threads_sidebar": {
-      "position": "right"
+      "position": "right",
     },
     "inline_assistant_model": {
       "provider": "lmstudio",
@@ -116,7 +117,7 @@
   },
   "file_types": {
     "json": ["flake.lock"],
-    "dotenv": [".env*","*.env"],
+    "dotenv": [".env*", "*.env"],
   },
   "use_on_type_format": true,
   "indent_guides": {
@@ -125,14 +126,131 @@
   "soft_wrap": "editor_width",
   "terminal": {
     "font_size": 16.0,
-    "font_family": "FantasqueSansM Nerd Font Mono",
+    "font_family": "Maple Mono NF CN",
+    "font_features": {
+      //Ligatures
+      "calt": true,
+      "zero": false,
+      //Upright
+      "cv01": false,
+      "cv02": true,
+      "cv03": true,
+      "cv04": false,
+      "cv05": true,
+      "cv06": true,
+      "cv07": false,
+      "cv08": false,
+      "cv09": true,
+      "cv10": false,
+      "cv11": false,
+      "cv61": false,
+      "cv62": false,
+      "cv63": false,
+      "cv64": false,
+      "cv65": false,
+      "cv66": false,
+      //Italics
+      "cv31": false,
+      "cv32": false,
+      "cv33": false,
+      "cv34": false,
+      "cv35": false,
+      "cv36": false,
+      "cv37": false,
+      "cv38": true,
+      "cv39": false,
+      "cv40": true,
+      "cv41": true,
+      "cv42": true,
+      "cv43": false,
+      "cv44": false,
+      //Stylistic sets
+      "ss01": false,
+      "ss02": false,
+      "ss03": true,
+      "ss04": true,
+      "ss05": true,
+      "ss06": false,
+      "ss07": true,
+      "ss08": true,
+      "ss09": true,
+      "ss10": true,
+      "ss11": true,
+
+    },
   },
-  "buffer_font_family": "MonaspiceRn Nerd Font",
+  "buffer_font_family": "Maple Mono NF CN",
+  "buffer_font_features": {
+    //Ligatures
+    "calt": true,
+    "zero": false,
+    //Upright
+    "cv01": false,
+    "cv02": true,
+    "cv03": true,
+    "cv04": false,
+    "cv05": true,
+    "cv06": true,
+    "cv07": false,
+    "cv08": false,
+    "cv09": true,
+    "cv10": false,
+    "cv11": false,
+    "cv61": false,
+    "cv62": false,
+    "cv63": false,
+    "cv64": false,
+    "cv65": false,
+    "cv66": false,
+    //Italics
+    "cv31": false,
+    "cv32": false,
+    "cv33": false,
+    "cv34": false,
+    "cv35": false,
+    "cv36": false,
+    "cv37": false,
+    "cv38": true,
+    "cv39": false,
+    "cv40": true,
+    "cv41": true,
+    "cv42": true,
+    "cv43": false,
+    "cv44": false,
+    //Stylistic sets
+    "ss01": false,
+    "ss02": false,
+    "ss03": true,
+    "ss04": true,
+    "ss05": true,
+    "ss06": false,
+    "ss07": true,
+    "ss08": true,
+    "ss09": true,
+    "ss10": true,
+    "ss11": true,
+
+
+  },
+
   "ui_font_size": 16,
   "buffer_font_size": 18.0,
   "theme": {
     "mode": "dark",
     "light": "Gruvbox Light",
     "dark": "Gruvbox Material Dark Hard",
+  },
+  "theme_overrides": {
+    "Gruvbox Material Dark Hard": {
+      "syntax": {
+        "keyword": { "font_style": "italic", "font_weight": 600 },
+        "boolean": { "font_style": "italic", "font_weight": 600 },
+        "constant.builtin": { "font_style": "italic" },
+        "preproc": { "font_style": "italic" },
+        "label": { "font_style": "italic" },
+        "comment": { "font_style": "italic" },
+        "comment.doc": { "font_style": "italic" },
+      },
+    },
   },
 }

@@ -40,13 +40,13 @@ with pkgs;
       sqlc
       sql-studio
       buf
-      helixmaster
       just
       ffmpeg_7-headless
       gdb
       git-filter-repo
       gnumake
       quicktype
+      steelix
       tree-sitter
 
       ###Podman###

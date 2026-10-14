@@ -25,7 +25,6 @@
       url = "sourcehut:~detegr/bqnlsp";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix.url = "github:helix-editor/helix/master";
     monaspace-script = {
       url = "github:Roya1jr/monaspace-scripted";
       inputs.nixpkgs.follows = "nixpkgs";
