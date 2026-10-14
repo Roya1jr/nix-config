@@ -66,23 +66,6 @@
       capSysAdmin = true;
       openFirewall = true;
     };
-    calibre-web = {
-      enable = true;
-
-      listen = {
-        ip = "0.0.0.0";
-      };
-
-      openFirewall = true;
-
-      options = {
-        # Path to the directory containing metadata.db
-        calibreLibrary = "/mnt/Storage/Books";
-
-        enableBookUploading = true;
-        enableBookConversion = true;
-      };
-    };
 
     bookorbit = {
       enable = true;
