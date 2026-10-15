@@ -53,6 +53,7 @@
       "container"
       "container-compose"
       "odin"
+      "localai"
       "ollama"
       "pi-coding-agent"
     ];
