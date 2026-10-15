@@ -30,6 +30,7 @@
       home-manager
       kdePackages.partitionmanager
       pulseaudio
+      rustdesk-flutter
     ];
     plasma6 = {
       excludePackages = with pkgs.kdePackages; [

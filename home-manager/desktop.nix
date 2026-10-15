@@ -8,7 +8,6 @@
       ghostty
       itch
       rio
-      rustdesk-flutter
       vicinae
       zed-editor
     ];
