@@ -42,7 +42,6 @@
       "super-productivity"
       "tablecruncher"
       "utm"
-      "unsloth"
       "vorssaint"
       "zen"
       "zed"
@@ -53,7 +52,6 @@
       "container"
       "container-compose"
       "odin"
-      "localai"
       "ollama"
       "pi-coding-agent"
     ];
