@@ -22,7 +22,6 @@
       "birdfont"
       "blender@lts"
       "bruno"
-      "comfy"
       "dbeaver-community"
       "devtoys"
       "google-chrome"
