@@ -144,6 +144,7 @@ with pkgs;
       ##Typst#####
       tinymist
       typst
+      typstyle
       ###########
 
       ##Uiua##
