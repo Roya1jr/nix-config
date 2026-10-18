@@ -1,6 +1,6 @@
 #Font
 font-family = "Maple Mono NF CN"
-font-size = 18
+font-size = 16
 #ligatures
  font-feature = +calt
  font-feature = -zero
