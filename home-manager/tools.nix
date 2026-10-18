@@ -32,9 +32,6 @@ with pkgs;
       ###ZSH###
       zsh
       zsh-autocomplete
-      ###
-
-      ############
 
       ######Development Tools#####
       sqlc
@@ -45,25 +42,25 @@ with pkgs;
       gdb
       git-filter-repo
       gnumake
+      python314Packages.huggingface-hub
       quicktype
       steelix
       tree-sitter
+
 
       ###Podman###
       buildah
       podman
       podman-compose
       skopeo
-      ###
+
 
       ###Databases###
       sqld
       tigerbeetle
       postgresql
       libpq
-      ###
 
-      ############
 
     ];
     linuxOnly = with pkgs; [
