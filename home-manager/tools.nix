@@ -43,6 +43,7 @@ with pkgs;
       git-filter-repo
       gnumake
       python314Packages.huggingface-hub
+      llama-cpp
       quicktype
       steelix
       tree-sitter
