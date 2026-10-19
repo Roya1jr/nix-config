@@ -38,7 +38,7 @@ with pkgs;
       sql-studio
       buf
       just
-      ffmpeg_7-headless
+      ffmpeg
       gdb
       git-filter-repo
       gnumake
