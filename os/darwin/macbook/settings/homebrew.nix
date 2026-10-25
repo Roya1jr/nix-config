@@ -11,13 +11,16 @@
         "--force"
       ];
     };
+    taps = [
+      "desert-ant-labs/tap"
+    ];
+
 
     casks = [
       ########GUI#########
       "anydesk"
       "audacity"
       "anytype"
-      "audacity"
       "arduino-ide"
       "birdfont"
       "blender@lts"
@@ -51,14 +54,15 @@
     brews = [
       "container"
       "container-compose"
+      {
+         name = "desert-ant-labs/tap/desertant";
+         trusted = true;
+       }
       "odin"
       "ollama"
       "pi-coding-agent"
     ];
 
-    taps = [
-
-    ];
 
     masApps = {
       #"Bitwarden" = 1352778147;
