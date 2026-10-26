@@ -10,6 +10,7 @@
         "org.audacityteam.Audacity"
         "io.anytype.anytype"
         "org.blender.Blender"
+        "com.calibre_ebook.calibre"
         "io.github.thetumultuousunicornofdarkness.cpu-x"
         "com.tomjwatson.Emote"
         "io.github.Faugus.faugus-launcher"
