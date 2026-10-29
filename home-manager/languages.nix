@@ -13,6 +13,10 @@ with pkgs;
       "aarch64-linux"
     ];
     common = [
+      ##Ada##
+      alire
+      #######
+
       ##C++##
       pkg-config
       cmake
@@ -29,11 +33,11 @@ with pkgs;
       beam29Packages.erlang
       #############
 
-  
+
       ###Decker####
       decker
       #############
-      
+
       ####Fourth###
       _4th
       #############
