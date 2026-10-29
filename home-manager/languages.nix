@@ -14,7 +14,7 @@ with pkgs;
     ];
     common = [
       ##Ada##
-      alire
+      #alire
       #######
 
       ##C++##
