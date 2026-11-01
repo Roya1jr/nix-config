@@ -22,6 +22,7 @@ with pkgs;
       cmake
       llvmPackages_21.lldb
       raylib
+      box2d
       #######
 
       ##BQN##
