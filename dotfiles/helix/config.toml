@@ -2,6 +2,7 @@
 theme = "gruvbox-material-dark"
 
 [editor]
+scrolloff=999
 line-number = "relative"
 mouse = false
 insert-final-newline = false
