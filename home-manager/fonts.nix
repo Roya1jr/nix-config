@@ -21,6 +21,7 @@ with pkgs;
       uiua386
       bqn386
       googlesans-code
+      recursive
       monaspace
       monaspace-script-nerd
       maple-mono.NF-CN
