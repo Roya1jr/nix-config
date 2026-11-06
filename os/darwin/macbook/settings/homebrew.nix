@@ -30,6 +30,7 @@
       "google-chrome"
       "godot"
       "ghostty"
+      "herdr-app"
       "jdownloader"
       "knockknock"
       "lm-studio"
