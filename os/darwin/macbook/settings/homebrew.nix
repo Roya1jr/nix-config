@@ -59,7 +59,6 @@
          name = "desert-ant-labs/tap/desertant";
          trusted = true;
        }
-      "herdr"
       "odin"
       "ollama"
       "pi-coding-agent"
