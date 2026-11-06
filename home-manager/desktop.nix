@@ -7,7 +7,6 @@
       anydesk
       ghostty
       itch
-      rio
       vicinae
       zed-editor
     ];

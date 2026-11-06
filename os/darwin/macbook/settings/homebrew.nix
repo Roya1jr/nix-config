@@ -39,7 +39,6 @@
       "obsidian"
       "pixieditor"
       "raycast"
-      "rio"
       "rustdesk"
       "sonic-pi"
       "super-productivity"
