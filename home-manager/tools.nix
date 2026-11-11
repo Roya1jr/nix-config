@@ -34,6 +34,7 @@ with pkgs;
       zsh-autocomplete
 
       ######Development Tools#####
+      libjxl
       sqlc
       sql-studio
       buf
