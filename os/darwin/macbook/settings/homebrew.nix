@@ -27,6 +27,7 @@
       "bruno"
       "dbeaver-community"
       "devtoys"
+      "datagrip"
       "google-chrome"
       "godot"
       "ghostty"
