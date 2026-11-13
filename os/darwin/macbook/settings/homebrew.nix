@@ -22,7 +22,6 @@
       "audacity"
       "anytype"
       "arduino-ide"
-      "beekeeper-studio"
       "birdfont"
       "blender@lts"
       "bruno"
