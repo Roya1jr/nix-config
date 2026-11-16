@@ -25,7 +25,6 @@
       "birdfont"
       "blender@lts"
       "bruno"
-      "capacities"
       "dbeaver-community"
       "devtoys"
       "google-chrome"
