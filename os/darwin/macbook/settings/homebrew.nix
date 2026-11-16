@@ -43,6 +43,7 @@
       "sonic-pi"
       "super-productivity"
       "tablecruncher"
+      "tolaria"
       "utm"
       "unsloth"
       "vorssaint"
