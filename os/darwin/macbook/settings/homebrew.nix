@@ -21,6 +21,7 @@
       "anydesk"
       "audacity"
       "anytype"
+      "android-studio"
       "arduino-ide"
       "birdfont"
       "blender@lts"
