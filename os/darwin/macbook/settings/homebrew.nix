@@ -45,7 +45,6 @@
       "super-productivity"
       "tablecruncher"
       "utm"
-      "unsloth"
       "vorssaint"
       "zen"
       "zed"
